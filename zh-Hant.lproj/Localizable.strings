@@ -3,40 +3,40 @@ Scan List
 ../..
 */
 /* JHDocument.m */
-"Add Scan Folders or Files" = "Add Scan Folders or Files";/**/ 
-"Scan" = "Scan";/**/ 
+"Add Scan Folders or Files" = "增加掃瞄的資料夾或檔案";/**/ 
+"Scan" = "掃瞄";/**/ 
 
 
 /* JHFilePathTableViewController.m */
-"Remove Src Path" = "Remove Src Path";/**/ 
-"Add Src Path" = "Add Src Path";/**/ 
-"OK" = "OK";/**/ 
-"Invalid scan list" = "Invalid scan list";/**/ 
+"Remove Src Path" = "移除原始檔路徑";/**/ 
+"Add Src Path" = "新增原始檔路徑";/**/ 
+"OK" = "確認";/**/ 
+"Invalid scan list" = "含有不合法的掃描路徑";/**/ 
 
 
 /* JHMatchInfoTableView.m */
-"Delete" = "Delete";/**/ 
-"from" = "from";/**/ 
-"translate string" = "translate string";/**/ 
-"comment" = "comment";/**/ 
-"key" = "key";/**/ 
-"Context Menu" = "Context Menu";/**/ 
-"Copy" = "Copy";/**/ 
-"Paste" = "Paste";/**/ 
+"Delete" = "移除";/**/ 
+"from" = "檔案路徑";/**/ 
+"translate string" = "翻譯字串";/**/ 
+"comment" = "註解";/**/ 
+"key" = "關鍵字";/**/ 
+"Context Menu" = "選單內容";/**/ 
+"Copy" = "複製";/**/ 
+"Paste" = "貼上";/**/ 
 
 
 /* JHMatchInfoTableViewController.m */
-"Edit" = "Edit";/**/ 
-"Insert" = "Insert";/**/ 
+"Edit" = "編輯";/**/ 
+"Insert" = "插入";/**/ 
 
 
 /* JHPreferenceController.m */
-"Fill translate string automatically." = "Fill translate string automatically.";/**/ 
-"localizer will fill untranslate string with key automatically." = "localizer will fill untranslate string with key automatically.";/**/ 
+"Fill translate string automatically." = "自動填入翻譯字串";/**/ 
+"localizer will fill untranslate string with key automatically." = "localizer 將自動地利用關鍵字當做翻譯字串";/**/ 
 
 
 /* JHScanFoldersTableView.m */
-"Open Folder in Finder" = "Open Folder in Finder";/**/ 
-"source code file path" = "source code file path";/**/ 
+"Open Folder in Finder" = "利用 Finder 打開資料夾";/**/ 
+"source code file path" = "原始碼檔案路徑";/**/ 
 
 
