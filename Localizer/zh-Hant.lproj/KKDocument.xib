@@ -2,13 +2,13 @@
 <archive type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="8.00">
 	<data>
 		<int key="IBDocument.SystemTarget">1070</int>
-		<string key="IBDocument.SystemVersion">12A269</string>
-		<string key="IBDocument.InterfaceBuilderVersion">2549</string>
-		<string key="IBDocument.AppKitVersion">1187</string>
-		<string key="IBDocument.HIToolboxVersion">624.00</string>
+		<string key="IBDocument.SystemVersion">11E53</string>
+		<string key="IBDocument.InterfaceBuilderVersion">2843</string>
+		<string key="IBDocument.AppKitVersion">1138.47</string>
+		<string key="IBDocument.HIToolboxVersion">569.00</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginVersions">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.CocoaPlugin</string>
-			<string key="NS.object.0">2549</string>
+			<string key="NS.object.0">2843</string>
 		</object>
 		<array key="IBDocument.IntegratedClassDependencies">
 			<string>IBNSLayoutConstraint</string>
@@ -225,7 +225,6 @@
 									</object>
 								</object>
 							</object>
-							<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 						</object>
 						<object class="NSSplitView" id="1065102651">
 							<reference key="NSNextResponder" ref="568628114"/>
@@ -248,8 +247,6 @@
 													<reference key="NSNextKeyView" ref="132856126"/>
 													<string key="NSReuseIdentifierKey">_NS:13</string>
 													<bool key="NSEnabled">YES</bool>
-													<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
-													<bool key="NSControlAllowsExpansionToolTips">YES</bool>
 													<object class="NSTableHeaderView" key="NSHeaderView" id="641784707">
 														<reference key="NSNextResponder" ref="132856126"/>
 														<int key="NSvFlags">256</int>
@@ -455,7 +452,6 @@
 											<reference key="NSWindow"/>
 											<reference key="NSNextKeyView" ref="740349334"/>
 											<string key="NSReuseIdentifierKey">_NS:58</string>
-											<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 											<reference key="NSTarget" ref="290018748"/>
 											<string key="NSAction">_doScroller:</string>
 											<double key="NSPercent">1</double>
@@ -463,13 +459,12 @@
 										<object class="NSScroller" id="740349334">
 											<reference key="NSNextResponder" ref="290018748"/>
 											<int key="NSvFlags">256</int>
-											<string key="NSFrame">{{1, 361}, {882, 16}}</string>
+											<string key="NSFrame">{{1, 362}, {882, 15}}</string>
 											<reference key="NSSuperview" ref="290018748"/>
 											<reference key="NSWindow"/>
 											<reference key="NSNextKeyView" ref="576911534"/>
 											<string key="NSReuseIdentifierKey">_NS:60</string>
 											<bool key="NSEnabled">YES</bool>
-											<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 											<int key="NSsFlags">1</int>
 											<reference key="NSTarget" ref="290018748"/>
 											<string key="NSAction">_doScroller:</string>
@@ -502,9 +497,6 @@
 									<reference key="NSContentView" ref="548235643"/>
 									<reference key="NSHeaderClipView" ref="132856126"/>
 									<bytes key="NSScrollAmts">QSAAAEEgAABBsAAAQbAAAA</bytes>
-									<double key="NSMinMagnification">0.25</double>
-									<double key="NSMaxMagnification">4</double>
-									<double key="NSMagnification">1</double>
 								</object>
 								<object class="NSScrollView" id="576911534">
 									<reference key="NSNextResponder" ref="1065102651"/>
@@ -523,8 +515,6 @@
 													<reference key="NSNextKeyView" ref="930491211"/>
 													<string key="NSReuseIdentifierKey">_NS:13</string>
 													<bool key="NSEnabled">YES</bool>
-													<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
-													<bool key="NSControlAllowsExpansionToolTips">YES</bool>
 													<object class="NSTableHeaderView" key="NSHeaderView" id="962191166">
 														<reference key="NSNextResponder" ref="930491211"/>
 														<int key="NSvFlags">256</int>
@@ -607,7 +597,6 @@
 											<reference key="NSWindow"/>
 											<reference key="NSNextKeyView" ref="433022199"/>
 											<string key="NSReuseIdentifierKey">_NS:58</string>
-											<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 											<reference key="NSTarget" ref="576911534"/>
 											<string key="NSAction">_doScroller:</string>
 											<double key="NSCurValue">37</double>
@@ -621,7 +610,6 @@
 											<reference key="NSWindow"/>
 											<reference key="NSNextKeyView" ref="768484216"/>
 											<string key="NSReuseIdentifierKey">_NS:60</string>
-											<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 											<int key="NSsFlags">1</int>
 											<reference key="NSTarget" ref="576911534"/>
 											<string key="NSAction">_doScroller:</string>
@@ -654,9 +642,6 @@
 									<reference key="NSContentView" ref="63663070"/>
 									<reference key="NSHeaderClipView" ref="930491211"/>
 									<bytes key="NSScrollAmts">QSAAAEEgAABBmAAAQZgAAA</bytes>
-									<double key="NSMinMagnification">0.25</double>
-									<double key="NSMaxMagnification">4</double>
-									<double key="NSMagnification">1</double>
 								</object>
 							</array>
 							<string key="NSFrameSize">{884, 505}</string>
@@ -671,7 +656,7 @@
 					<reference key="NSWindow"/>
 					<reference key="NSNextKeyView" ref="1065102651"/>
 				</object>
-				<string key="NSScreenRect">{{0, 0}, {1280, 778}}</string>
+				<string key="NSScreenRect">{{0, 0}, {1920, 1058}}</string>
 				<string key="NSMinSize">{94, 164}</string>
 				<string key="NSMaxSize">{10000000000000, 10000000000000}</string>
 				<bool key="NSWindowIsRestorable">YES</bool>
@@ -1450,6 +1435,25 @@
 				<object class="IBPartialClassDescription">
 					<string key="className">KKMatchInfoTableView</string>
 					<string key="superclassName">NSTableView</string>
+					<dictionary class="NSMutableDictionary" key="actions">
+						<string key="copy:">id</string>
+						<string key="delete:">id</string>
+						<string key="paste:">id</string>
+					</dictionary>
+					<dictionary class="NSMutableDictionary" key="actionInfosByName">
+						<object class="IBActionInfo" key="copy:">
+							<string key="name">copy:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="delete:">
+							<string key="name">delete:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="paste:">
+							<string key="name">paste:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+					</dictionary>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
 						<string key="minorKey">./Classes/KKMatchInfoTableView.h</string>
@@ -1477,55 +1481,23 @@
 				<object class="IBPartialClassDescription">
 					<string key="className">KKScanFoldersTableView</string>
 					<string key="superclassName">NSTableView</string>
+					<dictionary class="NSMutableDictionary" key="actions">
+						<string key="delete:">id</string>
+						<string key="openFileInFinder:">id</string>
+					</dictionary>
+					<dictionary class="NSMutableDictionary" key="actionInfosByName">
+						<object class="IBActionInfo" key="delete:">
+							<string key="name">delete:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="openFileInFinder:">
+							<string key="name">openFileInFinder:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+					</dictionary>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
 						<string key="minorKey">./Classes/KKScanFoldersTableView.h</string>
-					</object>
-				</object>
-				<object class="IBPartialClassDescription">
-					<string key="className">NSDocument</string>
-					<dictionary class="NSMutableDictionary" key="actions">
-						<string key="duplicateDocument:">id</string>
-						<string key="printDocument:">id</string>
-						<string key="revertDocumentToSaved:">id</string>
-						<string key="runPageLayout:">id</string>
-						<string key="saveDocument:">id</string>
-						<string key="saveDocumentAs:">id</string>
-						<string key="saveDocumentTo:">id</string>
-					</dictionary>
-					<dictionary class="NSMutableDictionary" key="actionInfosByName">
-						<object class="IBActionInfo" key="duplicateDocument:">
-							<string key="name">duplicateDocument:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="printDocument:">
-							<string key="name">printDocument:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="revertDocumentToSaved:">
-							<string key="name">revertDocumentToSaved:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="runPageLayout:">
-							<string key="name">runPageLayout:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="saveDocument:">
-							<string key="name">saveDocument:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="saveDocumentAs:">
-							<string key="name">saveDocumentAs:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="saveDocumentTo:">
-							<string key="name">saveDocumentTo:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-					</dictionary>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/NSDocument.h</string>
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">
@@ -1540,10 +1512,6 @@
 		</object>
 		<int key="IBDocument.localizationMode">0</int>
 		<string key="IBDocument.TargetRuntimeIdentifier">IBCocoaFramework</string>
-		<object class="NSMutableDictionary" key="IBDocument.PluginDeclaredDependencyDefaults">
-			<string key="NS.key.0">com.apple.InterfaceBuilder.CocoaPlugin.macosx</string>
-			<real value="1070" key="NS.object.0"/>
-		</object>
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 		<dictionary class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
