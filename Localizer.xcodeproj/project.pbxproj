@@ -45,6 +45,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		39185BFF163E2DDF000AE5DF /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = "zh-Hant"; path = "/Users/KKBOX/Desktop/Localizer/Localizer/zh-Hant.lproj/Credits.rtf"; sourceTree = "<absolute>"; };
+		39185C00163E2DDF000AE5DF /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "/Users/KKBOX/Desktop/Localizer/Localizer/zh-Hant.lproj/InfoPlist.strings"; sourceTree = "<absolute>"; };
+		39185C01163E2DDF000AE5DF /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "zh-Hant"; path = "/Users/KKBOX/Desktop/Localizer/Localizer/zh-Hant.lproj/KKDocument.xib"; sourceTree = "<absolute>"; };
+		39185C02163E2DDF000AE5DF /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "zh-Hant"; path = "/Users/KKBOX/Desktop/Localizer/Localizer/zh-Hant.lproj/MainMenu.xib"; sourceTree = "<absolute>"; };
 		39715A701637E4D80098BC0A /* ImageAndTextCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageAndTextCell.h; sourceTree = "<group>"; };
 		39715A711637E4D80098BC0A /* ImageAndTextCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageAndTextCell.m; sourceTree = "<group>"; };
 		39715A731637E4D80098BC0A /* NSString+RelativePath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+RelativePath.h"; sourceTree = "<group>"; };
@@ -442,6 +446,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				39F25AE51626A36900BAF9C9 /* en */,
+				39185C00163E2DDF000AE5DF /* zh-Hant */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -450,6 +455,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				39F25AEB1626A36900BAF9C9 /* en */,
+				39185BFF163E2DDF000AE5DF /* zh-Hant */,
 			);
 			name = Credits.rtf;
 			sourceTree = "<group>";
@@ -458,6 +464,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				39F25AF11626A36900BAF9C9 /* en */,
+				39185C01163E2DDF000AE5DF /* zh-Hant */,
 			);
 			name = KKDocument.xib;
 			sourceTree = "<group>";
@@ -466,6 +473,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				39F25AF41626A36A00BAF9C9 /* en */,
+				39185C02163E2DDF000AE5DF /* zh-Hant */,
 			);
 			name = MainMenu.xib;
 			sourceTree = "<group>";

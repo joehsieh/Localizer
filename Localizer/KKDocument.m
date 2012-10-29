@@ -35,6 +35,9 @@
         [NSValueTransformer setValueTransformer:transformer forName:@"KKMatchInfoRecordColorTransformer"];
         
         matchInfoProcessor = [[KKMatchInfoProcessor alloc] init];
+        
+        //預設自動填入翻譯字串
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:autoFillTranslateStr];
     }
     return self;
 }

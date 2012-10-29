@@ -10,6 +10,14 @@
 #import "KKSourceCodeParser.h"
 @implementation KKPreferenceController
 
+- (void)dealloc
+{
+    self.window = nil;
+    self.message = nil;
+    self.subMessage = nil;
+    [super dealloc];
+}
+
 -(IBAction)showPreference:(id)sender
 {
     if (!window) {
