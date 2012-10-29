@@ -2,41 +2,41 @@
 Scan List
 ../..
 */
-/* JHDocument.m */
-"Add Scan Folders or Files" = "新增掃瞄的資料夾或者是檔案";/**/ 
-"Scan" = "掃瞄";/**/ 
+/* KKDocument.m */
+"Add Scan Folders or Files" = "Add Scan Folders or Files";/**/ 
+"Scan" = "Scan";/**/ 
 
 
-/* JHFilePathTableViewController.m */
-"Remove Src Path" = "移除原始碼檔案路徑";/**/ 
-"Add Src Path" = "增加原始碼檔案路徑";/**/ 
-"OK" = "確認";/**/ 
-"Invalid scan list" = "存在不合法的掃瞄路徑";/**/ 
+/* KKFilePathTableViewController.m */
+"Remove Src Path" = "Remove Src Path";/**/ 
+"Add Src Path" = "Add Src Path";/**/ 
+"OK" = "OK";/**/ 
+"Invalid scan list" = "Invalid scan list";/**/ 
 
 
-/* JHMatchInfoTableView.m */
-"Delete" = "刪除";/**/ 
-"from" = "檔案路徑";/**/ 
-"translate string" = "翻譯字串";/**/ 
-"comment" = "註解";/**/ 
-"key" = "關鍵字";/**/ 
-"Context Menu" = "選單";/**/ 
-"Copy" = "複製";/**/ 
-"Paste" = "貼上";/**/ 
+/* KKMatchInfoTableView.m */
+"Delete" = "Delete";/**/ 
+"from" = "from";/**/ 
+"translate string" = "translate string";/**/ 
+"comment" = "comment";/**/ 
+"key" = "key";/**/ 
+"Context Menu" = "Context Menu";/**/ 
+"Copy" = "Copy";/**/ 
+"Paste" = "Paste";/**/ 
 
 
-/* JHMatchInfoTableViewController.m */
-"Edit" = "編輯";/**/ 
-"Insert" = "插入";/**/ 
+/* KKMatchInfoTableViewController.m */
+"Edit" = "Edit";/**/ 
+"Insert" = "Insert";/**/ 
 
 
-/* JHPreferenceController.m */
-"Fill translate string automatically." = "自動填入翻譯字串";/**/ 
-"localizer will fill untranslate string with key automatically." = "localizer 將自動地利用關鍵字填入未翻譯的字串";/**/ 
+/* KKPreferenceController.m */
+"Fill translate string automatically." = "Fill translate string automatically.";/**/ 
+"localizer will fill untranslate string with key automatically." = "localizer will fill untranslate string with key automatically.";/**/ 
 
 
-/* JHScanFoldersTableView.m */
-"Open Folder in Finder" = "使用 Finder 打開資料夾";/**/ 
-"source code file path" = "原始碼檔案路徑";/**/ 
+/* KKScanFoldersTableView.m */
+"Open Folder in Finder" = "Open Folder in Finder";/**/ 
+"source code file path" = "source code file path";/**/ 
 
 

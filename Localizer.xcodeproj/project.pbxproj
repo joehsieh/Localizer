@@ -75,12 +75,12 @@
 		399C06B6163A8D990076B5B4 /* JHPreferenceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHPreferenceController.m; sourceTree = "<group>"; };
 		399C06B9163A8DE20076B5B4 /* JHPreference.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JHPreference.xib; sourceTree = "<group>"; };
 		399E1E931639405800E787B5 /* App.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = App.icns; sourceTree = "<group>"; };
-		39B476BA163E65FA00EEAAB7 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
-		39B476BB163E65FA00EEAAB7 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "zh-Hant"; path = "zh-Hant.lproj/JHDocument.xib"; sourceTree = "<group>"; };
-		39B476BC163E65FA00EEAAB7 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "zh-Hant"; path = "zh-Hant.lproj/MainMenu.xib"; sourceTree = "<group>"; };
-		39B476BD163E65FA00EEAAB7 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
-		39B476BE163E65FA00EEAAB7 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = "zh-Hant"; path = "zh-Hant.lproj/Credits.rtf"; sourceTree = "<group>"; };
 		39DF7BBB163E6B6400558F99 /* JHMatchInfoTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHMatchInfoTableViewController.m; sourceTree = "<group>"; };
+		39DF7BC8163E772500558F99 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		39DF7BC9163E772600558F99 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "zh-Hant"; path = "zh-Hant.lproj/JHDocument.xib"; sourceTree = "<group>"; };
+		39DF7BCA163E772600558F99 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "zh-Hant"; path = "zh-Hant.lproj/MainMenu.xib"; sourceTree = "<group>"; };
+		39DF7BCB163E772600558F99 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		39DF7BCC163E772600558F99 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = "zh-Hant"; path = "zh-Hant.lproj/Credits.rtf"; sourceTree = "<group>"; };
 		39F25AD71626A36900BAF9C9 /* Localizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Localizer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		39F25ADB1626A36900BAF9C9 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		39F25ADE1626A36900BAF9C9 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -454,7 +454,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				39185C10163E3E7C000AE5DF /* en */,
-				39B476BA163E65FA00EEAAB7 /* zh-Hant */,
+				39DF7BC8163E772500558F99 /* zh-Hant */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -463,7 +463,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				39F25AE51626A36900BAF9C9 /* en */,
-				39B476BD163E65FA00EEAAB7 /* zh-Hant */,
+				39DF7BCB163E772600558F99 /* zh-Hant */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -472,7 +472,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				39F25AEB1626A36900BAF9C9 /* en */,
-				39B476BE163E65FA00EEAAB7 /* zh-Hant */,
+				39DF7BCC163E772600558F99 /* zh-Hant */,
 			);
 			name = Credits.rtf;
 			sourceTree = "<group>";
@@ -481,7 +481,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				39F25AF11626A36900BAF9C9 /* en */,
-				39B476BB163E65FA00EEAAB7 /* zh-Hant */,
+				39DF7BC9163E772600558F99 /* zh-Hant */,
 			);
 			name = JHDocument.xib;
 			sourceTree = "<group>";
@@ -490,7 +490,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				39F25AF41626A36A00BAF9C9 /* en */,
-				39B476BC163E65FA00EEAAB7 /* zh-Hant */,
+				39DF7BCA163E772600558F99 /* zh-Hant */,
 			);
 			name = MainMenu.xib;
 			sourceTree = "<group>";
