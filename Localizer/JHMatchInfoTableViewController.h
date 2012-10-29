@@ -7,9 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "KKMatchInfoTableView.h"
+#import "JHMatchInfoTableView.h"
 
-@interface KKMatchInfoTableViewController : NSObject<NSTableViewDelegate, NSTableViewDelegateMatchInfoExtension>
+@interface JHMatchInfoTableViewController : NSObject<NSTableViewDelegate, NSTableViewDelegateMatchInfoExtension>
 {
     // table view data
     IBOutlet NSArrayController *arrayController;

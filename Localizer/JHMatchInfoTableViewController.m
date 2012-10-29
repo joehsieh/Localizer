@@ -6,11 +6,11 @@
 //
 //
 
-#import "KKMatchInfoTableViewController.h"
+#import "JHMatchInfoTableViewController.h"
 #import "ImageAndTextCell.h"
-#import "KKMatchInfo.h"
+#import "JHMatchInfo.h"
 
-@implementation KKMatchInfoTableViewController
+@implementation JHMatchInfoTableViewController
 
 - (void)dealloc
 {
@@ -56,9 +56,9 @@
     if ([inIndexes count] != 0) {
         NSMutableArray *matchInfoArray = [NSMutableArray array];
         [inIndexes enumerateIndexesUsingBlock:^(NSUInteger idx, BOOL *stop) {
-            KKMatchInfo *selectedMatchInfo = [arrayController.content objectAtIndex:idx];
+            JHMatchInfo *selectedMatchInfo = [arrayController.content objectAtIndex:idx];
             if ([arrayController.content containsObject:selectedMatchInfo]) {
-                KKMatchInfo *matchInfo = [[[KKMatchInfo alloc] init] autorelease];
+                JHMatchInfo *matchInfo = [[[JHMatchInfo alloc] init] autorelease];
                 matchInfo.key = [NSString stringWithFormat:@"%@ copy",selectedMatchInfo.key];
                 matchInfo.translateString = selectedMatchInfo.translateString;
                 matchInfo.comment = selectedMatchInfo.comment;
@@ -77,7 +77,7 @@
 - (void)tableView:(NSTableView *)inTableView didPasteMatchInfos:(NSIndexSet *)inIndexes
 {
     NSPasteboard *pasteboard = [NSPasteboard generalPasteboard];
-    NSArray *classArray = [NSArray arrayWithObject:[KKMatchInfo class]];
+    NSArray *classArray = [NSArray arrayWithObject:[JHMatchInfo class]];
     NSDictionary *options = [NSDictionary dictionary];
     
     BOOL ok = [pasteboard canReadObjectForClasses:classArray options:options];
@@ -157,7 +157,7 @@
 - (void)stopObservingMatchInfoArray:(NSArray *)inArray
 {
     //移除 observing
-    for (KKMatchInfo *matchInfo in [inArray retain]) {
+    for (JHMatchInfo *matchInfo in [inArray retain]) {
         [matchInfo removeObserver:self forKeyPath:@"translateString"];
         [matchInfo removeObserver:self forKeyPath:@"comment"];
     }
@@ -166,7 +166,7 @@
 - (void)startObservingMatchInfoArray:(NSArray *) inArray
 {
     //加上 KVO 準備 Undo 用
-    for (KKMatchInfo *matchInfo in [inArray retain]) {
+    for (JHMatchInfo *matchInfo in [inArray retain]) {
         [matchInfo addObserver:self forKeyPath:@"translateString" options:NSKeyValueObservingOptionOld context:nil];
         [matchInfo addObserver:self forKeyPath:@"comment" options:NSKeyValueObservingOptionOld context:nil];
     }
@@ -192,7 +192,7 @@
     
     for (NSString *filePath in [self sortedMatchInfoFilePathArray]) {
         [resultString appendFormat:@"/* %@ */\n",filePath];
-        for (KKMatchInfo *matchInfo in [self matchInfoArray]) {
+        for (JHMatchInfo *matchInfo in [self matchInfoArray]) {
             if ([[matchInfo filePath] isEqualToString:filePath]) {
                 [resultString appendString:[NSString stringWithFormat:@"\"%@\" = \"%@\";/*%@*/ \n", matchInfo.key, matchInfo.translateString, matchInfo.comment]];
             }

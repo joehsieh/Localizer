@@ -6,16 +6,16 @@
 //
 //
 
-#import "KKLocalizableSettingParser.h"
-#import "KKMatchInfo.h"
+#import "JHLocalizableSettingParser.h"
+#import "JHMatchInfo.h"
 
-@interface KKLocalizableSettingParser()
+@interface JHLocalizableSettingParser()
 //測試用
 - (void)seperateFileContent:(NSString *)inFileContent header:(out NSString **)outHeader body:(out NSString **)outBody;
 - (NSMutableArray *)scanFolderPathsFromString:(NSString *)inScanFolders;
 @end
 
-@implementation KKLocalizableSettingParser
+@implementation JHLocalizableSettingParser
 
 - (void)parse:(NSString *)fileContent scanFolderPathArray:(out NSArray **)outArray matchRecordSet:(out NSSet **)outSet
 {   
@@ -93,7 +93,7 @@
             comment = @"";
         }
         
-        KKMatchInfo *matchInfo = [[[KKMatchInfo alloc] init] autorelease];
+        JHMatchInfo *matchInfo = [[[JHMatchInfo alloc] init] autorelease];
         
         [matchInfo setValue:[key stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] forKey:@"key"];            
         [matchInfo setValue:[translateString stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] forKey:@"translateString"];            

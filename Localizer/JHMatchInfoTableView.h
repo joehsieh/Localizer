@@ -13,6 +13,6 @@
 - (void)tableView:(NSTableView *)inTableView didPasteMatchInfos:(NSIndexSet *)inIndexes;
 @end
 
-@interface KKMatchInfoTableView : NSTableView
+@interface JHMatchInfoTableView : NSTableView
 
 @end

@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface KKMatchInfoProcessor : NSObject
+@interface JHMatchInfoProcessor : NSObject
 
 //according to that does localizable.strings file exit to merge src info set and localizable info set
 - (NSArray *)mergeSetWithSrcInfoSet:(NSSet *)inSrcInfoSet withLocalizableInfoSet:(NSSet *)inLocalizableInfoSet withLocalizableFileExist:(BOOL)isLocalizableFileExist;

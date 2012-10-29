@@ -6,9 +6,9 @@
 //  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
 //
 
-#import "KKPreferenceController.h"
-#import "KKSourceCodeParser.h"
-@implementation KKPreferenceController
+#import "JHPreferenceController.h"
+#import "JHSourceCodeParser.h"
+@implementation JHPreferenceController
 
 - (void)dealloc
 {
@@ -21,7 +21,7 @@
 -(IBAction)showPreference:(id)sender
 {
     if (!window) {
-        [NSBundle loadNibNamed:@"KKPreference" owner:self];
+        [NSBundle loadNibNamed:@"JHPreference" owner:self];
         message.stringValue = NSLocalizedString(@"Fill translate string automatically.", @"");
         subMessage.stringValue = NSLocalizedString(@"localizer will fill untranslate string with key automatically.", @"");
     }

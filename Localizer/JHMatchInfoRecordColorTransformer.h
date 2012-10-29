@@ -8,6 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-@interface KKMatchInfoRecordColorTransformer : NSValueTransformer
+@interface JHMatchInfoRecordColorTransformer : NSValueTransformer
 
 @end

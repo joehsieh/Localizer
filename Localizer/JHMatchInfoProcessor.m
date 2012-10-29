@@ -6,9 +6,9 @@
 //  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
 //
 
-#import "KKMatchInfoProcessor.h"
-#import "KKMatchInfo.h"
-@implementation KKMatchInfoProcessor
+#import "JHMatchInfoProcessor.h"
+#import "JHMatchInfo.h"
+@implementation JHMatchInfoProcessor
 
 - (NSArray *)mergeSetWithSrcInfoSet:(NSSet *)inSrcInfoSet withLocalizableInfoSet:(NSSet *)inLocalizableInfoSet withLocalizableFileExist:(BOOL)isLocalizableFileExist
 {
@@ -38,9 +38,9 @@
     
     NSArray *srcInfoArray = [NSArray arrayWithArray:[inSrcInfoSet allObjects]];
     NSArray *localizableInfoArray = [NSArray arrayWithArray:[inLocalizableInfoSet allObjects]];
-    for (KKMatchInfo *srcInfoRecord in srcInfoArray) {
+    for (JHMatchInfo *srcInfoRecord in srcInfoArray) {
         BOOL isExist = NO;
-        for (KKMatchInfo *localizableInfoRecord in localizableInfoArray) {
+        for (JHMatchInfo *localizableInfoRecord in localizableInfoArray) {
             if ([srcInfoRecord.key isEqualToString:localizableInfoRecord.key]) {
                 isExist = ![localizableInfoRecord.filePath isEqualToString:@"Not exist"];
                 break;
@@ -61,8 +61,8 @@
     
     NSArray *srcInfoArray = [NSArray arrayWithArray:[inSrcInfoSet allObjects]];
     NSArray *localizableInfoArray = [NSArray arrayWithArray:[inLocalizableInfoSet allObjects]];
-    for (KKMatchInfo *localizableInfoRecord in localizableInfoArray) {
-        for (KKMatchInfo *srcInfoRecord in srcInfoArray) {
+    for (JHMatchInfo *localizableInfoRecord in localizableInfoArray) {
+        for (JHMatchInfo *srcInfoRecord in srcInfoArray) {
             if ([localizableInfoRecord.key isEqualToString:srcInfoRecord.key] && ![localizableInfoRecord.filePath isEqualToString:@"Not exist"]) {
                 [result addObject:localizableInfoRecord];
             }
@@ -78,9 +78,9 @@
     
     NSArray *srcInfoArray = [NSArray arrayWithArray:[inSrcInfoSet allObjects]];
     NSArray *localizableInfoArray = [NSArray arrayWithArray:[inLocalizableInfoSet allObjects]];
-    for (KKMatchInfo *localizableInfoRecord in localizableInfoArray) {
+    for (JHMatchInfo *localizableInfoRecord in localizableInfoArray) {
         BOOL isExist = NO;
-        for (KKMatchInfo *srcInfoRecord in srcInfoArray) {
+        for (JHMatchInfo *srcInfoRecord in srcInfoArray) {
             if ([localizableInfoRecord.key isEqualToString:srcInfoRecord.key]) {
                 isExist = YES;
                 break;

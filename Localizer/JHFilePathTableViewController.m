@@ -6,16 +6,16 @@
 //  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
 //
 
-#import "KKFilePathTableViewController.h"
+#import "JHFilePathTableViewController.h"
 #import "NSString+RelativePath.h"
 
-@interface KKFilePathTableViewController(Privates)
+@interface JHFilePathTableViewController(Privates)
 - (void)restoreFilePathArray:(NSArray *)inArray actionName:(NSString *)inActionName;
 - (NSArray *)translateRelativePathToAbsolutePath:(NSArray *)inArray withBasePath:(NSString *)inBasePath;
 - (void)reloadSourceFilePaths;
 @end
 
-@implementation KKFilePathTableViewController(Privates)
+@implementation JHFilePathTableViewController(Privates)
 
 - (void)restoreFilePathArray:(NSArray *)inArray actionName:(NSString *)inActionName
 {
@@ -57,7 +57,7 @@
 
 @end
 
-@implementation KKFilePathTableViewController
+@implementation JHFilePathTableViewController
 
 - (void)dealloc
 {

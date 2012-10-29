@@ -38,13 +38,13 @@
 		</object>
 		<array class="NSMutableArray" key="IBDocument.RootObjects" id="580458321">
 			<object class="NSCustomObject" id="512844837">
-				<string key="NSClassName">KKDocument</string>
+				<string key="NSClassName">JHDocument</string>
 			</object>
 			<object class="NSCustomObject" id="613418571">
 				<string key="NSClassName">FirstResponder</string>
 			</object>
 			<object class="NSCustomObject" id="614337002">
-				<string key="NSClassName">KKFilePathTableViewController</string>
+				<string key="NSClassName">JHFilePathTableViewController</string>
 			</object>
 			<object class="NSWindowTemplate" id="275939982">
 				<int key="NSWindowStyleMask">15</int>
@@ -195,6 +195,7 @@
 							<string key="NSFrame">{{308, 243}, {268, 22}}</string>
 							<reference key="NSSuperview" ref="568628114"/>
 							<reference key="NSWindow"/>
+							<reference key="NSNextKeyView"/>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSTextFieldCell" key="NSCell" id="566561048">
 								<int key="NSCellFlags">67108864</int>
@@ -244,7 +245,7 @@
 													<string key="NSFrameSize">{948, 360}</string>
 													<reference key="NSSuperview" ref="548235643"/>
 													<reference key="NSWindow"/>
-													<reference key="NSNextKeyView" ref="132856126"/>
+													<reference key="NSNextKeyView" ref="23447825"/>
 													<string key="NSReuseIdentifierKey">_NS:13</string>
 													<bool key="NSEnabled">YES</bool>
 													<object class="NSTableHeaderView" key="NSHeaderView" id="641784707">
@@ -489,7 +490,7 @@
 									<string key="NSFrameSize">{884, 378}</string>
 									<reference key="NSSuperview" ref="1065102651"/>
 									<reference key="NSWindow"/>
-									<reference key="NSNextKeyView" ref="548235643"/>
+									<reference key="NSNextKeyView" ref="132856126"/>
 									<string key="NSReuseIdentifierKey">_NS:9</string>
 									<int key="NSsFlags">133810</int>
 									<reference key="NSVScroller" ref="23447825"/>
@@ -512,7 +513,7 @@
 													<string key="NSFrameSize">{882, 99}</string>
 													<reference key="NSSuperview" ref="63663070"/>
 													<reference key="NSWindow"/>
-													<reference key="NSNextKeyView" ref="930491211"/>
+													<reference key="NSNextKeyView" ref="557948489"/>
 													<string key="NSReuseIdentifierKey">_NS:13</string>
 													<bool key="NSEnabled">YES</bool>
 													<object class="NSTableHeaderView" key="NSHeaderView" id="962191166">
@@ -634,7 +635,7 @@
 									<string key="NSFrame">{{0, 388}, {884, 117}}</string>
 									<reference key="NSSuperview" ref="1065102651"/>
 									<reference key="NSWindow"/>
-									<reference key="NSNextKeyView" ref="63663070"/>
+									<reference key="NSNextKeyView" ref="930491211"/>
 									<string key="NSReuseIdentifierKey">_NS:9</string>
 									<int key="NSsFlags">133682</int>
 									<reference key="NSVScroller" ref="768484216"/>
@@ -668,7 +669,7 @@
 					<string>comment</string>
 					<string>filePath</string>
 				</array>
-				<string key="NSObjectClassName">KKMatchInfo</string>
+				<string key="NSObjectClassName">JHMatchInfo</string>
 				<bool key="NSEditable">YES</bool>
 				<object class="_NSManagedProxy" key="_NSManagedProxy"/>
 				<bool key="NSAvoidsEmptySelection">YES</bool>
@@ -678,7 +679,7 @@
 				<bool key="NSClearsFilterPredicateOnInsertion">YES</bool>
 			</object>
 			<object class="NSCustomObject" id="990823172">
-				<string key="NSClassName">KKMatchInfoTableViewController</string>
+				<string key="NSClassName">JHMatchInfoTableViewController</string>
 			</object>
 			<object class="NSCustomObject" id="796877042">
 				<string key="NSClassName">NSApplication</string>
@@ -779,12 +780,12 @@
 							<string key="NSKeyPath">arrangedObjects.state</string>
 							<object class="NSDictionary" key="NSOptions">
 								<string key="NS.key.0">NSValueTransformerName</string>
-								<string key="NS.object.0">KKMatchInfoRecordColorTransformer</string>
+								<string key="NS.object.0">JHMatchInfoRecordColorTransformer</string>
 							</object>
 							<int key="NSNibBindingConnectorVersion">2</int>
 						</object>
 					</object>
-					<int key="connectionID">100444</int>
+					<int key="connectionID">100492</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
@@ -839,12 +840,12 @@
 							<string key="NSKeyPath">arrangedObjects.state</string>
 							<object class="NSDictionary" key="NSOptions">
 								<string key="NS.key.0">NSValueTransformerName</string>
-								<string key="NS.object.0">KKMatchInfoRecordColorTransformer</string>
+								<string key="NS.object.0">JHMatchInfoRecordColorTransformer</string>
 							</object>
 							<int key="NSNibBindingConnectorVersion">2</int>
 						</object>
 					</object>
-					<int key="connectionID">100445</int>
+					<int key="connectionID">100493</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
@@ -875,12 +876,12 @@
 							<string key="NSKeyPath">arrangedObjects.state</string>
 							<object class="NSDictionary" key="NSOptions">
 								<string key="NS.key.0">NSValueTransformerName</string>
-								<string key="NS.object.0">KKMatchInfoRecordColorTransformer</string>
+								<string key="NS.object.0">JHMatchInfoRecordColorTransformer</string>
 							</object>
 							<int key="NSNibBindingConnectorVersion">2</int>
 						</object>
 					</object>
-					<int key="connectionID">100446</int>
+					<int key="connectionID">100494</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
@@ -911,12 +912,12 @@
 							<string key="NSKeyPath">arrangedObjects.state</string>
 							<object class="NSDictionary" key="NSOptions">
 								<string key="NS.key.0">NSValueTransformerName</string>
-								<string key="NS.object.0">KKMatchInfoRecordColorTransformer</string>
+								<string key="NS.object.0">JHMatchInfoRecordColorTransformer</string>
 							</object>
 							<int key="NSNibBindingConnectorVersion">2</int>
 						</object>
 					</object>
-					<int key="connectionID">100447</int>
+					<int key="connectionID">100495</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
@@ -1318,7 +1319,7 @@
 				<string key="-3.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="100020.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="100033.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<string key="100034.CustomClassName">KKMatchInfoTableView</string>
+				<string key="100034.CustomClassName">JHMatchInfoTableView</string>
 				<string key="100034.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="100035.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="100036.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -1326,7 +1327,7 @@
 				<string key="100038.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="100041.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="100066.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<string key="100067.CustomClassName">KKScanFoldersTableView</string>
+				<string key="100067.CustomClassName">JHScanFoldersTableView</string>
 				<string key="100067.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="100068.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="100069.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -1376,7 +1377,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">100490</int>
+			<int key="maxID">100495</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -1389,7 +1390,7 @@
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">
-					<string key="className">KKDocument</string>
+					<string key="className">JHDocument</string>
 					<string key="superclassName">NSDocument</string>
 					<dictionary class="NSMutableDictionary" key="actions">
 						<string key="addScanFolderAndFiles:">id</string>
@@ -1406,34 +1407,34 @@
 						</object>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="outlets">
-						<string key="filePathTableViewController">KKFilePathTableViewController</string>
-						<string key="matchInfoTableViewController">KKMatchInfoTableViewController</string>
+						<string key="filePathTableViewController">JHFilePathTableViewController</string>
+						<string key="matchInfoTableViewController">JHMatchInfoTableViewController</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
 						<object class="IBToOneOutletInfo" key="filePathTableViewController">
 							<string key="name">filePathTableViewController</string>
-							<string key="candidateClassName">KKFilePathTableViewController</string>
+							<string key="candidateClassName">JHFilePathTableViewController</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="matchInfoTableViewController">
 							<string key="name">matchInfoTableViewController</string>
-							<string key="candidateClassName">KKMatchInfoTableViewController</string>
+							<string key="candidateClassName">JHMatchInfoTableViewController</string>
 						</object>
 					</dictionary>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/KKDocument.h</string>
+						<string key="minorKey">./Classes/JHDocument.h</string>
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">
-					<string key="className">KKFilePathTableViewController</string>
+					<string key="className">JHFilePathTableViewController</string>
 					<string key="superclassName">NSViewController</string>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/KKFilePathTableViewController.h</string>
+						<string key="minorKey">./Classes/JHFilePathTableViewController.h</string>
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">
-					<string key="className">KKMatchInfoTableView</string>
+					<string key="className">JHMatchInfoTableView</string>
 					<string key="superclassName">NSTableView</string>
 					<dictionary class="NSMutableDictionary" key="actions">
 						<string key="copy:">id</string>
@@ -1456,11 +1457,11 @@
 					</dictionary>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/KKMatchInfoTableView.h</string>
+						<string key="minorKey">./Classes/JHMatchInfoTableView.h</string>
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">
-					<string key="className">KKMatchInfoTableViewController</string>
+					<string key="className">JHMatchInfoTableViewController</string>
 					<string key="superclassName">NSObject</string>
 					<object class="NSMutableDictionary" key="outlets">
 						<string key="NS.key.0">arrayController</string>
@@ -1475,29 +1476,102 @@
 					</object>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/KKMatchInfoTableViewController.h</string>
+						<string key="minorKey">./Classes/JHMatchInfoTableViewController.h</string>
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">
-					<string key="className">KKScanFoldersTableView</string>
+					<string key="className">JHScanFoldersTableView</string>
 					<string key="superclassName">NSTableView</string>
-					<dictionary class="NSMutableDictionary" key="actions">
-						<string key="delete:">id</string>
-						<string key="openFileInFinder:">id</string>
-					</dictionary>
-					<dictionary class="NSMutableDictionary" key="actionInfosByName">
-						<object class="IBActionInfo" key="delete:">
+					<object class="NSMutableDictionary" key="actions">
+						<string key="NS.key.0">delete:</string>
+						<string key="NS.object.0">id</string>
+					</object>
+					<object class="NSMutableDictionary" key="actionInfosByName">
+						<string key="NS.key.0">delete:</string>
+						<object class="IBActionInfo" key="NS.object.0">
 							<string key="name">delete:</string>
 							<string key="candidateClassName">id</string>
 						</object>
-						<object class="IBActionInfo" key="openFileInFinder:">
-							<string key="name">openFileInFinder:</string>
+					</object>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/JHScanFoldersTableView.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">NSDocument</string>
+					<dictionary class="NSMutableDictionary" key="actions">
+						<string key="browseDocumentVersions:">id</string>
+						<string key="duplicateDocument:">id</string>
+						<string key="lockDocument:">id</string>
+						<string key="moveDocument:">id</string>
+						<string key="moveDocumentToUbiquityContainer:">id</string>
+						<string key="printDocument:">id</string>
+						<string key="renameDocument:">id</string>
+						<string key="revertDocumentToSaved:">id</string>
+						<string key="runPageLayout:">id</string>
+						<string key="saveDocument:">id</string>
+						<string key="saveDocumentAs:">id</string>
+						<string key="saveDocumentTo:">id</string>
+						<string key="unlockDocument:">id</string>
+					</dictionary>
+					<dictionary class="NSMutableDictionary" key="actionInfosByName">
+						<object class="IBActionInfo" key="browseDocumentVersions:">
+							<string key="name">browseDocumentVersions:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="duplicateDocument:">
+							<string key="name">duplicateDocument:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="lockDocument:">
+							<string key="name">lockDocument:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="moveDocument:">
+							<string key="name">moveDocument:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="moveDocumentToUbiquityContainer:">
+							<string key="name">moveDocumentToUbiquityContainer:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="printDocument:">
+							<string key="name">printDocument:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="renameDocument:">
+							<string key="name">renameDocument:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="revertDocumentToSaved:">
+							<string key="name">revertDocumentToSaved:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="runPageLayout:">
+							<string key="name">runPageLayout:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="saveDocument:">
+							<string key="name">saveDocument:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="saveDocumentAs:">
+							<string key="name">saveDocumentAs:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="saveDocumentTo:">
+							<string key="name">saveDocumentTo:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="unlockDocument:">
+							<string key="name">unlockDocument:</string>
 							<string key="candidateClassName">id</string>
 						</object>
 					</dictionary>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/KKScanFoldersTableView.h</string>
+						<string key="minorKey">./Classes/NSDocument.h</string>
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">

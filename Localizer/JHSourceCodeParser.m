@@ -6,12 +6,12 @@
 //  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
 //
 
-#import "KKSourceCodeParser.h"
-#import "KKMatchInfo.h"
+#import "JHSourceCodeParser.h"
+#import "JHMatchInfo.h"
 
 NSString *const autoFillTranslateStr = @"autoFillTranslateStr";
 
-@implementation KKSourceCodeParser
+@implementation JHSourceCodeParser
 
 static NSSet *makeMatchInfoSet(NSString *pattern, NSString *fileContent, NSString *filePath)
 {
@@ -34,7 +34,7 @@ static NSSet *makeMatchInfoSet(NSString *pattern, NSString *fileContent, NSStrin
         else{
             comment = @"";
         }
-        KKMatchInfo *matchInfo = [[KKMatchInfo alloc] init];
+        JHMatchInfo *matchInfo = [[JHMatchInfo alloc] init];
         matchInfo.key = [key stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
         
         //檢查 userDefault 如果 autoFillTranslateStr 是打開的則 translate string 自動填入 key

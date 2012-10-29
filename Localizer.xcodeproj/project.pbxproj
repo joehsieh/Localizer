@@ -11,24 +11,24 @@
 		39185C11163E3E7C000AE5DF /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 39185C0C163E3E14000AE5DF /* Localizable.strings */; };
 		39715A751637E4D80098BC0A /* ImageAndTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 39715A711637E4D80098BC0A /* ImageAndTextCell.m */; };
 		39715A761637E4D80098BC0A /* NSString+RelativePath.m in Sources */ = {isa = PBXBuildFile; fileRef = 39715A741637E4D80098BC0A /* NSString+RelativePath.m */; };
-		39715A8E1637E50A0098BC0A /* KKDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 39715A791637E50A0098BC0A /* KKDocument.m */; };
-		39715A8F1637E50A0098BC0A /* KKFilePathTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39715A7B1637E50A0098BC0A /* KKFilePathTableViewController.m */; };
-		39715A901637E50A0098BC0A /* KKLocalizableSettingParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 39715A7D1637E50A0098BC0A /* KKLocalizableSettingParser.m */; };
-		39715A921637E50A0098BC0A /* KKMatchInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 39715A811637E50A0098BC0A /* KKMatchInfo.m */; };
-		39715A931637E50A0098BC0A /* KKMatchInfoRecordColorTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 39715A831637E50A0098BC0A /* KKMatchInfoRecordColorTransformer.m */; };
-		39715A941637E50A0098BC0A /* KKMatchInfoTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 39715A851637E50A0098BC0A /* KKMatchInfoTableView.m */; };
-		39715A951637E50A0098BC0A /* KKMatchInfoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39715A871637E50A0098BC0A /* KKMatchInfoTableViewController.m */; };
-		39715A971637E50A0098BC0A /* KKScanFoldersTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 39715A8B1637E50A0098BC0A /* KKScanFoldersTableView.m */; };
-		39715A981637E50A0098BC0A /* KKSourceCodeParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 39715A8D1637E50A0098BC0A /* KKSourceCodeParser.m */; };
-		399C0686163A1C720076B5B4 /* KKMatchInfoProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = 399C0685163A1C720076B5B4 /* KKMatchInfoProcessor.m */; };
-		399C06B7163A8D990076B5B4 /* KKPreferenceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 399C06B6163A8D990076B5B4 /* KKPreferenceController.m */; };
-		399C06BA163A8DE20076B5B4 /* KKPreference.xib in Resources */ = {isa = PBXBuildFile; fileRef = 399C06B9163A8DE20076B5B4 /* KKPreference.xib */; };
+		39715A8E1637E50A0098BC0A /* JHDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 39715A791637E50A0098BC0A /* JHDocument.m */; };
+		39715A8F1637E50A0098BC0A /* JHFilePathTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39715A7B1637E50A0098BC0A /* JHFilePathTableViewController.m */; };
+		39715A901637E50A0098BC0A /* JHLocalizableSettingParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 39715A7D1637E50A0098BC0A /* JHLocalizableSettingParser.m */; };
+		39715A921637E50A0098BC0A /* JHMatchInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 39715A811637E50A0098BC0A /* JHMatchInfo.m */; };
+		39715A931637E50A0098BC0A /* JHMatchInfoRecordColorTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 39715A831637E50A0098BC0A /* JHMatchInfoRecordColorTransformer.m */; };
+		39715A941637E50A0098BC0A /* JHMatchInfoTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 39715A851637E50A0098BC0A /* JHMatchInfoTableView.m */; };
+		39715A971637E50A0098BC0A /* JHScanFoldersTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 39715A8B1637E50A0098BC0A /* JHScanFoldersTableView.m */; };
+		39715A981637E50A0098BC0A /* JHSourceCodeParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 39715A8D1637E50A0098BC0A /* JHSourceCodeParser.m */; };
+		399C0686163A1C720076B5B4 /* JHMatchInfoProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = 399C0685163A1C720076B5B4 /* JHMatchInfoProcessor.m */; };
+		399C06B7163A8D990076B5B4 /* JHPreferenceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 399C06B6163A8D990076B5B4 /* JHPreferenceController.m */; };
+		399C06BA163A8DE20076B5B4 /* JHPreference.xib in Resources */ = {isa = PBXBuildFile; fileRef = 399C06B9163A8DE20076B5B4 /* JHPreference.xib */; };
 		399E1E941639405800E787B5 /* App.icns in Resources */ = {isa = PBXBuildFile; fileRef = 399E1E931639405800E787B5 /* App.icns */; };
+		39DF7BBC163E6B6400558F99 /* JHMatchInfoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39DF7BBB163E6B6400558F99 /* JHMatchInfoTableViewController.m */; };
 		39F25ADC1626A36900BAF9C9 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39F25ADB1626A36900BAF9C9 /* Cocoa.framework */; };
 		39F25AE61626A36900BAF9C9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 39F25AE41626A36900BAF9C9 /* InfoPlist.strings */; };
 		39F25AE81626A36900BAF9C9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 39F25AE71626A36900BAF9C9 /* main.m */; };
 		39F25AEC1626A36900BAF9C9 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 39F25AEA1626A36900BAF9C9 /* Credits.rtf */; };
-		39F25AF21626A36900BAF9C9 /* KKDocument.xib in Resources */ = {isa = PBXBuildFile; fileRef = 39F25AF01626A36900BAF9C9 /* KKDocument.xib */; };
+		39F25AF21626A36900BAF9C9 /* JHDocument.xib in Resources */ = {isa = PBXBuildFile; fileRef = 39F25AF01626A36900BAF9C9 /* JHDocument.xib */; };
 		39F25AF51626A36A00BAF9C9 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 39F25AF31626A36A00BAF9C9 /* MainMenu.xib */; };
 		39F25AFD1626A36A00BAF9C9 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39F25AFC1626A36A00BAF9C9 /* SenTestingKit.framework */; };
 		39F25AFE1626A36A00BAF9C9 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39F25ADB1626A36900BAF9C9 /* Cocoa.framework */; };
@@ -52,35 +52,35 @@
 		39715A711637E4D80098BC0A /* ImageAndTextCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageAndTextCell.m; sourceTree = "<group>"; };
 		39715A731637E4D80098BC0A /* NSString+RelativePath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+RelativePath.h"; sourceTree = "<group>"; };
 		39715A741637E4D80098BC0A /* NSString+RelativePath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+RelativePath.m"; sourceTree = "<group>"; };
-		39715A781637E50A0098BC0A /* KKDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKDocument.h; sourceTree = "<group>"; };
-		39715A791637E50A0098BC0A /* KKDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKDocument.m; sourceTree = "<group>"; };
-		39715A7A1637E50A0098BC0A /* KKFilePathTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKFilePathTableViewController.h; sourceTree = "<group>"; };
-		39715A7B1637E50A0098BC0A /* KKFilePathTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKFilePathTableViewController.m; sourceTree = "<group>"; };
-		39715A7C1637E50A0098BC0A /* KKLocalizableSettingParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKLocalizableSettingParser.h; sourceTree = "<group>"; };
-		39715A7D1637E50A0098BC0A /* KKLocalizableSettingParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKLocalizableSettingParser.m; sourceTree = "<group>"; };
-		39715A801637E50A0098BC0A /* KKMatchInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKMatchInfo.h; sourceTree = "<group>"; };
-		39715A811637E50A0098BC0A /* KKMatchInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKMatchInfo.m; sourceTree = "<group>"; };
-		39715A821637E50A0098BC0A /* KKMatchInfoRecordColorTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKMatchInfoRecordColorTransformer.h; sourceTree = "<group>"; };
-		39715A831637E50A0098BC0A /* KKMatchInfoRecordColorTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKMatchInfoRecordColorTransformer.m; sourceTree = "<group>"; };
-		39715A841637E50A0098BC0A /* KKMatchInfoTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKMatchInfoTableView.h; sourceTree = "<group>"; };
-		39715A851637E50A0098BC0A /* KKMatchInfoTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKMatchInfoTableView.m; sourceTree = "<group>"; };
-		39715A861637E50A0098BC0A /* KKMatchInfoTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKMatchInfoTableViewController.h; sourceTree = "<group>"; };
-		39715A871637E50A0098BC0A /* KKMatchInfoTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKMatchInfoTableViewController.m; sourceTree = "<group>"; };
-		39715A8A1637E50A0098BC0A /* KKScanFoldersTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKScanFoldersTableView.h; sourceTree = "<group>"; };
-		39715A8B1637E50A0098BC0A /* KKScanFoldersTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKScanFoldersTableView.m; sourceTree = "<group>"; };
-		39715A8C1637E50A0098BC0A /* KKSourceCodeParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKSourceCodeParser.h; sourceTree = "<group>"; };
-		39715A8D1637E50A0098BC0A /* KKSourceCodeParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKSourceCodeParser.m; sourceTree = "<group>"; };
-		399C0684163A1C720076B5B4 /* KKMatchInfoProcessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKMatchInfoProcessor.h; sourceTree = "<group>"; };
-		399C0685163A1C720076B5B4 /* KKMatchInfoProcessor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKMatchInfoProcessor.m; sourceTree = "<group>"; };
-		399C06B5163A8D990076B5B4 /* KKPreferenceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKPreferenceController.h; sourceTree = "<group>"; };
-		399C06B6163A8D990076B5B4 /* KKPreferenceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKPreferenceController.m; sourceTree = "<group>"; };
-		399C06B9163A8DE20076B5B4 /* KKPreference.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KKPreference.xib; sourceTree = "<group>"; };
+		39715A781637E50A0098BC0A /* JHDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHDocument.h; sourceTree = "<group>"; };
+		39715A791637E50A0098BC0A /* JHDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHDocument.m; sourceTree = "<group>"; };
+		39715A7A1637E50A0098BC0A /* JHFilePathTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHFilePathTableViewController.h; sourceTree = "<group>"; };
+		39715A7B1637E50A0098BC0A /* JHFilePathTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHFilePathTableViewController.m; sourceTree = "<group>"; };
+		39715A7C1637E50A0098BC0A /* JHLocalizableSettingParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHLocalizableSettingParser.h; sourceTree = "<group>"; };
+		39715A7D1637E50A0098BC0A /* JHLocalizableSettingParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHLocalizableSettingParser.m; sourceTree = "<group>"; };
+		39715A801637E50A0098BC0A /* JHMatchInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHMatchInfo.h; sourceTree = "<group>"; };
+		39715A811637E50A0098BC0A /* JHMatchInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHMatchInfo.m; sourceTree = "<group>"; };
+		39715A821637E50A0098BC0A /* JHMatchInfoRecordColorTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHMatchInfoRecordColorTransformer.h; sourceTree = "<group>"; };
+		39715A831637E50A0098BC0A /* JHMatchInfoRecordColorTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHMatchInfoRecordColorTransformer.m; sourceTree = "<group>"; };
+		39715A841637E50A0098BC0A /* JHMatchInfoTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHMatchInfoTableView.h; sourceTree = "<group>"; };
+		39715A851637E50A0098BC0A /* JHMatchInfoTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHMatchInfoTableView.m; sourceTree = "<group>"; };
+		39715A861637E50A0098BC0A /* JHMatchInfoTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHMatchInfoTableViewController.h; sourceTree = "<group>"; };
+		39715A8A1637E50A0098BC0A /* JHScanFoldersTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHScanFoldersTableView.h; sourceTree = "<group>"; };
+		39715A8B1637E50A0098BC0A /* JHScanFoldersTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHScanFoldersTableView.m; sourceTree = "<group>"; };
+		39715A8C1637E50A0098BC0A /* JHSourceCodeParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHSourceCodeParser.h; sourceTree = "<group>"; };
+		39715A8D1637E50A0098BC0A /* JHSourceCodeParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHSourceCodeParser.m; sourceTree = "<group>"; };
+		399C0684163A1C720076B5B4 /* JHMatchInfoProcessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHMatchInfoProcessor.h; sourceTree = "<group>"; };
+		399C0685163A1C720076B5B4 /* JHMatchInfoProcessor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHMatchInfoProcessor.m; sourceTree = "<group>"; };
+		399C06B5163A8D990076B5B4 /* JHPreferenceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHPreferenceController.h; sourceTree = "<group>"; };
+		399C06B6163A8D990076B5B4 /* JHPreferenceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHPreferenceController.m; sourceTree = "<group>"; };
+		399C06B9163A8DE20076B5B4 /* JHPreference.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JHPreference.xib; sourceTree = "<group>"; };
 		399E1E931639405800E787B5 /* App.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = App.icns; sourceTree = "<group>"; };
 		39B476BA163E65FA00EEAAB7 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
-		39B476BB163E65FA00EEAAB7 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "zh-Hant"; path = "zh-Hant.lproj/KKDocument.xib"; sourceTree = "<group>"; };
+		39B476BB163E65FA00EEAAB7 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "zh-Hant"; path = "zh-Hant.lproj/JHDocument.xib"; sourceTree = "<group>"; };
 		39B476BC163E65FA00EEAAB7 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "zh-Hant"; path = "zh-Hant.lproj/MainMenu.xib"; sourceTree = "<group>"; };
 		39B476BD163E65FA00EEAAB7 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		39B476BE163E65FA00EEAAB7 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = "zh-Hant"; path = "zh-Hant.lproj/Credits.rtf"; sourceTree = "<group>"; };
+		39DF7BBB163E6B6400558F99 /* JHMatchInfoTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHMatchInfoTableViewController.m; sourceTree = "<group>"; };
 		39F25AD71626A36900BAF9C9 /* Localizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Localizer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		39F25ADB1626A36900BAF9C9 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		39F25ADE1626A36900BAF9C9 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -91,7 +91,7 @@
 		39F25AE71626A36900BAF9C9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		39F25AE91626A36900BAF9C9 /* Localizer-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Localizer-Prefix.pch"; sourceTree = "<group>"; };
 		39F25AEB1626A36900BAF9C9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
-		39F25AF11626A36900BAF9C9 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/KKDocument.xib; sourceTree = "<group>"; };
+		39F25AF11626A36900BAF9C9 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/JHDocument.xib; sourceTree = "<group>"; };
 		39F25AF41626A36A00BAF9C9 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		39F25AFB1626A36A00BAF9C9 /* LocalizerTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LocalizerTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		39F25AFC1626A36A00BAF9C9 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
@@ -162,10 +162,10 @@
 		39715A991637E6080098BC0A /* Parsers */ = {
 			isa = PBXGroup;
 			children = (
-				39715A8C1637E50A0098BC0A /* KKSourceCodeParser.h */,
-				39715A8D1637E50A0098BC0A /* KKSourceCodeParser.m */,
-				39715A7C1637E50A0098BC0A /* KKLocalizableSettingParser.h */,
-				39715A7D1637E50A0098BC0A /* KKLocalizableSettingParser.m */,
+				39715A8C1637E50A0098BC0A /* JHSourceCodeParser.h */,
+				39715A8D1637E50A0098BC0A /* JHSourceCodeParser.m */,
+				39715A7C1637E50A0098BC0A /* JHLocalizableSettingParser.h */,
+				39715A7D1637E50A0098BC0A /* JHLocalizableSettingParser.m */,
 			);
 			name = Parsers;
 			sourceTree = "<group>";
@@ -173,8 +173,8 @@
 		39715A9A1637E6170098BC0A /* Transformers */ = {
 			isa = PBXGroup;
 			children = (
-				39715A821637E50A0098BC0A /* KKMatchInfoRecordColorTransformer.h */,
-				39715A831637E50A0098BC0A /* KKMatchInfoRecordColorTransformer.m */,
+				39715A821637E50A0098BC0A /* JHMatchInfoRecordColorTransformer.h */,
+				39715A831637E50A0098BC0A /* JHMatchInfoRecordColorTransformer.m */,
 			);
 			name = Transformers;
 			sourceTree = "<group>";
@@ -182,8 +182,8 @@
 		39715A9B1637E6240098BC0A /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				39715A801637E50A0098BC0A /* KKMatchInfo.h */,
-				39715A811637E50A0098BC0A /* KKMatchInfo.m */,
+				39715A801637E50A0098BC0A /* JHMatchInfo.h */,
+				39715A811637E50A0098BC0A /* JHMatchInfo.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -191,10 +191,10 @@
 		39715A9C1637E6340098BC0A /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				39715A841637E50A0098BC0A /* KKMatchInfoTableView.h */,
-				39715A851637E50A0098BC0A /* KKMatchInfoTableView.m */,
-				39715A8A1637E50A0098BC0A /* KKScanFoldersTableView.h */,
-				39715A8B1637E50A0098BC0A /* KKScanFoldersTableView.m */,
+				39715A841637E50A0098BC0A /* JHMatchInfoTableView.h */,
+				39715A851637E50A0098BC0A /* JHMatchInfoTableView.m */,
+				39715A8A1637E50A0098BC0A /* JHScanFoldersTableView.h */,
+				39715A8B1637E50A0098BC0A /* JHScanFoldersTableView.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -202,16 +202,16 @@
 		39715A9D1637E6440098BC0A /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				39715A781637E50A0098BC0A /* KKDocument.h */,
-				39715A791637E50A0098BC0A /* KKDocument.m */,
-				39715A7A1637E50A0098BC0A /* KKFilePathTableViewController.h */,
-				39715A7B1637E50A0098BC0A /* KKFilePathTableViewController.m */,
-				39715A861637E50A0098BC0A /* KKMatchInfoTableViewController.h */,
-				39715A871637E50A0098BC0A /* KKMatchInfoTableViewController.m */,
-				399C0684163A1C720076B5B4 /* KKMatchInfoProcessor.h */,
-				399C0685163A1C720076B5B4 /* KKMatchInfoProcessor.m */,
-				399C06B5163A8D990076B5B4 /* KKPreferenceController.h */,
-				399C06B6163A8D990076B5B4 /* KKPreferenceController.m */,
+				39DF7BBB163E6B6400558F99 /* JHMatchInfoTableViewController.m */,
+				39715A781637E50A0098BC0A /* JHDocument.h */,
+				39715A791637E50A0098BC0A /* JHDocument.m */,
+				39715A7A1637E50A0098BC0A /* JHFilePathTableViewController.h */,
+				39715A7B1637E50A0098BC0A /* JHFilePathTableViewController.m */,
+				39715A861637E50A0098BC0A /* JHMatchInfoTableViewController.h */,
+				399C0684163A1C720076B5B4 /* JHMatchInfoProcessor.h */,
+				399C0685163A1C720076B5B4 /* JHMatchInfoProcessor.m */,
+				399C06B5163A8D990076B5B4 /* JHPreferenceController.h */,
+				399C06B6163A8D990076B5B4 /* JHPreferenceController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -269,14 +269,14 @@
 		39F25AE21626A36900BAF9C9 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				39F25AF01626A36900BAF9C9 /* KKDocument.xib */,
+				39F25AF01626A36900BAF9C9 /* JHDocument.xib */,
 				39F25AF31626A36A00BAF9C9 /* MainMenu.xib */,
 				39F25AE31626A36900BAF9C9 /* Localizer-Info.plist */,
 				39F25AE41626A36900BAF9C9 /* InfoPlist.strings */,
 				39F25AE71626A36900BAF9C9 /* main.m */,
 				39F25AE91626A36900BAF9C9 /* Localizer-Prefix.pch */,
 				39F25AEA1626A36900BAF9C9 /* Credits.rtf */,
-				399C06B9163A8DE20076B5B4 /* KKPreference.xib */,
+				399C06B9163A8DE20076B5B4 /* JHPreference.xib */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -374,12 +374,12 @@
 			files = (
 				39F25AE61626A36900BAF9C9 /* InfoPlist.strings in Resources */,
 				39F25AEC1626A36900BAF9C9 /* Credits.rtf in Resources */,
-				39F25AF21626A36900BAF9C9 /* KKDocument.xib in Resources */,
+				39F25AF21626A36900BAF9C9 /* JHDocument.xib in Resources */,
 				39F25AF51626A36A00BAF9C9 /* MainMenu.xib in Resources */,
 				D49A4D4E163848C900113ABE /* build.png in Resources */,
 				D49A4D4F163848C900113ABE /* folder.png in Resources */,
 				399E1E941639405800E787B5 /* App.icns in Resources */,
-				399C06BA163A8DE20076B5B4 /* KKPreference.xib in Resources */,
+				399C06BA163A8DE20076B5B4 /* JHPreference.xib in Resources */,
 				39185C0E163E3E14000AE5DF /* Localizable.strings in Resources */,
 				39185C11163E3E7C000AE5DF /* Localizable.strings in Resources */,
 			);
@@ -418,17 +418,17 @@
 				39F25AE81626A36900BAF9C9 /* main.m in Sources */,
 				39715A751637E4D80098BC0A /* ImageAndTextCell.m in Sources */,
 				39715A761637E4D80098BC0A /* NSString+RelativePath.m in Sources */,
-				39715A8E1637E50A0098BC0A /* KKDocument.m in Sources */,
-				39715A8F1637E50A0098BC0A /* KKFilePathTableViewController.m in Sources */,
-				39715A901637E50A0098BC0A /* KKLocalizableSettingParser.m in Sources */,
-				39715A921637E50A0098BC0A /* KKMatchInfo.m in Sources */,
-				39715A931637E50A0098BC0A /* KKMatchInfoRecordColorTransformer.m in Sources */,
-				39715A941637E50A0098BC0A /* KKMatchInfoTableView.m in Sources */,
-				39715A951637E50A0098BC0A /* KKMatchInfoTableViewController.m in Sources */,
-				39715A971637E50A0098BC0A /* KKScanFoldersTableView.m in Sources */,
-				39715A981637E50A0098BC0A /* KKSourceCodeParser.m in Sources */,
-				399C0686163A1C720076B5B4 /* KKMatchInfoProcessor.m in Sources */,
-				399C06B7163A8D990076B5B4 /* KKPreferenceController.m in Sources */,
+				39715A8E1637E50A0098BC0A /* JHDocument.m in Sources */,
+				39715A8F1637E50A0098BC0A /* JHFilePathTableViewController.m in Sources */,
+				39715A901637E50A0098BC0A /* JHLocalizableSettingParser.m in Sources */,
+				39715A921637E50A0098BC0A /* JHMatchInfo.m in Sources */,
+				39715A931637E50A0098BC0A /* JHMatchInfoRecordColorTransformer.m in Sources */,
+				39715A941637E50A0098BC0A /* JHMatchInfoTableView.m in Sources */,
+				39715A971637E50A0098BC0A /* JHScanFoldersTableView.m in Sources */,
+				39715A981637E50A0098BC0A /* JHSourceCodeParser.m in Sources */,
+				399C0686163A1C720076B5B4 /* JHMatchInfoProcessor.m in Sources */,
+				399C06B7163A8D990076B5B4 /* JHPreferenceController.m in Sources */,
+				39DF7BBC163E6B6400558F99 /* JHMatchInfoTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -477,13 +477,13 @@
 			name = Credits.rtf;
 			sourceTree = "<group>";
 		};
-		39F25AF01626A36900BAF9C9 /* KKDocument.xib */ = {
+		39F25AF01626A36900BAF9C9 /* JHDocument.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				39F25AF11626A36900BAF9C9 /* en */,
 				39B476BB163E65FA00EEAAB7 /* zh-Hant */,
 			);
-			name = KKDocument.xib;
+			name = JHDocument.xib;
 			sourceTree = "<group>";
 		};
 		39F25AF31626A36A00BAF9C9 /* MainMenu.xib */ = {

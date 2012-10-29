@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface KKLocalizableSettingParser : NSObject
+@interface JHLocalizableSettingParser : NSObject
 
 - (void)parse:(NSString *)fileContent scanFolderPathArray:(out NSArray **)outArray matchRecordSet:(out NSSet **)outSet;
 

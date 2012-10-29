@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface KKFilePathTableViewController : NSViewController <NSTableViewDelegate, NSTableViewDataSource>
+@interface JHFilePathTableViewController : NSViewController <NSTableViewDelegate, NSTableViewDataSource>
 {
     NSMutableArray *filePathArray;
     

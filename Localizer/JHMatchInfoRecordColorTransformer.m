@@ -6,10 +6,10 @@
 //
 //
 
-#import "KKMatchInfoRecordColorTransformer.h"
-#import "KKMatchInfo.h"
+#import "JHMatchInfoRecordColorTransformer.h"
+#import "JHMatchInfo.h"
 
-@implementation KKMatchInfoRecordColorTransformer
+@implementation JHMatchInfoRecordColorTransformer
 
 + (Class)transformedValueClass
 {

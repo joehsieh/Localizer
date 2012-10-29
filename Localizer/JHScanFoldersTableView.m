@@ -1,6 +1,6 @@
-#import "KKScanFoldersTableView.h"
+#import "JHScanFoldersTableView.h"
 
-@implementation KKScanFoldersTableView
+@implementation JHScanFoldersTableView
 
 - (id)initWithCoder:(NSCoder *)aDecoder
 {

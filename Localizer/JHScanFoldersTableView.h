@@ -5,6 +5,6 @@
 - (void)tableView:(NSTableView *)inTableView didOpenScanFoldersWithIndexes:(NSIndexSet *)inIndexes;
 @end
 
-@interface KKScanFoldersTableView : NSTableView
+@interface JHScanFoldersTableView : NSTableView
 
 @end

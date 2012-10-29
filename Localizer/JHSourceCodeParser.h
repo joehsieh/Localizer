@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 extern NSString *const autoFillTranslateStr;
-@interface KKSourceCodeParser : NSObject
+@interface JHSourceCodeParser : NSObject
 
 - (NSMutableSet *)parse:(NSString *)filePath;
 

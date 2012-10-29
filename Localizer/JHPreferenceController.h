@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface KKPreferenceController : NSObject
+@interface JHPreferenceController : NSObject
 {
     IBOutlet NSWindow *window;
     IBOutlet NSTextField *message;

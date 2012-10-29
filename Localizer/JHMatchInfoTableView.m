@@ -6,9 +6,9 @@
 //  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
 //
 
-#import "KKMatchInfoTableView.h"
+#import "JHMatchInfoTableView.h"
 
-@implementation KKMatchInfoTableView
+@implementation JHMatchInfoTableView
 
 - (id)initWithCoder:(NSCoder *)aDecoder
 {

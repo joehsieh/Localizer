@@ -14,7 +14,7 @@ typedef enum {
     existing // exist
 } MatchInfoRecordState;
 
-@interface KKMatchInfo : NSObject<NSCopying, NSCoding, NSPasteboardWriting, NSPasteboardReading>
+@interface JHMatchInfo : NSObject<NSCopying, NSCoding, NSPasteboardWriting, NSPasteboardReading>
 {
     NSString *key;
     NSString *translateString;

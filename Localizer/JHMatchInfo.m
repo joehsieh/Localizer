@@ -1,14 +1,14 @@
 //
-//  KKMatchInfo.m
+//  JHMatchInfo.m
 //  Localizer
 //
 //  Created by KKBOX on 12/10/11.
 //  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
 //
 
-#import "KKMatchInfo.h"
-NSString *const KKMatchInfoUTI = @"com.joehsieh.KKMatchInfo";
-@implementation KKMatchInfo
+#import "JHMatchInfo.h"
+NSString *const JHMatchInfoUTI = @"com.joehsieh.JHMatchInfo";
+@implementation JHMatchInfo
 
 - (void)dealloc
 {
@@ -25,7 +25,7 @@ NSString *const KKMatchInfoUTI = @"com.joehsieh.KKMatchInfo";
         return YES;
     if (!object || ![object isKindOfClass:[self class]])
         return NO;
-    if ([[self key] isEqualToString:[(KKMatchInfo *)object key]]) {
+    if ([[self key] isEqualToString:[(JHMatchInfo *)object key]]) {
         return YES;
     }
     return NO;
@@ -41,7 +41,7 @@ NSString *const KKMatchInfoUTI = @"com.joehsieh.KKMatchInfo";
 
 - (id)copyWithZone:(NSZone *)zone
 {
-    KKMatchInfo *copy = [[[self class] allocWithZone: zone] init];
+    JHMatchInfo *copy = [[[self class] allocWithZone: zone] init];
     copy.key = key;
     copy.translateString = translateString;
     copy.comment = comment;
@@ -52,7 +52,7 @@ NSString *const KKMatchInfoUTI = @"com.joehsieh.KKMatchInfo";
 
 -(NSString *)description
 {
-    return [NSString stringWithFormat:@"<KKMatchInfo: key: %@, translateString: %@, comment: %@, filePath: %@>",
+    return [NSString stringWithFormat:@"<JHMatchInfo: key: %@, translateString: %@, comment: %@, filePath: %@>",
             [self key], [self translateString], [self comment], [self filePath]];
 }
 
@@ -77,14 +77,14 @@ NSString *const KKMatchInfoUTI = @"com.joehsieh.KKMatchInfo";
     static NSArray *writableTypes = nil;
     
     if (!writableTypes) {
-        writableTypes = [[NSArray alloc] initWithObjects:KKMatchInfoUTI, nil];
+        writableTypes = [[NSArray alloc] initWithObjects:JHMatchInfoUTI, nil];
     }
     return writableTypes;
 }
 
 - (id)pasteboardPropertyListForType:(NSString *)type {
     
-    if ([type isEqualToString:KKMatchInfoUTI]) {
+    if ([type isEqualToString:JHMatchInfoUTI]) {
         return [NSKeyedArchiver archivedDataWithRootObject:self];
     }
     
@@ -96,13 +96,13 @@ NSString *const KKMatchInfoUTI = @"com.joehsieh.KKMatchInfo";
     
     static NSArray *readableTypes = nil;
     if (!readableTypes) {
-        readableTypes = [[NSArray alloc] initWithObjects:KKMatchInfoUTI, nil];
+        readableTypes = [[NSArray alloc] initWithObjects:JHMatchInfoUTI, nil];
     }
     return readableTypes;
 }
 
 + (NSPasteboardReadingOptions)readingOptionsForType:(NSString *)type pasteboard:(NSPasteboard *)pboard {
-    if ([type isEqualToString:KKMatchInfoUTI]) {
+    if ([type isEqualToString:JHMatchInfoUTI]) {
         return NSPasteboardReadingAsKeyedArchive;
     }
     return 0;

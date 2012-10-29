@@ -6,16 +6,16 @@
 //  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
 //
 
-#import "KKDocument.h"
-#import "KKSourceCodeParser.h"
-#import "KKFilePathTableViewController.h"
-#import "KKMatchInfo.h"
-#import "KKLocalizableSettingParser.h"
-#import "KKMatchInfoTableViewController.h"
-#import "KKMatchInfoRecordColorTransformer.h"
+#import "JHDocument.h"
+#import "JHSourceCodeParser.h"
+#import "JHFilePathTableViewController.h"
+#import "JHMatchInfo.h"
+#import "JHLocalizableSettingParser.h"
+#import "JHMatchInfoTableViewController.h"
+#import "JHMatchInfoRecordColorTransformer.h"
 #import "NSString+RelativePath.h"
 
-@implementation KKDocument
+@implementation JHDocument
 
 - (void)dealloc
 {
@@ -31,10 +31,10 @@
     self = [super init];
     if (self) {
         //註冊 value transformer
-        KKMatchInfoRecordColorTransformer *transformer = [[[KKMatchInfoRecordColorTransformer alloc] init] autorelease];
+        JHMatchInfoRecordColorTransformer *transformer = [[[JHMatchInfoRecordColorTransformer alloc] init] autorelease];
         [NSValueTransformer setValueTransformer:transformer forName:@"KKMatchInfoRecordColorTransformer"];
         
-        matchInfoProcessor = [[KKMatchInfoProcessor alloc] init];
+        matchInfoProcessor = [[JHMatchInfoProcessor alloc] init];
         
         //預設自動填入翻譯字串
         [[NSUserDefaults standardUserDefaults] setBool:YES forKey:autoFillTranslateStr];
@@ -82,7 +82,7 @@
     if (localizableFileContent) {
         readSuccess = YES;
         // get localizable related info from Localizable.strings
-        KKLocalizableSettingParser *localizableSettingParser = [[[KKLocalizableSettingParser alloc] init] autorelease];
+        JHLocalizableSettingParser *localizableSettingParser = [[[JHLocalizableSettingParser alloc] init] autorelease];
             
         NSArray *tempScanArray = nil;
         NSSet *tempMatchRecordSet = nil;
@@ -114,7 +114,7 @@
 
 - (NSString *)windowNibName
 {
-    return @"KKDocument";
+    return @"JHDocument";
 }
 
 #pragma mark - NSToolbarDelegate
@@ -188,7 +188,7 @@
 - (NSSet *)parseSourceCode:(NSArray *)filePathArray
 {
     NSMutableSet *sourceCodeInfoSet = [NSMutableSet set];
-    KKSourceCodeParser *sourceCodeParser = [[KKSourceCodeParser alloc] init];
+    JHSourceCodeParser *sourceCodeParser = [[JHSourceCodeParser alloc] init];
     for (NSURL *filePath in filePathArray) {
         [sourceCodeInfoSet unionSet: [sourceCodeParser parse:[filePath path]]];
     }
@@ -199,7 +199,7 @@
 - (void)updateLocalizableSet
 {
     NSArray *updatedLocalizableInfoArray = [NSArray arrayWithArray:matchInfoTableViewController.matchInfoArray];
-    [updatedLocalizableInfoArray enumerateObjectsUsingBlock:^(KKMatchInfo *obj, NSUInteger idx, BOOL *stop) {
+    [updatedLocalizableInfoArray enumerateObjectsUsingBlock:^(JHMatchInfo *obj, NSUInteger idx, BOOL *stop) {
         
         [[obj filePath] isEqualToString:@"Not exist"]?[obj setState:notExist]:[obj setState:existing];
     }];
