@@ -120,11 +120,10 @@
 #pragma mark - NSToolbarDelegate
 - (void)toolbarWillAddItem:(NSNotification *)notification
 {
-//    NSDictionary *toolbarItemNameDictionary = @{
-//        @"Add Scan Folders or Files": NSLocalizedString(@"Add Scan Folders or Files", @""),
-//        @"Scan":NSLocalizedString(@"Scan", @"")
-//    };
-    NSDictionary *toolbarItemNameDictionary = [NSDictionary dictionaryWithObjectsAndKeys: NSLocalizedString(@"Add Scan Folders or Files", @""),@"Add Scan Folders or Files", NSLocalizedString(@"Scan", @""), @"Scan", nil];
+    NSDictionary *toolbarItemNameDictionary = @{
+        @"Add Scan Folders or Files": NSLocalizedString(@"Add Scan Folders or Files", @""),
+        @"Scan":NSLocalizedString(@"Scan", @"")
+    };
     
     NSToolbarItem *item = [notification.userInfo objectForKey:@"item"];
     item.label = [toolbarItemNameDictionary objectForKey:item.itemIdentifier];

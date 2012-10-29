@@ -7,9 +7,7 @@
     self = [super initWithCoder:aDecoder];
     
     if (self) {
-//        NSArray *headerNameArray = @[NSLocalizedString(@"source code file path", @"")];
-        
-        NSArray *headerNameArray = [NSArray arrayWithObject:NSLocalizedString(@"source code file path", @"")];
+        NSArray *headerNameArray = @[NSLocalizedString(@"source code file path", @"")];
         //設定可以多選
         [self setAllowsMultipleSelection: YES];
         

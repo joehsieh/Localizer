@@ -15,18 +15,13 @@
     self = [super initWithCoder:aDecoder];
     
     if (self) {
-//        NSArray *headerNameArray = @[
-//            NSLocalizedString(@"key", @""),
-//            NSLocalizedString(@"translate string", @""),
-//            NSLocalizedString(@"comment", @""),
-//            NSLocalizedString(@"from", @"")
-//        ];
-        
-        NSArray *headerNameArray  = [NSArray arrayWithObjects:            
-                                     NSLocalizedString(@"key", @""),
-                                     NSLocalizedString(@"translate string", @""),
-                                     NSLocalizedString(@"comment", @""),
-                                     NSLocalizedString(@"from", @""), nil];
+        NSArray *headerNameArray = @[
+            NSLocalizedString(@"key", @""),
+            NSLocalizedString(@"translate string", @""),
+            NSLocalizedString(@"comment", @""),
+            NSLocalizedString(@"from", @"")
+        ];
+    
         //設定可以多選
         [self setAllowsMultipleSelection: YES];
         
