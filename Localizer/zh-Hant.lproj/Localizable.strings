@@ -1,0 +1,42 @@
+/*
+Scan List
+../..
+*/
+/* KKDocument.m */
+"Add Scan Folders or Files" = "新增掃瞄的資料夾或者是檔案";/**/ 
+"Scan" = "掃瞄";/**/ 
+
+
+/* KKFilePathTableViewController.m */
+"Remove Src Path" = "移除原始碼檔案路徑";/**/ 
+"Add Src Path" = "增加原始碼檔案路徑";/**/ 
+"OK" = "確認";/**/ 
+"Invalid scan list" = "存在不合法的掃瞄路徑";/**/ 
+
+
+/* KKMatchInfoTableView.m */
+"Delete" = "刪除";/**/ 
+"from" = "檔案路徑";/**/ 
+"translate string" = "翻譯字串";/**/ 
+"comment" = "註解";/**/ 
+"key" = "關鍵字";/**/ 
+"Context Menu" = "選單";/**/ 
+"Copy" = "複製";/**/ 
+"Paste" = "貼上";/**/ 
+
+
+/* KKMatchInfoTableViewController.m */
+"Edit" = "編輯";/**/ 
+"Insert" = "插入";/**/ 
+
+
+/* KKPreferenceController.m */
+"Fill translate string automatically." = "自動填入翻譯字串";/**/ 
+"localizer will fill untranslate string with key automatically." = "localizer 將自動地利用關鍵字填入未翻譯的字串";/**/ 
+
+
+/* KKScanFoldersTableView.m */
+"Open Folder in Finder" = "使用 Finder 打開資料夾";/**/ 
+"source code file path" = "原始碼檔案路徑";/**/ 
+
+
