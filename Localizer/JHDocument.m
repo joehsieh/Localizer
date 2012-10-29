@@ -35,7 +35,7 @@
     if (self) {
         //註冊 value transformer
         JHMatchInfoRecordColorTransformer *transformer = [[[JHMatchInfoRecordColorTransformer alloc] init] autorelease];
-        [NSValueTransformer setValueTransformer:transformer forName:@"KKMatchInfoRecordColorTransformer"];
+        [NSValueTransformer setValueTransformer:transformer forName:@"JHMatchInfoRecordColorTransformer"];
         
         matchInfoProcessor = [[JHMatchInfoProcessor alloc] init];
         

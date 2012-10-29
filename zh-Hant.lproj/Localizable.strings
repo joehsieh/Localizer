@@ -2,19 +2,19 @@
 Scan List
 ../..
 */
-/* KKDocument.m */
+/* JHDocument.m */
 "Add Scan Folders or Files" = "Add Scan Folders or Files";/**/ 
 "Scan" = "Scan";/**/ 
 
 
-/* KKFilePathTableViewController.m */
+/* JHFilePathTableViewController.m */
 "Remove Src Path" = "Remove Src Path";/**/ 
 "Add Src Path" = "Add Src Path";/**/ 
 "OK" = "OK";/**/ 
 "Invalid scan list" = "Invalid scan list";/**/ 
 
 
-/* KKMatchInfoTableView.m */
+/* JHMatchInfoTableView.m */
 "Delete" = "Delete";/**/ 
 "from" = "from";/**/ 
 "translate string" = "translate string";/**/ 
@@ -25,17 +25,17 @@ Scan List
 "Paste" = "Paste";/**/ 
 
 
-/* KKMatchInfoTableViewController.m */
+/* JHMatchInfoTableViewController.m */
 "Edit" = "Edit";/**/ 
 "Insert" = "Insert";/**/ 
 
 
-/* KKPreferenceController.m */
+/* JHPreferenceController.m */
 "Fill translate string automatically." = "Fill translate string automatically.";/**/ 
 "localizer will fill untranslate string with key automatically." = "localizer will fill untranslate string with key automatically.";/**/ 
 
 
-/* KKScanFoldersTableView.m */
+/* JHScanFoldersTableView.m */
 "Open Folder in Finder" = "Open Folder in Finder";/**/ 
 "source code file path" = "source code file path";/**/ 
 

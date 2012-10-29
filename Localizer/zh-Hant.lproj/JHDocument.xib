@@ -763,7 +763,7 @@
 							<string key="NSKeyPath">arrangedObjects.state</string>
 							<object class="NSDictionary" key="NSOptions">
 								<string key="NS.key.0">NSValueTransformerName</string>
-								<string key="NS.object.0">KKMatchInfoRecordColorTransformer</string>
+								<string key="NS.object.0">JHMatchInfoRecordColorTransformer</string>
 							</object>
 							<int key="NSNibBindingConnectorVersion">2</int>
 						</object>
@@ -823,7 +823,7 @@
 							<string key="NSKeyPath">arrangedObjects.state</string>
 							<object class="NSDictionary" key="NSOptions">
 								<string key="NS.key.0">NSValueTransformerName</string>
-								<string key="NS.object.0">KKMatchInfoRecordColorTransformer</string>
+								<string key="NS.object.0">JHMatchInfoRecordColorTransformer</string>
 							</object>
 							<int key="NSNibBindingConnectorVersion">2</int>
 						</object>
@@ -859,7 +859,7 @@
 							<string key="NSKeyPath">arrangedObjects.state</string>
 							<object class="NSDictionary" key="NSOptions">
 								<string key="NS.key.0">NSValueTransformerName</string>
-								<string key="NS.object.0">KKMatchInfoRecordColorTransformer</string>
+								<string key="NS.object.0">JHMatchInfoRecordColorTransformer</string>
 							</object>
 							<int key="NSNibBindingConnectorVersion">2</int>
 						</object>
@@ -895,7 +895,7 @@
 							<string key="NSKeyPath">arrangedObjects.state</string>
 							<object class="NSDictionary" key="NSOptions">
 								<string key="NS.key.0">NSValueTransformerName</string>
-								<string key="NS.object.0">KKMatchInfoRecordColorTransformer</string>
+								<string key="NS.object.0">JHMatchInfoRecordColorTransformer</string>
 							</object>
 							<int key="NSNibBindingConnectorVersion">2</int>
 						</object>

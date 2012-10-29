@@ -118,7 +118,7 @@ static NSSet *parseDir(NSString *baseFilePath, NSError **error)
 - (NSSet *)parse:(NSString *)filePath
 {
     if (!filePath) {
-        [NSException raise:@"KKSourceCodeParserError" format:@"File path is missing."];
+        [NSException raise:@"JHSourceCodeParserError" format:@"File path is missing."];
     }
 
     BOOL isDir = NO;
