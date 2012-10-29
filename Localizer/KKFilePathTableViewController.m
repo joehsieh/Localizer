@@ -201,7 +201,8 @@
 - (void)updateRelativeFilePathArrayWithNewBaseURL:(NSURL *)baseURL
 {
     if (![baseURL path]) {
-        //todoe 丟出錯誤
+        //如果沒有基礎的路徑可以轉換出相對路徑，就回傳絕對路徑
+        relativeFilePathArray = filePathArray;
     }
     NSMutableArray *result = [NSMutableArray array];
     for (NSURL *i in filePathArray) {
