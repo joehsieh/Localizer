@@ -1,0 +1,688 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		39076D24162F9D3F000F8BC0 /* LocalizableTest2.strings in Resources */ = {isa = PBXBuildFile; fileRef = 39076D23162F9D3F000F8BC0 /* LocalizableTest2.strings */; };
+		391DD14D1630F839004219E8 /* scanList in Resources */ = {isa = PBXBuildFile; fileRef = 391DD14C1630F839004219E8 /* scanList */; };
+		39715A751637E4D80098BC0A /* ImageAndTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 39715A711637E4D80098BC0A /* ImageAndTextCell.m */; };
+		39715A761637E4D80098BC0A /* NSString+RelativePath.m in Sources */ = {isa = PBXBuildFile; fileRef = 39715A741637E4D80098BC0A /* NSString+RelativePath.m */; };
+		39715A8E1637E50A0098BC0A /* KKDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 39715A791637E50A0098BC0A /* KKDocument.m */; };
+		39715A8F1637E50A0098BC0A /* KKFilePathTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39715A7B1637E50A0098BC0A /* KKFilePathTableViewController.m */; };
+		39715A901637E50A0098BC0A /* KKLocalizableSettingParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 39715A7D1637E50A0098BC0A /* KKLocalizableSettingParser.m */; };
+		39715A921637E50A0098BC0A /* KKMatchInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 39715A811637E50A0098BC0A /* KKMatchInfo.m */; };
+		39715A931637E50A0098BC0A /* KKMatchInfoRecordColorTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 39715A831637E50A0098BC0A /* KKMatchInfoRecordColorTransformer.m */; };
+		39715A941637E50A0098BC0A /* KKMatchInfoTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 39715A851637E50A0098BC0A /* KKMatchInfoTableView.m */; };
+		39715A951637E50A0098BC0A /* KKMatchInfoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39715A871637E50A0098BC0A /* KKMatchInfoTableViewController.m */; };
+		39715A971637E50A0098BC0A /* KKScanFoldersTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 39715A8B1637E50A0098BC0A /* KKScanFoldersTableView.m */; };
+		39715A981637E50A0098BC0A /* KKSourceCodeParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 39715A8D1637E50A0098BC0A /* KKSourceCodeParser.m */; };
+		39755FDB162D137B0094F190 /* LocalizableTest1.strings in Resources */ = {isa = PBXBuildFile; fileRef = 39755FDA162D137B0094F190 /* LocalizableTest1.strings */; };
+		399C0686163A1C720076B5B4 /* KKMatchInfoProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = 399C0685163A1C720076B5B4 /* KKMatchInfoProcessor.m */; };
+		399C06B7163A8D990076B5B4 /* KKPreferenceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 399C06B6163A8D990076B5B4 /* KKPreferenceController.m */; };
+		399C06BA163A8DE20076B5B4 /* KKPreference.xib in Resources */ = {isa = PBXBuildFile; fileRef = 399C06B9163A8DE20076B5B4 /* KKPreference.xib */; };
+		399E1E941639405800E787B5 /* App.icns in Resources */ = {isa = PBXBuildFile; fileRef = 399E1E931639405800E787B5 /* App.icns */; };
+		39A3A8101634F05D00C85E30 /* SrcParserTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 39A3A80F1634F05D00C85E30 /* SrcParserTest.m */; };
+		39A3A81E1634FF2300C85E30 /* test in Resources */ = {isa = PBXBuildFile; fileRef = 39A3A81D1634FF2300C85E30 /* test */; };
+		39F25ADC1626A36900BAF9C9 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39F25ADB1626A36900BAF9C9 /* Cocoa.framework */; };
+		39F25AE61626A36900BAF9C9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 39F25AE41626A36900BAF9C9 /* InfoPlist.strings */; };
+		39F25AE81626A36900BAF9C9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 39F25AE71626A36900BAF9C9 /* main.m */; };
+		39F25AEC1626A36900BAF9C9 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 39F25AEA1626A36900BAF9C9 /* Credits.rtf */; };
+		39F25AF21626A36900BAF9C9 /* KKDocument.xib in Resources */ = {isa = PBXBuildFile; fileRef = 39F25AF01626A36900BAF9C9 /* KKDocument.xib */; };
+		39F25AF51626A36A00BAF9C9 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 39F25AF31626A36A00BAF9C9 /* MainMenu.xib */; };
+		39F25AFD1626A36A00BAF9C9 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39F25AFC1626A36A00BAF9C9 /* SenTestingKit.framework */; };
+		39F25AFE1626A36A00BAF9C9 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39F25ADB1626A36900BAF9C9 /* Cocoa.framework */; };
+		39F25B061626A36A00BAF9C9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 39F25B041626A36A00BAF9C9 /* InfoPlist.strings */; };
+		39F25B091626A36A00BAF9C9 /* LocalizerParserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 39F25B081626A36A00BAF9C9 /* LocalizerParserTests.m */; };
+		D49A4D4E163848C900113ABE /* build.png in Resources */ = {isa = PBXBuildFile; fileRef = D49A4D4C163848C900113ABE /* build.png */; };
+		D49A4D4F163848C900113ABE /* folder.png in Resources */ = {isa = PBXBuildFile; fileRef = D49A4D4D163848C900113ABE /* folder.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		39F25AFF1626A36A00BAF9C9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 39F25ACE1626A36900BAF9C9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 39F25AD61626A36900BAF9C9;
+			remoteInfo = Localizer;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		39076D23162F9D3F000F8BC0 /* LocalizableTest2.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = LocalizableTest2.strings; sourceTree = "<group>"; };
+		391DD14C1630F839004219E8 /* scanList */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = scanList; sourceTree = "<group>"; };
+		39715A701637E4D80098BC0A /* ImageAndTextCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageAndTextCell.h; sourceTree = "<group>"; };
+		39715A711637E4D80098BC0A /* ImageAndTextCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageAndTextCell.m; sourceTree = "<group>"; };
+		39715A731637E4D80098BC0A /* NSString+RelativePath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+RelativePath.h"; sourceTree = "<group>"; };
+		39715A741637E4D80098BC0A /* NSString+RelativePath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+RelativePath.m"; sourceTree = "<group>"; };
+		39715A781637E50A0098BC0A /* KKDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKDocument.h; sourceTree = "<group>"; };
+		39715A791637E50A0098BC0A /* KKDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKDocument.m; sourceTree = "<group>"; };
+		39715A7A1637E50A0098BC0A /* KKFilePathTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKFilePathTableViewController.h; sourceTree = "<group>"; };
+		39715A7B1637E50A0098BC0A /* KKFilePathTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKFilePathTableViewController.m; sourceTree = "<group>"; };
+		39715A7C1637E50A0098BC0A /* KKLocalizableSettingParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKLocalizableSettingParser.h; sourceTree = "<group>"; };
+		39715A7D1637E50A0098BC0A /* KKLocalizableSettingParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKLocalizableSettingParser.m; sourceTree = "<group>"; };
+		39715A801637E50A0098BC0A /* KKMatchInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKMatchInfo.h; sourceTree = "<group>"; };
+		39715A811637E50A0098BC0A /* KKMatchInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKMatchInfo.m; sourceTree = "<group>"; };
+		39715A821637E50A0098BC0A /* KKMatchInfoRecordColorTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKMatchInfoRecordColorTransformer.h; sourceTree = "<group>"; };
+		39715A831637E50A0098BC0A /* KKMatchInfoRecordColorTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKMatchInfoRecordColorTransformer.m; sourceTree = "<group>"; };
+		39715A841637E50A0098BC0A /* KKMatchInfoTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKMatchInfoTableView.h; sourceTree = "<group>"; };
+		39715A851637E50A0098BC0A /* KKMatchInfoTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKMatchInfoTableView.m; sourceTree = "<group>"; };
+		39715A861637E50A0098BC0A /* KKMatchInfoTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKMatchInfoTableViewController.h; sourceTree = "<group>"; };
+		39715A871637E50A0098BC0A /* KKMatchInfoTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKMatchInfoTableViewController.m; sourceTree = "<group>"; };
+		39715A8A1637E50A0098BC0A /* KKScanFoldersTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKScanFoldersTableView.h; sourceTree = "<group>"; };
+		39715A8B1637E50A0098BC0A /* KKScanFoldersTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKScanFoldersTableView.m; sourceTree = "<group>"; };
+		39715A8C1637E50A0098BC0A /* KKSourceCodeParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKSourceCodeParser.h; sourceTree = "<group>"; };
+		39715A8D1637E50A0098BC0A /* KKSourceCodeParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKSourceCodeParser.m; sourceTree = "<group>"; };
+		39755FDA162D137B0094F190 /* LocalizableTest1.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = LocalizableTest1.strings; sourceTree = "<group>"; };
+		399C0684163A1C720076B5B4 /* KKMatchInfoProcessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKMatchInfoProcessor.h; sourceTree = "<group>"; };
+		399C0685163A1C720076B5B4 /* KKMatchInfoProcessor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKMatchInfoProcessor.m; sourceTree = "<group>"; };
+		399C06B5163A8D990076B5B4 /* KKPreferenceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKPreferenceController.h; sourceTree = "<group>"; };
+		399C06B6163A8D990076B5B4 /* KKPreferenceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKPreferenceController.m; sourceTree = "<group>"; };
+		399C06B9163A8DE20076B5B4 /* KKPreference.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KKPreference.xib; sourceTree = "<group>"; };
+		399E1E931639405800E787B5 /* App.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = App.icns; sourceTree = "<group>"; };
+		39A3A80E1634F05D00C85E30 /* SrcParserTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SrcParserTest.h; sourceTree = "<group>"; };
+		39A3A80F1634F05D00C85E30 /* SrcParserTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SrcParserTest.m; sourceTree = "<group>"; };
+		39A3A81D1634FF2300C85E30 /* test */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = test; sourceTree = "<group>"; };
+		39F25AD71626A36900BAF9C9 /* Localizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Localizer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		39F25ADB1626A36900BAF9C9 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		39F25ADE1626A36900BAF9C9 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		39F25ADF1626A36900BAF9C9 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		39F25AE01626A36900BAF9C9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		39F25AE31626A36900BAF9C9 /* Localizer-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Localizer-Info.plist"; sourceTree = "<group>"; };
+		39F25AE51626A36900BAF9C9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		39F25AE71626A36900BAF9C9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		39F25AE91626A36900BAF9C9 /* Localizer-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Localizer-Prefix.pch"; sourceTree = "<group>"; };
+		39F25AEB1626A36900BAF9C9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		39F25AF11626A36900BAF9C9 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/KKDocument.xib; sourceTree = "<group>"; };
+		39F25AF41626A36A00BAF9C9 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		39F25AFB1626A36A00BAF9C9 /* LocalizerTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LocalizerTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		39F25AFC1626A36A00BAF9C9 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		39F25B031626A36A00BAF9C9 /* LocalizerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LocalizerTests-Info.plist"; sourceTree = "<group>"; };
+		39F25B051626A36A00BAF9C9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		39F25B071626A36A00BAF9C9 /* LocalizerParserTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LocalizerParserTests.h; sourceTree = "<group>"; };
+		39F25B081626A36A00BAF9C9 /* LocalizerParserTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LocalizerParserTests.m; sourceTree = "<group>"; };
+		D49A4D4C163848C900113ABE /* build.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = build.png; sourceTree = "<group>"; };
+		D49A4D4D163848C900113ABE /* folder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = folder.png; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		39F25AD41626A36900BAF9C9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				39F25ADC1626A36900BAF9C9 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		39F25AF71626A36A00BAF9C9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				39F25AFD1626A36A00BAF9C9 /* SenTestingKit.framework in Frameworks */,
+				39F25AFE1626A36A00BAF9C9 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		39715A6E1637E4D80098BC0A /* ExternalLibraries */ = {
+			isa = PBXGroup;
+			children = (
+				39715A6F1637E4D80098BC0A /* ImageAndTextCell */,
+				39715A721637E4D80098BC0A /* NSString+RelativePath */,
+			);
+			path = ExternalLibraries;
+			sourceTree = "<group>";
+		};
+		39715A6F1637E4D80098BC0A /* ImageAndTextCell */ = {
+			isa = PBXGroup;
+			children = (
+				39715A701637E4D80098BC0A /* ImageAndTextCell.h */,
+				39715A711637E4D80098BC0A /* ImageAndTextCell.m */,
+			);
+			path = ImageAndTextCell;
+			sourceTree = "<group>";
+		};
+		39715A721637E4D80098BC0A /* NSString+RelativePath */ = {
+			isa = PBXGroup;
+			children = (
+				39715A731637E4D80098BC0A /* NSString+RelativePath.h */,
+				39715A741637E4D80098BC0A /* NSString+RelativePath.m */,
+			);
+			path = "NSString+RelativePath";
+			sourceTree = "<group>";
+		};
+		39715A771637E4FC0098BC0A /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				39715A9D1637E6440098BC0A /* Controllers */,
+				39715A9C1637E6340098BC0A /* Views */,
+				39715A9B1637E6240098BC0A /* Models */,
+				39715A9A1637E6170098BC0A /* Transformers */,
+				39715A991637E6080098BC0A /* Parsers */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		39715A991637E6080098BC0A /* Parsers */ = {
+			isa = PBXGroup;
+			children = (
+				39715A8C1637E50A0098BC0A /* KKSourceCodeParser.h */,
+				39715A8D1637E50A0098BC0A /* KKSourceCodeParser.m */,
+				39715A7C1637E50A0098BC0A /* KKLocalizableSettingParser.h */,
+				39715A7D1637E50A0098BC0A /* KKLocalizableSettingParser.m */,
+			);
+			name = Parsers;
+			sourceTree = "<group>";
+		};
+		39715A9A1637E6170098BC0A /* Transformers */ = {
+			isa = PBXGroup;
+			children = (
+				39715A821637E50A0098BC0A /* KKMatchInfoRecordColorTransformer.h */,
+				39715A831637E50A0098BC0A /* KKMatchInfoRecordColorTransformer.m */,
+			);
+			name = Transformers;
+			sourceTree = "<group>";
+		};
+		39715A9B1637E6240098BC0A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				39715A801637E50A0098BC0A /* KKMatchInfo.h */,
+				39715A811637E50A0098BC0A /* KKMatchInfo.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		39715A9C1637E6340098BC0A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				39715A841637E50A0098BC0A /* KKMatchInfoTableView.h */,
+				39715A851637E50A0098BC0A /* KKMatchInfoTableView.m */,
+				39715A8A1637E50A0098BC0A /* KKScanFoldersTableView.h */,
+				39715A8B1637E50A0098BC0A /* KKScanFoldersTableView.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		39715A9D1637E6440098BC0A /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				39715A781637E50A0098BC0A /* KKDocument.h */,
+				39715A791637E50A0098BC0A /* KKDocument.m */,
+				39715A7A1637E50A0098BC0A /* KKFilePathTableViewController.h */,
+				39715A7B1637E50A0098BC0A /* KKFilePathTableViewController.m */,
+				39715A861637E50A0098BC0A /* KKMatchInfoTableViewController.h */,
+				39715A871637E50A0098BC0A /* KKMatchInfoTableViewController.m */,
+				399C0684163A1C720076B5B4 /* KKMatchInfoProcessor.h */,
+				399C0685163A1C720076B5B4 /* KKMatchInfoProcessor.m */,
+				399C06B5163A8D990076B5B4 /* KKPreferenceController.h */,
+				399C06B6163A8D990076B5B4 /* KKPreferenceController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		39755FD8162D13500094F190 /* test data */ = {
+			isa = PBXGroup;
+			children = (
+				39A3A8131634F1CF00C85E30 /* test localizabe file data */,
+				39A3A8121634F1B100C85E30 /* test src parser data */,
+			);
+			name = "test data";
+			sourceTree = "<group>";
+		};
+		39A3A8121634F1B100C85E30 /* test src parser data */ = {
+			isa = PBXGroup;
+			children = (
+				39A3A81D1634FF2300C85E30 /* test */,
+			);
+			name = "test src parser data";
+			sourceTree = "<group>";
+		};
+		39A3A8131634F1CF00C85E30 /* test localizabe file data */ = {
+			isa = PBXGroup;
+			children = (
+				39755FDA162D137B0094F190 /* LocalizableTest1.strings */,
+				39076D23162F9D3F000F8BC0 /* LocalizableTest2.strings */,
+				391DD14C1630F839004219E8 /* scanList */,
+			);
+			name = "test localizabe file data";
+			sourceTree = "<group>";
+		};
+		39F25ACC1626A36900BAF9C9 = {
+			isa = PBXGroup;
+			children = (
+				39715A6E1637E4D80098BC0A /* ExternalLibraries */,
+				39F39E2B16369BB9004F0F7D /* art */,
+				39F25AE11626A36900BAF9C9 /* Localizer */,
+				39F25B011626A36A00BAF9C9 /* LocalizerTests */,
+				39F25ADA1626A36900BAF9C9 /* Frameworks */,
+				39F25AD81626A36900BAF9C9 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		39F25AD81626A36900BAF9C9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				39F25AD71626A36900BAF9C9 /* Localizer.app */,
+				39F25AFB1626A36A00BAF9C9 /* LocalizerTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		39F25ADA1626A36900BAF9C9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				39F25ADB1626A36900BAF9C9 /* Cocoa.framework */,
+				39F25AFC1626A36A00BAF9C9 /* SenTestingKit.framework */,
+				39F25ADD1626A36900BAF9C9 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		39F25ADD1626A36900BAF9C9 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				39F25ADE1626A36900BAF9C9 /* AppKit.framework */,
+				39F25ADF1626A36900BAF9C9 /* CoreData.framework */,
+				39F25AE01626A36900BAF9C9 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		39F25AE11626A36900BAF9C9 /* Localizer */ = {
+			isa = PBXGroup;
+			children = (
+				39715A771637E4FC0098BC0A /* Classes */,
+				39F25AE21626A36900BAF9C9 /* Supporting Files */,
+			);
+			path = Localizer;
+			sourceTree = "<group>";
+		};
+		39F25AE21626A36900BAF9C9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				39F25AF01626A36900BAF9C9 /* KKDocument.xib */,
+				39F25AF31626A36A00BAF9C9 /* MainMenu.xib */,
+				39F25AE31626A36900BAF9C9 /* Localizer-Info.plist */,
+				39F25AE41626A36900BAF9C9 /* InfoPlist.strings */,
+				39F25AE71626A36900BAF9C9 /* main.m */,
+				39F25AE91626A36900BAF9C9 /* Localizer-Prefix.pch */,
+				39F25AEA1626A36900BAF9C9 /* Credits.rtf */,
+				399C06B9163A8DE20076B5B4 /* KKPreference.xib */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		39F25B011626A36A00BAF9C9 /* LocalizerTests */ = {
+			isa = PBXGroup;
+			children = (
+				39755FD8162D13500094F190 /* test data */,
+				39F25B071626A36A00BAF9C9 /* LocalizerParserTests.h */,
+				39F25B081626A36A00BAF9C9 /* LocalizerParserTests.m */,
+				39F25B021626A36A00BAF9C9 /* Supporting Files */,
+				39A3A80E1634F05D00C85E30 /* SrcParserTest.h */,
+				39A3A80F1634F05D00C85E30 /* SrcParserTest.m */,
+			);
+			path = LocalizerTests;
+			sourceTree = "<group>";
+		};
+		39F25B021626A36A00BAF9C9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				39F25B031626A36A00BAF9C9 /* LocalizerTests-Info.plist */,
+				39F25B041626A36A00BAF9C9 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		39F39E2B16369BB9004F0F7D /* art */ = {
+			isa = PBXGroup;
+			children = (
+				D49A4D4B163848C900113ABE /* Images */,
+			);
+			name = art;
+			sourceTree = "<group>";
+		};
+		D49A4D4B163848C900113ABE /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				399E1E931639405800E787B5 /* App.icns */,
+				D49A4D4C163848C900113ABE /* build.png */,
+				D49A4D4D163848C900113ABE /* folder.png */,
+			);
+			name = Images;
+			path = Localizer/Images;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		39F25AD61626A36900BAF9C9 /* Localizer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 39F25B0C1626A36A00BAF9C9 /* Build configuration list for PBXNativeTarget "Localizer" */;
+			buildPhases = (
+				39F25AD31626A36900BAF9C9 /* Sources */,
+				39F25AD41626A36900BAF9C9 /* Frameworks */,
+				39F25AD51626A36900BAF9C9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Localizer;
+			productName = Localizer;
+			productReference = 39F25AD71626A36900BAF9C9 /* Localizer.app */;
+			productType = "com.apple.product-type.application";
+		};
+		39F25AFA1626A36A00BAF9C9 /* LocalizerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 39F25B0F1626A36A00BAF9C9 /* Build configuration list for PBXNativeTarget "LocalizerTests" */;
+			buildPhases = (
+				39F25AF61626A36A00BAF9C9 /* Sources */,
+				39F25AF71626A36A00BAF9C9 /* Frameworks */,
+				39F25AF81626A36A00BAF9C9 /* Resources */,
+				39F25AF91626A36A00BAF9C9 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				39F25B001626A36A00BAF9C9 /* PBXTargetDependency */,
+			);
+			name = LocalizerTests;
+			productName = LocalizerTests;
+			productReference = 39F25AFB1626A36A00BAF9C9 /* LocalizerTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		39F25ACE1626A36900BAF9C9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = KK;
+				LastUpgradeCheck = 0430;
+			};
+			buildConfigurationList = 39F25AD11626A36900BAF9C9 /* Build configuration list for PBXProject "Localizer" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 39F25ACC1626A36900BAF9C9;
+			productRefGroup = 39F25AD81626A36900BAF9C9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				39F25AD61626A36900BAF9C9 /* Localizer */,
+				39F25AFA1626A36A00BAF9C9 /* LocalizerTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		39F25AD51626A36900BAF9C9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				39F25AE61626A36900BAF9C9 /* InfoPlist.strings in Resources */,
+				39F25AEC1626A36900BAF9C9 /* Credits.rtf in Resources */,
+				39F25AF21626A36900BAF9C9 /* KKDocument.xib in Resources */,
+				39F25AF51626A36A00BAF9C9 /* MainMenu.xib in Resources */,
+				D49A4D4E163848C900113ABE /* build.png in Resources */,
+				D49A4D4F163848C900113ABE /* folder.png in Resources */,
+				399E1E941639405800E787B5 /* App.icns in Resources */,
+				399C06BA163A8DE20076B5B4 /* KKPreference.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		39F25AF81626A36A00BAF9C9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				39F25B061626A36A00BAF9C9 /* InfoPlist.strings in Resources */,
+				39755FDB162D137B0094F190 /* LocalizableTest1.strings in Resources */,
+				39076D24162F9D3F000F8BC0 /* LocalizableTest2.strings in Resources */,
+				391DD14D1630F839004219E8 /* scanList in Resources */,
+				39A3A81E1634FF2300C85E30 /* test in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		39F25AF91626A36A00BAF9C9 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		39F25AD31626A36900BAF9C9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				39F25AE81626A36900BAF9C9 /* main.m in Sources */,
+				39715A751637E4D80098BC0A /* ImageAndTextCell.m in Sources */,
+				39715A761637E4D80098BC0A /* NSString+RelativePath.m in Sources */,
+				39715A8E1637E50A0098BC0A /* KKDocument.m in Sources */,
+				39715A8F1637E50A0098BC0A /* KKFilePathTableViewController.m in Sources */,
+				39715A901637E50A0098BC0A /* KKLocalizableSettingParser.m in Sources */,
+				39715A921637E50A0098BC0A /* KKMatchInfo.m in Sources */,
+				39715A931637E50A0098BC0A /* KKMatchInfoRecordColorTransformer.m in Sources */,
+				39715A941637E50A0098BC0A /* KKMatchInfoTableView.m in Sources */,
+				39715A951637E50A0098BC0A /* KKMatchInfoTableViewController.m in Sources */,
+				39715A971637E50A0098BC0A /* KKScanFoldersTableView.m in Sources */,
+				39715A981637E50A0098BC0A /* KKSourceCodeParser.m in Sources */,
+				399C0686163A1C720076B5B4 /* KKMatchInfoProcessor.m in Sources */,
+				399C06B7163A8D990076B5B4 /* KKPreferenceController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		39F25AF61626A36A00BAF9C9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				39F25B091626A36A00BAF9C9 /* LocalizerParserTests.m in Sources */,
+				39A3A8101634F05D00C85E30 /* SrcParserTest.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		39F25B001626A36A00BAF9C9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 39F25AD61626A36900BAF9C9 /* Localizer */;
+			targetProxy = 39F25AFF1626A36A00BAF9C9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		39F25AE41626A36900BAF9C9 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				39F25AE51626A36900BAF9C9 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		39F25AEA1626A36900BAF9C9 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				39F25AEB1626A36900BAF9C9 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		39F25AF01626A36900BAF9C9 /* KKDocument.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				39F25AF11626A36900BAF9C9 /* en */,
+			);
+			name = KKDocument.xib;
+			sourceTree = "<group>";
+		};
+		39F25AF31626A36A00BAF9C9 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				39F25AF41626A36A00BAF9C9 /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		39F25B041626A36A00BAF9C9 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				39F25B051626A36A00BAF9C9 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		39F25B0A1626A36A00BAF9C9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx10.7;
+			};
+			name = Debug;
+		};
+		39F25B0B1626A36A00BAF9C9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx10.7;
+			};
+			name = Release;
+		};
+		39F25B0D1626A36A00BAF9C9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Localizer/Localizer-Prefix.pch";
+				INFOPLIST_FILE = "Localizer/Localizer-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		39F25B0E1626A36A00BAF9C9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Localizer/Localizer-Prefix.pch";
+				INFOPLIST_FILE = "Localizer/Localizer-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		39F25B101626A36A00BAF9C9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Localizer.app/Contents/MacOS/Localizer";
+				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Localizer/Localizer-Prefix.pch";
+				INFOPLIST_FILE = "LocalizerTests/LocalizerTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		39F25B111626A36A00BAF9C9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Localizer.app/Contents/MacOS/Localizer";
+				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Localizer/Localizer-Prefix.pch";
+				INFOPLIST_FILE = "LocalizerTests/LocalizerTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		39F25AD11626A36900BAF9C9 /* Build configuration list for PBXProject "Localizer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				39F25B0A1626A36A00BAF9C9 /* Debug */,
+				39F25B0B1626A36A00BAF9C9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		39F25B0C1626A36A00BAF9C9 /* Build configuration list for PBXNativeTarget "Localizer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				39F25B0D1626A36A00BAF9C9 /* Debug */,
+				39F25B0E1626A36A00BAF9C9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		39F25B0F1626A36A00BAF9C9 /* Build configuration list for PBXNativeTarget "LocalizerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				39F25B101626A36A00BAF9C9 /* Debug */,
+				39F25B111626A36A00BAF9C9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 39F25ACE1626A36900BAF9C9 /* Project object */;
+}

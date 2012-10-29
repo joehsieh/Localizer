@@ -1,0 +1,13 @@
+//測試不同的格式以及縮排
+LFLSTR(@"test1");
+    NSLocalizedString(@"test2",@"");
+        LFLSTR(@"test3");
+            NSLocalizedString(@"test4",@"");
+
+//測試重覆
+LFLSTR(@"test5");
+LFLSTR(@"test5");
+NSLocalizedString(@"test5",@"");
+
+//測試連三個
+NSLog(@"%@, %@, %@",LFLSTR(@"test6"), LFLSTR(@"test7"), NSLocalizedString(@"test8",@""));
