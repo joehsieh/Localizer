@@ -54,7 +54,7 @@
 /*
  source code 和 localizable.strings 檔案的交集
  - 交集結果以 localizable.strings 的內容表達。
- - 交集時，若交集到 localizable.strings 中的 Not exist 則將檔案路徑由 Not exist 換成 source code 的路徑
+ - 交集時，若 matchInfo 中 file path 中不同時，則使用 source code 的 file path 更新 localizable.strings 中 matchInfo record 的 file path
  */
 - (NSArray *)getIntersectArray:(NSSet *)inSrcInfoSet localizableInfoSet:(NSSet *)inLocalizableInfoSet
 {
@@ -65,7 +65,9 @@
     for (JHMatchInfo *localizableInfoRecord in localizableInfoArray) {
         for (JHMatchInfo *srcInfoRecord in srcInfoArray) {
             if ([localizableInfoRecord.key isEqualToString:srcInfoRecord.key]) {
-                if ([localizableInfoRecord.filePath isEqualToString:@"Not exist"]) {
+                if (![localizableInfoRecord.filePath isEqualToString:srcInfoRecord.filePath]) {
+                    //更新localizable.strings 中 matchInfo record 中的 file path 
+                    localizableInfoRecord.state = existing;
                     localizableInfoRecord.filePath = srcInfoRecord.filePath;
                 }
                 [result addObject:localizableInfoRecord];

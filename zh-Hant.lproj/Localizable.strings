@@ -2,19 +2,19 @@
 Scan List
 ../..
 */
-/* JHDocument.m */
+/* Localizer/JHDocument.m */
 "Add Scan Folders or Files" = "增加掃瞄的資料夾或檔案";/**/ 
 "Scan" = "掃瞄";/**/ 
 
 
-/* JHFilePathTableViewController.m */
+/* Localizer/JHFilePathTableViewController.m */
 "Remove Src Path" = "移除原始檔路徑";/**/ 
 "Add Src Path" = "新增原始檔路徑";/**/ 
 "OK" = "確認";/**/ 
 "Invalid scan list" = "含有不合法的掃描路徑";/**/ 
 
 
-/* JHMatchInfoTableView.m */
+/* Localizer/JHMatchInfoTableView.m */
 "Delete" = "移除";/**/ 
 "from" = "檔案路徑";/**/ 
 "translate string" = "翻譯字串";/**/ 
@@ -25,17 +25,17 @@ Scan List
 "Paste" = "貼上";/**/ 
 
 
-/* JHMatchInfoTableViewController.m */
+/* Localizer/JHMatchInfoTableViewController.m */
 "Edit" = "編輯";/**/ 
 "Insert" = "插入";/**/ 
 
 
-/* JHPreferenceController.m */
+/* Localizer/JHPreferenceController.m */
 "Fill translate string automatically." = "自動填入翻譯字串";/**/ 
 "localizer will fill untranslate string with key automatically." = "localizer 將自動地利用關鍵字當做翻譯字串";/**/ 
 
 
-/* JHScanFoldersTableView.m */
+/* Localizer/JHScanFoldersTableView.m */
 "Open Folder in Finder" = "利用 Finder 打開資料夾";/**/ 
 "source code file path" = "原始碼檔案路徑";/**/ 
 

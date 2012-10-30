@@ -73,7 +73,9 @@
         NSString *belongFilePath = [inMatchInfosString substringWithRange:[i rangeAtIndex:1]];
         NSString *bodyString = [inMatchInfosString substringWithRange:[i rangeAtIndex:2]];
         //將區塊中的資訊掃出來封裝進 JHMatchInfo
-        [result addObjectsFromArray:[[self makeMatchRecord:belongFilePath bodyString:bodyString]allObjects]];
+        NSMutableSet *matchInfoSet = [NSMutableSet setWithSet:[self makeMatchRecord:belongFilePath bodyString:bodyString]];
+        [matchInfoSet unionSet:result];
+        result = matchInfoSet;
     }
     return result;
 }
