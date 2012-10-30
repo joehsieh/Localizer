@@ -11,6 +11,7 @@
 
 #import "JHLocalizableSettingParser.h"
 #import "JHMatchInfo.h"
+#import "NSString+EscapeInvalidChar.h"
 
 @interface JHLocalizableSettingParser()
 //測試用
@@ -98,10 +99,10 @@
         
         JHMatchInfo *matchInfo = [[[JHMatchInfo alloc] init] autorelease];
         
-        [matchInfo setValue:[key stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] forKey:@"key"];            
-        [matchInfo setValue:[translateString stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] forKey:@"translateString"];            
-        [matchInfo setValue:[comment stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]]  forKey:@"comment"];            
-        [matchInfo setValue:[belongFilePath stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] forKey:@"filePath"];
+        [matchInfo setValue:[[key decodeInvalidChar] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] forKey:@"key"];
+        [matchInfo setValue:[[translateString decodeInvalidChar] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] forKey:@"translateString"];
+        [matchInfo setValue:[[comment decodeInvalidChar] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]]  forKey:@"comment"];
+        [matchInfo setValue:[[belongFilePath decodeInvalidChar] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] forKey:@"filePath"];
         
         [result addObject:matchInfo];
     }

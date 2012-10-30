@@ -12,6 +12,7 @@
 #import "JHMatchInfoTableViewController.h"
 #import "ImageAndTextCell.h"
 #import "JHMatchInfo.h"
+#import "NSString+EscapeInvalidChar.h"
 
 @implementation JHMatchInfoTableViewController
 
@@ -194,10 +195,10 @@
     NSMutableString *resultString = [NSMutableString string];
     
     for (NSString *filePath in [self sortedMatchInfoFilePathArray]) {
-        [resultString appendFormat:@"/* %@ */\n",filePath];
+        [resultString appendFormat:@"/* %@ */\n",[filePath encodeInvalidChar]];
         for (JHMatchInfo *matchInfo in [self matchInfoArray]) {
             if ([[matchInfo filePath] isEqualToString:filePath]) {
-                [resultString appendString:[NSString stringWithFormat:@"\"%@\" = \"%@\";/*%@*/ \n", matchInfo.key, matchInfo.translateString, matchInfo.comment]];
+                [resultString appendString:[NSString stringWithFormat:@"\"%@\" = \"%@\";/*%@*/ \n", [matchInfo.key encodeInvalidChar], [matchInfo.translateString encodeInvalidChar], [matchInfo.comment encodeInvalidChar]]];
             }
         }
 		[resultString appendString:@"\n\n"];
