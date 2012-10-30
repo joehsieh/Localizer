@@ -35,29 +35,27 @@
 }
 
 #pragma mark -  set operation
+
+/*
+ source code 和 localizable.strings 檔案的差集
+ - 將差集後的每筆的結果標上藍色
+ */
 - (NSArray *)getAddedSortedArray:(NSSet *)inSrcInfoSet localizableInfoSet:(NSSet *)inLocalizableInfoSet
 {
-    NSMutableArray *result = [NSMutableArray array];
+    NSMutableSet *mutableSrcInfoSet = [NSMutableSet setWithSet:inSrcInfoSet];
+    [mutableSrcInfoSet minusSet:inLocalizableInfoSet];
+    [mutableSrcInfoSet enumerateObjectsUsingBlock:^(JHMatchInfo *obj, BOOL *stop) {
+        obj.state = justInserted;
+    }];
     
-    NSArray *srcInfoArray = [NSArray arrayWithArray:[inSrcInfoSet allObjects]];
-    NSArray *localizableInfoArray = [NSArray arrayWithArray:[inLocalizableInfoSet allObjects]];
-    for (JHMatchInfo *srcInfoRecord in srcInfoArray) {
-        BOOL isExist = NO;
-        for (JHMatchInfo *localizableInfoRecord in localizableInfoArray) {
-            if ([srcInfoRecord.key isEqualToString:localizableInfoRecord.key]) {
-                isExist = ![localizableInfoRecord.filePath isEqualToString:@"Not exist"];
-                break;
-            }
-        }
-        if (!isExist) {
-            srcInfoRecord.state = justInserted;
-            [result addObject:srcInfoRecord];
-        }
-        
-    }
-    return result;
+    return [mutableSrcInfoSet allObjects];
 }
 
+/*
+ source code 和 localizable.strings 檔案的交集
+ - 交集結果以 localizable.strings 的內容表達。
+ - 交集時，若交集到 localizable.strings 中的 Not exist 則將檔案路徑由 Not exist 換成 source code 的路徑
+ */
 - (NSArray *)getIntersectArray:(NSSet *)inSrcInfoSet localizableInfoSet:(NSSet *)inLocalizableInfoSet
 {
     NSMutableArray *result = [NSMutableArray array];
@@ -66,7 +64,10 @@
     NSArray *localizableInfoArray = [NSArray arrayWithArray:[inLocalizableInfoSet allObjects]];
     for (JHMatchInfo *localizableInfoRecord in localizableInfoArray) {
         for (JHMatchInfo *srcInfoRecord in srcInfoArray) {
-            if ([localizableInfoRecord.key isEqualToString:srcInfoRecord.key] && ![localizableInfoRecord.filePath isEqualToString:@"Not exist"]) {
+            if ([localizableInfoRecord.key isEqualToString:srcInfoRecord.key]) {
+                if ([localizableInfoRecord.filePath isEqualToString:@"Not exist"]) {
+                    localizableInfoRecord.filePath = srcInfoRecord.filePath;
+                }
                 [result addObject:localizableInfoRecord];
             }
         }
@@ -74,7 +75,10 @@
     return result;
 }
 
-// matchInfo exist in localizable.strings but not in selected source code
+/*
+ localizable.strings 和 source code 檔案的差集
+ - 將差集後的每筆的結果標上紅色並且將路徑由 source code 修改成 localizable.strings 的路徑
+ */
 - (NSArray *)getNoExistArray:(NSSet *)inSrcInfoSet localizableInfoSet:(NSSet *)inLocalizableInfoSet
 {
     NSMutableArray *result = [NSMutableArray array];
