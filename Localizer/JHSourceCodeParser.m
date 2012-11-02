@@ -38,7 +38,7 @@ static NSSet *makeMatchInfoSet(NSString *pattern, NSString *fileContent, NSStrin
             comment = @"";
         }
         JHMatchInfo *matchInfo = [[JHMatchInfo alloc] init];
-        matchInfo.key = [key stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+        matchInfo.key = key;
         
         //檢查 userDefault 如果 autoFillTranslateStr 是打開的則 translate string 自動填入 key
         
@@ -48,8 +48,8 @@ static NSSet *makeMatchInfoSet(NSString *pattern, NSString *fileContent, NSStrin
         else {
             matchInfo.translateString = @"";
         }
-        matchInfo.comment = [comment stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-        matchInfo.filePath = [filePath stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+        matchInfo.comment = comment;
+        matchInfo.filePath = filePath;
         
         [result addObject:[matchInfo autorelease]];
     }

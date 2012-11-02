@@ -40,7 +40,6 @@
     } 
     NSMutableArray *result = [NSMutableArray array];
     for (NSString *folderPath in [inFolderPaths componentsSeparatedByString:@","]) {
-		folderPath = [folderPath stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
         if ([folderPath length]) {
             NSURL *fileURL = [NSURL fileURLWithPath:folderPath];
             [result addObject:fileURL];
@@ -93,7 +92,7 @@
         NSString *translateString = [inBodyString substringWithRange:[match rangeAtIndex:2]];
         NSString *comment = nil;
         if ([match rangeAtIndex:4].location != NSNotFound) {
-            comment = [[inBodyString substringWithRange:[match rangeAtIndex:4]] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]]; 
+            comment = [inBodyString substringWithRange:[match rangeAtIndex:4]] ; 
         }
         else {
             comment = @"";
@@ -101,10 +100,10 @@
         
         JHMatchInfo *matchInfo = [[[JHMatchInfo alloc] init] autorelease];
         
-        [matchInfo setValue:[[key decodeInvalidChar] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] forKey:@"key"];
-        [matchInfo setValue:[[translateString decodeInvalidChar] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] forKey:@"translateString"];
-        [matchInfo setValue:[[comment decodeInvalidChar] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]]  forKey:@"comment"];
-        [matchInfo setValue:[[belongFilePath decodeInvalidChar] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] forKey:@"filePath"];
+        [matchInfo setValue:[key decodeInvalidChar] forKey:@"key"];
+        [matchInfo setValue:[translateString decodeInvalidChar] forKey:@"translateString"];
+        [matchInfo setValue:[comment decodeInvalidChar]  forKey:@"comment"];
+        [matchInfo setValue:[belongFilePath decodeInvalidChar] forKey:@"filePath"];
         
         [result addObject:matchInfo];
     }
