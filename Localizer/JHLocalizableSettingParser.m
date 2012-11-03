@@ -11,7 +11,6 @@
 
 #import "JHLocalizableSettingParser.h"
 #import "JHMatchInfo.h"
-#import "NSString+EscapeInvalidChar.h"
 
 @interface JHLocalizableSettingParser()
 //測試用
@@ -100,10 +99,10 @@
         
         JHMatchInfo *matchInfo = [[[JHMatchInfo alloc] init] autorelease];
         
-        [matchInfo setValue:[key decodeInvalidChar] forKey:@"key"];
-        [matchInfo setValue:[translateString decodeInvalidChar] forKey:@"translateString"];
-        [matchInfo setValue:[comment decodeInvalidChar]  forKey:@"comment"];
-        [matchInfo setValue:[belongFilePath decodeInvalidChar] forKey:@"filePath"];
+        [matchInfo setValue:key forKey:@"key"];
+        [matchInfo setValue:translateString forKey:@"translateString"];
+        [matchInfo setValue:comment forKey:@"comment"];
+        [matchInfo setValue:belongFilePath forKey:@"filePath"];
         
         [result addObject:matchInfo];
     }
