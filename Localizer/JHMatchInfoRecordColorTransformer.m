@@ -29,11 +29,11 @@
     NSInteger state = [value integerValue];
     
     switch (state) {
-        case justInserted:
+        case unTranslated:
             return [NSColor blueColor];
         case notExist:
             return [NSColor redColor];
-        case existing:
+        case translated:
             return [NSColor blackColor];
         default:
             break;
@@ -44,13 +44,13 @@
 - (id)reverseTransformedValue:(id)value
 {
     if (value == [NSColor blueColor]) {
-        return [NSNumber numberWithInt:justInserted];
+        return [NSNumber numberWithInt:unTranslated];
     }
     else if(value == [NSColor redColor]) {
         return [NSNumber numberWithInt:notExist];
     }
     else if(value == [NSColor blackColor]) {
-        return [NSNumber numberWithInt:existing];
+        return [NSNumber numberWithInt:translated];
     }
     return nil;
 }

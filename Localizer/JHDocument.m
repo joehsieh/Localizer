@@ -120,6 +120,11 @@
     return @"JHDocument";
 }
 
++(BOOL)autosavesInPlace
+{
+    return YES;
+}
+
 #pragma mark - NSToolbarDelegate
 - (void)toolbarWillAddItem:(NSNotification *)notification
 {
@@ -202,10 +207,6 @@
 - (void)updateLocalizableSet
 {
     NSArray *updatedLocalizableInfoArray = [NSArray arrayWithArray:matchInfoTableViewController.matchInfoArray];
-    [updatedLocalizableInfoArray enumerateObjectsUsingBlock:^(JHMatchInfo *obj, NSUInteger idx, BOOL *stop) {
-        
-        [[obj filePath] isEqualToString:@"Not exist"]?[obj setState:notExist]:[obj setState:existing];
-    }];
     
     NSSet *temp = localizableInfoSet;
     localizableInfoSet = [[NSSet setWithArray:updatedLocalizableInfoArray] retain];

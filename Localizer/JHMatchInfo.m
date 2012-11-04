@@ -61,13 +61,13 @@ NSString *const JHMatchInfoUTI = @"com.joehsieh.JHMatchInfo";
 
 - (MatchInfoRecordState)state
 {
-    if (state == justInserted) {
-        return justInserted;
+    if (state == unTranslated) {
+        return unTranslated;
     }
     if ([filePath isEqualToString:@"Not exist"]) {
         return notExist;
     }
-    return existing;
+    return translated;
 }
 
 - (void)setState:(MatchInfoRecordState)inState

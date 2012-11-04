@@ -102,8 +102,19 @@
         [matchInfo setValue:key forKey:@"key"];
         [matchInfo setValue:translateString forKey:@"translateString"];
         [matchInfo setValue:comment forKey:@"comment"];
-        [matchInfo setValue:belongFilePath forKey:@"filePath"];
+        // file path will be trimmed
+        [matchInfo setValue:[belongFilePath stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] forKey:@"filePath"];
         
+        // seperate translated string, untranslated string and not exist
+        if ([key isEqualToString:translateString] || [key isEqualToString:@""]) {
+            matchInfo.state = unTranslated;
+        }
+        else{
+            matchInfo.state = translated;
+        }
+        if ([matchInfo.filePath isEqualToString:@"Not exist"]) {
+            matchInfo.state = notExist;
+        }
         [result addObject:matchInfo];
     }
     return result;

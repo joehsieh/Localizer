@@ -13,8 +13,8 @@
 
 typedef enum {
     notExist, // not exist
-    justInserted, // added record after scan
-    existing // exist
+    unTranslated, // untranslatedString
+    translated // translatedString
 } MatchInfoRecordState;
 
 @interface JHMatchInfo : NSObject<NSCopying, NSCoding, NSPasteboardWriting, NSPasteboardReading>

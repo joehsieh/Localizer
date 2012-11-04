@@ -45,7 +45,7 @@
     NSMutableSet *mutableSrcInfoSet = [NSMutableSet setWithSet:inSrcInfoSet];
     [mutableSrcInfoSet minusSet:inLocalizableInfoSet];
     [mutableSrcInfoSet enumerateObjectsUsingBlock:^(JHMatchInfo *obj, BOOL *stop) {
-        obj.state = justInserted;
+        obj.state = unTranslated;
     }];
     
     return [mutableSrcInfoSet allObjects];
@@ -67,7 +67,6 @@
             if ([localizableInfoRecord.key isEqualToString:srcInfoRecord.key]) {
                 if (![localizableInfoRecord.filePath isEqualToString:srcInfoRecord.filePath]) {
                     //更新localizable.strings 中 matchInfo record 中的 file path 
-                    localizableInfoRecord.state = existing;
                     localizableInfoRecord.filePath = srcInfoRecord.filePath;
                 }
                 [result addObject:localizableInfoRecord];
