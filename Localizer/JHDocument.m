@@ -24,6 +24,7 @@
 {
     self.filePathTableViewController = nil;
     self.matchInfoTableViewController = nil;
+    self.translatedContext  = nil;
     self.matchInfoProcessor = nil;
     self.localizableInfoSet = nil;
     [super dealloc];    
@@ -67,7 +68,7 @@
  
     //成功儲存完相關資料後，更新 localizable 的 set
     if (boolResult) [self updateLocalizableSet];
-    
+
     return boolResult;
 }
 
@@ -113,6 +114,7 @@
     
     //載入 scan array 的資料
     [self.filePathTableViewController setSourceFilePaths:scanArray withBaseURL:[self fileURL]];
+    
 }
 
 - (NSString *)windowNibName
@@ -130,7 +132,8 @@
 {
     NSDictionary *toolbarItemNameDictionary = @{
         @"Add Scan Folders or Files": NSLocalizedString(@"Add Scan Folders or Files", @""),
-        @"Scan":NSLocalizedString(@"Scan", @"")
+        @"Scan":NSLocalizedString(@"Scan", @""),
+        @"Translate":NSLocalizedString(@"Translate", @"")
     };
     
     NSToolbarItem *item = [notification.userInfo objectForKey:@"item"];
@@ -177,6 +180,11 @@
     [self.matchInfoTableViewController reloadMatchInfoRecords:result];
 }
 
+- (IBAction)translate:(id)sender
+{
+    NSLog(@"%@",translatedContext.textStorage.string);
+}
+
 #pragma mark - validate tool bar item
 
 - (BOOL)validateToolbarItem:(NSToolbarItem *)theItem
@@ -188,6 +196,9 @@
 	else if (action == @selector(scan:)) {
 		return !![[self filePathTableViewController].filePathArray count];
 	}
+    else if (action == @selector(translate:)){
+        return YES;
+    }
 	return [super validateToolbarItem:theItem];
 	return NO;
 }
@@ -212,5 +223,6 @@
     localizableInfoSet = [[NSSet setWithArray:updatedLocalizableInfoArray] retain];
     [temp release];
 }
-@synthesize filePathTableViewController, matchInfoTableViewController, localizableInfoSet, scanArray, matchInfoProcessor;
+@synthesize filePathTableViewController, matchInfoTableViewController,translatedContext,
+localizableInfoSet, scanArray, matchInfoProcessor;
 @end
