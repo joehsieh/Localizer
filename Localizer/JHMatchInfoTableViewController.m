@@ -49,35 +49,41 @@
 }
 
 #pragma mark -  NSTableViewDelegateMatchInfoExtension
-- (void)tableView:(NSTableView *)inTableView didDeleteMatchInfosWithIndexes:(NSIndexSet *)inIndexes
+- (void)tableView:(NSTableView *)inTableView didDeleteMatchInfos:(id)inSomething
 {
-    [self removeMatchInfoArray:[arrayController.content objectsAtIndexes:inIndexes]]; 
+    [self removeMatchInfoArray:[arrayController selectedObjects]]; 
 }
 
 - (void)tableView:(NSTableView *)inTableView didCopiedMatchInfosWithIndexes:(NSIndexSet *)inIndexes
 {
-    if ([inIndexes count] != 0) {
-        NSMutableArray *matchInfoArray = [NSMutableArray array];
-        [inIndexes enumerateIndexesUsingBlock:^(NSUInteger idx, BOOL *stop) {
-            JHMatchInfo *selectedMatchInfo = [arrayController.content objectAtIndex:idx];
-            if ([arrayController.content containsObject:selectedMatchInfo]) {
-                JHMatchInfo *matchInfo = [[[JHMatchInfo alloc] init] autorelease];
-                matchInfo.key = [NSString stringWithFormat:@"%@ copy",selectedMatchInfo.key];
-                matchInfo.translateString = selectedMatchInfo.translateString;
-                matchInfo.comment = selectedMatchInfo.comment;
-                matchInfo.filePath = selectedMatchInfo.filePath;
-                
-                [matchInfoArray addObject:matchInfo];
-            }
-        }];
+    if ([[arrayController selectedObjects] count] != 0) {
         NSPasteboard *pasteBoard = [NSPasteboard generalPasteboard];
         [pasteBoard clearContents];
-        [pasteBoard writeObjects:matchInfoArray];
+        [pasteBoard writeObjects:[arrayController selectedObjects]];
         
     }
 }
 
-- (void)tableView:(NSTableView *)inTableView didPasteMatchInfos:(NSIndexSet *)inIndexes
+- (JHMatchInfo *)copiedMatchInfo:(JHMatchInfo *)inMatchInfo
+{
+    if ([arrayController.content containsObject:inMatchInfo]) {
+        JHMatchInfo *matchInfo = [[[JHMatchInfo alloc] init] autorelease];
+        matchInfo.key = [NSString stringWithFormat:@"%@ copy",inMatchInfo.key];
+        matchInfo.translateString = inMatchInfo.translateString;
+        matchInfo.comment = inMatchInfo.comment;
+        matchInfo.filePath = inMatchInfo.filePath;
+        JHMatchInfo *temp = [self copiedMatchInfo:matchInfo];
+        if (temp == nil) {
+            return matchInfo;
+        }
+        else{
+            return temp;
+        }
+    }
+    return nil;
+}
+
+- (void)tableView:(NSTableView *)inTableView didPasteMatchInfosWithIndexes:(NSIndexSet *)inIndexes
 {
     NSPasteboard *pasteboard = [NSPasteboard generalPasteboard];
     NSArray *classArray = [NSArray arrayWithObject:[JHMatchInfo class]];
@@ -86,17 +92,20 @@
     BOOL ok = [pasteboard canReadObjectForClasses:classArray options:options];
     if (ok) {
         NSArray *objectsToPaste = [pasteboard readObjectsForClasses:classArray options:options];
-        [self insetMatchInfoArray:objectsToPaste withIndex:[inIndexes firstIndex] + 1];
+        NSMutableArray *matchInfoArray = [NSMutableArray array];
+        
+        [objectsToPaste enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+            [matchInfoArray addObject:[self copiedMatchInfo:obj]];
+        }];
+        [self insetMatchInfoArray:matchInfoArray withIndex:[inIndexes firstIndex] + 1];
     }
 }
 
 
 - (void)reloadMatchInfoRecords:(NSArray *)inArray
 {
-    if (![[arrayController content] isEqualToArray:inArray]) {
-        [self startObservingMatchInfoArray:inArray];
-        arrayController.content = inArray;
-    } 
+    [self startObservingMatchInfoArray:inArray];
+    arrayController.content = inArray;
 }
 
 #pragma mark -  redo/undo add/delete matchInfo record
@@ -137,7 +146,7 @@
     
     [[undoManager prepareWithInvocationTarget:self] restoreMatchinfoArray:[[[arrayController content]copy]autorelease]  actionName:inActionName];
     if (!undoManager.isUndoing) {
-        [undoManager setActionName:NSLocalizedString(inActionName, @"")];
+        [undoManager setActionName:inActionName];
     }
     arrayController.content = inArray;
 }

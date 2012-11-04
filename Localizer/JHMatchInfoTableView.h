@@ -12,9 +12,9 @@
 
 #import <Cocoa/Cocoa.h>
 @protocol NSTableViewDelegateMatchInfoExtension <NSObject, NSTableViewDelegate>
-- (void)tableView:(NSTableView *)inTableView didDeleteMatchInfosWithIndexes:(NSIndexSet *)inIndexes;
+- (void)tableView:(NSTableView *)inTableView didDeleteMatchInfos:(id)inSomething;
 - (void)tableView:(NSTableView *)inTableView didCopiedMatchInfosWithIndexes:(NSIndexSet *)inIndexes;
-- (void)tableView:(NSTableView *)inTableView didPasteMatchInfos:(NSIndexSet *)inIndexes;
+- (void)tableView:(NSTableView *)inTableView didPasteMatchInfosWithIndexes:(NSIndexSet *)inIndexes;
 @end
 
 @interface JHMatchInfoTableView : NSTableView

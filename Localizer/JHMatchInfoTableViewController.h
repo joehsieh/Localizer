@@ -28,6 +28,9 @@
 //回傳排序好的 match info file path 陣列
 - (NSArray *)sortedMatchInfoFilePathArray;
 
+//matchInfo array 要 redo 的時候使用這個介面 restore 資料 
+- (void)restoreMatchinfoArray:(NSArray *)inArray actionName:(NSString *)inActionName;
+
 
 @property (retain, nonatomic) IBOutlet NSArrayController *arrayController;
 @property (readonly, nonatomic) NSArray *matchInfoArray;

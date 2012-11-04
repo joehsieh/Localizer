@@ -38,8 +38,8 @@
 - (IBAction)delete:(id)sender
 {    
     id <NSTableViewDelegateMatchInfoExtension> delegate = (id <NSTableViewDelegateMatchInfoExtension>)[self delegate];
-    if ([delegate respondsToSelector:@selector(tableView:didDeleteMatchInfosWithIndexes:)]) {
-        [delegate tableView:self didDeleteMatchInfosWithIndexes:[self selectedRowIndexes]];
+    if ([delegate respondsToSelector:@selector(tableView:didDeleteMatchInfos:)]) {
+        [delegate tableView:self didDeleteMatchInfos:nil];
     }
 }
 
@@ -54,8 +54,8 @@
 - (IBAction)paste:(id)sender
 {
     id <NSTableViewDelegateMatchInfoExtension> delegate = (id <NSTableViewDelegateMatchInfoExtension>)[self delegate];
-    if ([delegate respondsToSelector:@selector(tableView:didPasteMatchInfos:)]) {
-        [delegate tableView:self didPasteMatchInfos:[self selectedRowIndexes]];
+    if ([delegate respondsToSelector:@selector(tableView:didPasteMatchInfosWithIndexes:)]) {
+        [delegate tableView:self didPasteMatchInfosWithIndexes:[self selectedRowIndexes]];
     }
 }
 

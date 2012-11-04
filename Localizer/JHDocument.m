@@ -182,22 +182,48 @@
 
 - (IBAction)translate:(id)sender
 {
-    NSLog(@"%@",translatedView.textStorage.string);
+    NSUndoManager *undoManager = [self undoManager];
+    NSString *inActionName = NSLocalizedString(@"Translate", @"");
+    [[undoManager prepareWithInvocationTarget:matchInfoTableViewController] restoreMatchinfoArray:[[[matchInfoTableViewController.arrayController content]copy]autorelease]  actionName:inActionName];
+    if (!undoManager.isUndoing) {
+        [undoManager setActionName:NSLocalizedString(inActionName, @"")];
+    }
+    NSString *translatedContent = [NSString stringWithFormat:@"/* Not exist */ \n %@",translatedView.textStorage.string];
     
-//    if (localizableFileContent) {
-//        readSuccess = YES;
-//        // get localizable related info from Localizable.strings
-//        JHLocalizableSettingParser *localizableSettingParser = [[[JHLocalizableSettingParser alloc] init] autorelease];
-//        
-//        NSArray *tempScanArray = nil;
-//        NSSet *tempMatchRecordSet = nil;
-//        
-//        [localizableSettingParser parse:localizableFileContent scanFolderPathArray:&tempScanArray matchRecordSet:&tempMatchRecordSet];
-//        
-//        scanArray = [tempScanArray copy];
-//        localizableInfoSet = [tempMatchRecordSet copy];
-//    }
-//    [localizableFileContent release];
+    if (translatedContent && localizableInfoSet) {
+        JHLocalizableSettingParser *localizableSettingParser = [[[JHLocalizableSettingParser alloc] init] autorelease];
+        
+        NSArray *tempScanArray = nil;
+        NSSet *translatedMatchRecordSet = nil;
+        
+        [localizableSettingParser parse:translatedContent scanFolderPathArray:&tempScanArray matchRecordSet:&translatedMatchRecordSet];
+        
+        // 在加入翻譯字串前，先將 localizanleSet 更新到最新的狀態
+        [self updateLocalizableSet];
+        
+        NSMutableArray *result = [NSMutableArray arrayWithArray:[localizableInfoSet allObjects]];
+        
+        [translatedMatchRecordSet enumerateObjectsUsingBlock:^(JHMatchInfo *obj, BOOL *stop) {
+             //matchInfo 是以 key 為比對方式，key 相同就存在，在除了 key 以外的資訊有可能不同，所以採用 replace 的方式置換
+            if ([localizableInfoSet containsObject:obj]) {
+                NSUInteger index = [result indexOfObject:obj];
+                
+                JHMatchInfo *matchInfo = [result objectAtIndex:index];
+                obj.filePath = matchInfo.filePath;
+                
+                if ([obj.key isEqualToString:obj.translateString]) {
+                    obj.state = unTranslated;
+                }
+                
+                [result replaceObjectAtIndex:index withObject:obj];
+            }
+            else{
+                [result addObject:obj];
+            }
+            
+        }];
+        [matchInfoTableViewController reloadMatchInfoRecords:result];
+    }
 }
 
 #pragma mark - validate tool bar item

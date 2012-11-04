@@ -85,7 +85,7 @@
     
     NSArray *matches = [regEx matchesInString:inBodyString options:0 range:NSMakeRange(0, [inBodyString length])];
     
-    NSMutableSet *result = [NSMutableSet set];
+    NSMutableArray *result = [NSMutableArray array];
     for (NSTextCheckingResult * match in matches) {                        
         NSString *key = [inBodyString substringWithRange:[match rangeAtIndex:1]];                                    
         NSString *translateString = [inBodyString substringWithRange:[match rangeAtIndex:2]];
@@ -115,9 +115,16 @@
         if ([matchInfo.filePath isEqualToString:@"Not exist"]) {
             matchInfo.state = notExist;
         }
-        [result addObject:matchInfo];
+        //matchInfo 是以 key 為比對方式，key 相同就存在，在除了 key 以外的資訊有可能不同，所以採用 replace 的方式置換
+        if ([result containsObject:matchInfo]) {
+            NSUInteger index = [result indexOfObject:matchInfo];
+            [result replaceObjectAtIndex:index withObject:matchInfo];
+        }
+        else{
+            [result addObject:matchInfo];
+        }
     }
-    return result;
+    return [NSSet setWithArray:result];
 }
 
 - (void)seperateFileContent:(NSString *)inFileContent header:(out NSString **)outHeader body:(out NSString **)outBody
