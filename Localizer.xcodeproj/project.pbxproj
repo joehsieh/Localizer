@@ -202,12 +202,12 @@
 		39715A9D1637E6440098BC0A /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				39DF7BBB163E6B6400558F99 /* JHMatchInfoTableViewController.m */,
 				39715A781637E50A0098BC0A /* JHDocument.h */,
 				39715A791637E50A0098BC0A /* JHDocument.m */,
 				39715A7A1637E50A0098BC0A /* JHFilePathTableViewController.h */,
 				39715A7B1637E50A0098BC0A /* JHFilePathTableViewController.m */,
 				39715A861637E50A0098BC0A /* JHMatchInfoTableViewController.h */,
+				39DF7BBB163E6B6400558F99 /* JHMatchInfoTableViewController.m */,
 				399C0684163A1C720076B5B4 /* JHMatchInfoProcessor.h */,
 				399C0685163A1C720076B5B4 /* JHMatchInfoProcessor.m */,
 				399C06B5163A8D990076B5B4 /* JHPreferenceController.h */,

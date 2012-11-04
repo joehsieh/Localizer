@@ -18,6 +18,11 @@
     IBOutlet NSArrayController *arrayController;
     NSUndoManager *undoManager;
     
+    // for update every type count of top tool bar
+    NSString *translatedCountString;
+    NSString *unTranslatedCountString;
+    NSString *notExistCountString;
+    
 }
 //指定新的 matchInfo record 並重新載入，動作完後會直接更新 table 上的資料
 - (void)reloadMatchInfoRecords:(NSArray *)inArray;

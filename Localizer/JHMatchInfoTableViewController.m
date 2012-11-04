@@ -106,6 +106,41 @@
 {
     [self startObservingMatchInfoArray:inArray];
     arrayController.content = inArray;
+    [self updateCount:inArray];
+}
+
+- (void)updateCount:(NSArray *)inArray
+{
+    NSUInteger translatedCount = 0;
+    NSUInteger unTranslatedCount = 0;
+    NSUInteger notExistCount = 0;
+    
+    for (JHMatchInfo *i in inArray) {
+        switch (i.state) {
+            case translated:
+                translatedCount++;
+                break;
+            case unTranslated:
+                unTranslatedCount++;
+                break;
+            case notExist:
+                notExistCount++;
+                break;
+            default:
+                break;
+        }
+    }
+    [self willChangeValueForKey:@"translatedCountString"];
+    translatedCountString = [NSString stringWithFormat:@"%ld", translatedCount];
+    [self didChangeValueForKey:@"translatedCountString"];
+        
+    [self willChangeValueForKey:@"unTranslatedCountString"];
+    unTranslatedCountString = [NSString stringWithFormat:@"%ld", unTranslatedCount];
+    [self didChangeValueForKey:@"unTranslatedCountString"];
+    
+    [self willChangeValueForKey:@"notExistCountString"];
+    notExistCountString = [NSString stringWithFormat:@"%ld", notExistCount];
+    [self didChangeValueForKey:@"notExistCountString"];
 }
 
 #pragma mark -  redo/undo add/delete matchInfo record
@@ -142,6 +177,7 @@
 
 - (void)restoreMatchinfoArray:(NSArray *)inArray actionName:(NSString *)inActionName
 {
+    [self updateCount:inArray];
     [self startObservingMatchInfoArray:inArray];
     
     [[undoManager prepareWithInvocationTarget:self] restoreMatchinfoArray:[[[arrayController content]copy]autorelease]  actionName:inActionName];
@@ -154,16 +190,24 @@
 #pragma mark -  redo/undo edit match record
 - (void)changeKeyPath:(NSString *)keyPath ofObject:(id)object toValue:(id)newValue
 {
+    [self updateCount:[NSArray arrayWithArray:arrayController.content]];
     [object setValue:newValue forKeyPath:keyPath];    
 }
 
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(JHMatchInfo *)object change:(NSDictionary *)change context:(void *)context
 {
     id oldValue = [change objectForKey:NSKeyValueChangeOldKey];
     [[undoManager prepareWithInvocationTarget:self] changeKeyPath:keyPath ofObject:object toValue:oldValue];
     if (!undoManager.isUndoing) {
         [undoManager setActionName:NSLocalizedString(@"Edit", @"")];
     }
+    if ([object.key isEqualToString:object.translateString] || [object.key isEqualToString:@""]) {
+        object.state = unTranslated;
+    }
+    else{
+        object.state = translated;
+    }
+    [self updateCount:arrayController.content];
 }
 
 - (void)stopObservingMatchInfoArray:(NSArray *)inArray
