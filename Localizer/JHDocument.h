@@ -18,7 +18,7 @@
 {
     IBOutlet JHFilePathTableViewController *filePathTableViewController;
     IBOutlet JHMatchInfoTableViewController *matchInfoTableViewController;
-    IBOutlet NSTextView *translatedContext;
+    IBOutlet NSTextView *translatedView;
     // 整合 src 和 localizable.strings 資料的處理器
     JHMatchInfoProcessor *matchInfoProcessor;
     
@@ -35,7 +35,7 @@
 
 @property (assign, nonatomic) IBOutlet JHFilePathTableViewController *filePathTableViewController;
 @property (assign, nonatomic) IBOutlet JHMatchInfoTableViewController *matchInfoTableViewController;
-@property (assign, nonatomic) IBOutlet NSTextView *translatedContext;
+@property (assign, nonatomic) IBOutlet NSTextView *translatedView;
 
 @property (retain, nonatomic) JHMatchInfoProcessor *matchInfoProcessor;
 @property (retain, nonatomic) NSSet *localizableInfoSet;

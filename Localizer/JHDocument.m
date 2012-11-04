@@ -24,7 +24,7 @@
 {
     self.filePathTableViewController = nil;
     self.matchInfoTableViewController = nil;
-    self.translatedContext  = nil;
+    self.translatedView  = nil;
     self.matchInfoProcessor = nil;
     self.localizableInfoSet = nil;
     [super dealloc];    
@@ -182,7 +182,22 @@
 
 - (IBAction)translate:(id)sender
 {
-    NSLog(@"%@",translatedContext.textStorage.string);
+    NSLog(@"%@",translatedView.textStorage.string);
+    
+//    if (localizableFileContent) {
+//        readSuccess = YES;
+//        // get localizable related info from Localizable.strings
+//        JHLocalizableSettingParser *localizableSettingParser = [[[JHLocalizableSettingParser alloc] init] autorelease];
+//        
+//        NSArray *tempScanArray = nil;
+//        NSSet *tempMatchRecordSet = nil;
+//        
+//        [localizableSettingParser parse:localizableFileContent scanFolderPathArray:&tempScanArray matchRecordSet:&tempMatchRecordSet];
+//        
+//        scanArray = [tempScanArray copy];
+//        localizableInfoSet = [tempMatchRecordSet copy];
+//    }
+//    [localizableFileContent release];
 }
 
 #pragma mark - validate tool bar item
@@ -223,6 +238,6 @@
     localizableInfoSet = [[NSSet setWithArray:updatedLocalizableInfoArray] retain];
     [temp release];
 }
-@synthesize filePathTableViewController, matchInfoTableViewController,translatedContext,
+@synthesize filePathTableViewController, matchInfoTableViewController,translatedView,
 localizableInfoSet, scanArray, matchInfoProcessor;
 @end
