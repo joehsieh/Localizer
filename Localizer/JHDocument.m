@@ -218,9 +218,13 @@
                     obj.state = unTranslated;
                 }
                 
+                if ([obj.filePath isEqualToString:@"Not exist"]) {
+                    obj.state = notExist;
+                }
                 [result replaceObjectAtIndex:index withObject:obj];
             }
             else{
+                obj.state = notExist;
                 [result addObject:obj];
             }
             
