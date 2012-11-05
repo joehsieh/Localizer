@@ -258,6 +258,16 @@
     return resultString;
 }
 
+- (IBAction)fileterByType:(id)sender
+{
+     
+    for (JHMatchInfo *matchInfo in arrayController.content) {
+        if (matchInfo.state != unTranslated) {
+             
+        }
+    }
+}
+
 @synthesize arrayController;
 @synthesize undoManager;
 @end

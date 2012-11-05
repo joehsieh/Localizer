@@ -24,7 +24,7 @@
 {
     self.filePathTableViewController = nil;
     self.matchInfoTableViewController = nil;
-    self.translatedView  = nil;
+    self.translatedWindowController = nil;
     self.matchInfoProcessor = nil;
     self.localizableInfoSet = nil;
     [super dealloc];    
@@ -42,6 +42,7 @@
         
         //預設自動填入翻譯字串
         [[NSUserDefaults standardUserDefaults] setBool:YES forKey:autoFillTranslateStr];
+    
     }
     return self;
 }
@@ -115,6 +116,8 @@
     //載入 scan array 的資料
     [self.filePathTableViewController setSourceFilePaths:scanArray withBaseURL:[self fileURL]];
     
+    translatedWindowController = [[JHTranslatedWindowController alloc] initWithWindowNibName:@"JHTranslatedWindow"];
+    translatedWindowController.translatedWindowControllerDelegate = self;
 }
 
 - (NSString *)windowNibName
@@ -185,52 +188,9 @@
 
 - (IBAction)translate:(id)sender
 {
-    NSUndoManager *undoManager = [self undoManager];
-    NSString *inActionName = NSLocalizedString(@"Translate", @"");
-    [[undoManager prepareWithInvocationTarget:matchInfoTableViewController] restoreMatchinfoArray:[[[matchInfoTableViewController.arrayController content]copy]autorelease]  actionName:inActionName];
-    if (!undoManager.isUndoing) {
-        [undoManager setActionName:NSLocalizedString(inActionName, @"")];
-    }
-    NSString *translatedContent = [NSString stringWithFormat:@"/* Not exist */ \n %@",translatedView.textStorage.string];
+    NSWindow *window = [[[self windowControllers] objectAtIndex:0] window];
+    [NSApp beginSheet:translatedWindowController.window modalForWindow:window modalDelegate:nil didEndSelector:NULL contextInfo:nil];
     
-    if (translatedContent && localizableInfoSet) {
-        JHLocalizableSettingParser *localizableSettingParser = [[[JHLocalizableSettingParser alloc] init] autorelease];
-        
-        NSArray *tempScanArray = nil;
-        NSSet *translatedMatchRecordSet = nil;
-        
-        [localizableSettingParser parse:translatedContent scanFolderPathArray:&tempScanArray matchRecordSet:&translatedMatchRecordSet];
-        
-        // 在加入翻譯字串前，先將 localizanleSet 更新到最新的狀態
-        [self updateLocalizableSet];
-        
-        NSMutableArray *result = [NSMutableArray arrayWithArray:[localizableInfoSet allObjects]];
-        
-        [translatedMatchRecordSet enumerateObjectsUsingBlock:^(JHMatchInfo *obj, BOOL *stop) {
-             //matchInfo 是以 key 為比對方式，key 相同就存在，在除了 key 以外的資訊有可能不同，所以採用 replace 的方式置換
-            if ([localizableInfoSet containsObject:obj]) {
-                NSUInteger index = [result indexOfObject:obj];
-                
-                JHMatchInfo *matchInfo = [result objectAtIndex:index];
-                obj.filePath = matchInfo.filePath;
-                
-                if ([obj.key isEqualToString:obj.translateString]) {
-                    obj.state = unTranslated;
-                }
-                
-                if ([obj.filePath isEqualToString:@"Not exist"]) {
-                    obj.state = notExist;
-                }
-                [result replaceObjectAtIndex:index withObject:obj];
-            }
-            else{
-                obj.state = notExist;
-                [result addObject:obj];
-            }
-            
-        }];
-        [matchInfoTableViewController reloadMatchInfoRecords:result];
-    }
 }
 
 #pragma mark - validate tool bar item
@@ -271,6 +231,59 @@
     localizableInfoSet = [[NSSet setWithArray:updatedLocalizableInfoArray] retain];
     [temp release];
 }
-@synthesize filePathTableViewController, matchInfoTableViewController,translatedView,
+
+- (void)windowController:(JHTranslatedWindowController *)inWindowController didMerge:(id)inSomething;
+{
+    NSUndoManager *undoManager = [self undoManager];
+    NSString *inActionName = NSLocalizedString(@"Translate", @"");
+    [[undoManager prepareWithInvocationTarget:matchInfoTableViewController] restoreMatchinfoArray:[[[matchInfoTableViewController.arrayController content]copy]autorelease]  actionName:inActionName];
+    if (!undoManager.isUndoing) {
+        [undoManager setActionName:NSLocalizedString(inActionName, @"")];
+    }
+    NSString *translatedContent = [NSString stringWithFormat:@"/* Not exist */ \n %@",translatedWindowController.translatedView.textStorage.string];
+
+    // 在加入翻譯字串前，先將 localizanbleSet 更新到最新的狀態
+    [self updateLocalizableSet];
+    
+    if (translatedContent && localizableInfoSet) {
+        JHLocalizableSettingParser *localizableSettingParser = [[[JHLocalizableSettingParser alloc] init] autorelease];
+        
+        NSArray *tempScanArray = nil;
+        NSSet *translatedMatchRecordSet = nil;
+        
+        [localizableSettingParser parse:translatedContent scanFolderPathArray:&tempScanArray matchRecordSet:&translatedMatchRecordSet];
+        
+        NSMutableArray *result = [NSMutableArray arrayWithArray:[localizableInfoSet allObjects]];
+        
+        [translatedMatchRecordSet enumerateObjectsUsingBlock:^(JHMatchInfo *obj, BOOL *stop) {
+            //matchInfo 是以 key 為比對方式，key 相同就存在，在除了 key 以外的資訊有可能不同，所以採用 replace 的方式置換
+            if ([localizableInfoSet containsObject:obj]) {
+                NSUInteger index = [result indexOfObject:obj];
+                
+                JHMatchInfo *matchInfo = [result objectAtIndex:index];
+                obj.filePath = matchInfo.filePath;
+                
+                if ([obj.key isEqualToString:obj.translateString]) {
+                    obj.state = unTranslated;
+                }
+                
+                if ([obj.filePath isEqualToString:@"Not exist"]) {
+                    obj.state = notExist;
+                }
+                [result replaceObjectAtIndex:index withObject:obj];
+            }
+            else{
+                obj.state = notExist;
+                [result addObject:obj];
+            }
+            
+        }];
+        [matchInfoTableViewController reloadMatchInfoRecords:result];
+    }
+}
+
+
+
+@synthesize filePathTableViewController, matchInfoTableViewController,translatedWindowController,
 localizableInfoSet, scanArray, matchInfoProcessor;
 @end

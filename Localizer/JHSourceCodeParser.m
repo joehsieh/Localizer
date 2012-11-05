@@ -29,7 +29,7 @@ static NSSet *makeMatchInfoSet(NSString *pattern, NSString *fileContent, NSStrin
         
         /* NSTextCheckingResult 中的 numberOfRanges 預設就有一個也就是 rangeAtIndex:0 就是 range
          因此如果 capture groups 有 2 個則 numberOfRanges 是 3 而不是 2
-         註：LFLSTR 有 key 一個 capture group，而 NSLocalizedString 有 key 和 comment 兩個 capture groups
+         註：LFLSTR 有 key 一個 capture group，而  有 key 和 comment 兩個 capture groups
          */
         if ([i numberOfRanges] == 3) {
             comment = [fileContent substringWithRange:[i rangeAtIndex:2]];

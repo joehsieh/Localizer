@@ -13,12 +13,13 @@
 #import "JHFilePathTableViewController.h"
 #import "JHMatchInfoTableViewController.h"
 #import "JHMatchInfoProcessor.h"
-
-@interface JHDocument : NSDocument<NSToolbarDelegate>
+#import "JHTranslatedWindowController.h"
+@interface JHDocument : NSDocument<NSToolbarDelegate,JHTranslatedWindowControllerDelegate>
 {
     IBOutlet JHFilePathTableViewController *filePathTableViewController;
     IBOutlet JHMatchInfoTableViewController *matchInfoTableViewController;
-    IBOutlet NSTextView *translatedView;
+    JHTranslatedWindowController *translatedWindowController;
+    
     // 整合 src 和 localizable.strings 資料的處理器
     JHMatchInfoProcessor *matchInfoProcessor;
     
@@ -35,7 +36,7 @@
 
 @property (assign, nonatomic) IBOutlet JHFilePathTableViewController *filePathTableViewController;
 @property (assign, nonatomic) IBOutlet JHMatchInfoTableViewController *matchInfoTableViewController;
-@property (assign, nonatomic) IBOutlet NSTextView *translatedView;
+@property (assign, nonatomic) JHTranslatedWindowController *translatedWindowController;
 
 @property (retain, nonatomic) JHMatchInfoProcessor *matchInfoProcessor;
 @property (retain, nonatomic) NSSet *localizableInfoSet;

@@ -36,6 +36,7 @@
 //matchInfo array 要 redo 的時候使用這個介面 restore 資料 
 - (void)restoreMatchinfoArray:(NSArray *)inArray actionName:(NSString *)inActionName;
 
+- (IBAction)fileterByType:(id)sender;
 
 @property (retain, nonatomic) IBOutlet NSArrayController *arrayController;
 @property (readonly, nonatomic) NSArray *matchInfoArray;
