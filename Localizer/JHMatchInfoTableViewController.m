@@ -258,14 +258,31 @@
     return resultString;
 }
 
-- (IBAction)fileterByType:(id)sender
+- (IBAction)fileterByType:(NSSegmentedControl *)sender
 {
-     
-    for (JHMatchInfo *matchInfo in arrayController.content) {
-        if (matchInfo.state != unTranslated) {
-             
-        }
+    MatchInfoRecordState state = 0;
+    switch (sender.selectedSegment) {
+        case 1:
+            state = translated;
+            break;
+        case 2:
+            state = unTranslated;
+            break;
+        case 3:
+            state = notExist;
+            break;
+        default:
+            break;
     }
+    NSPredicate *predict = nil;
+    if (sender.selectedSegment != 0) {
+        predict = [NSPredicate predicateWithFormat:@"SELF.state == %d", state];
+    }
+    else{
+        predict = [NSPredicate predicateWithFormat:@"SELF.state != -1"];
+    }
+    [arrayController setFilterPredicate:predict];
+
 }
 
 @synthesize arrayController;

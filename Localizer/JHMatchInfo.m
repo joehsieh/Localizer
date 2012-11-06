@@ -55,8 +55,8 @@ NSString *const JHMatchInfoUTI = @"com.joehsieh.JHMatchInfo";
 
 -(NSString *)description
 {
-    return [NSString stringWithFormat:@"<JHMatchInfo: key: %@, translateString: %@, comment: %@, filePath: %@>",
-            [self key], [self translateString], [self comment], [self filePath]];
+    return [NSString stringWithFormat:@"<JHMatchInfo: key: %@, translateString: %@, comment: %@, filePath: %@ state: %d>",
+            [self key], [self translateString], [self comment], [self filePath], [self state]];
 }
 
 - (MatchInfoRecordState)state
