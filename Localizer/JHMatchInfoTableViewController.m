@@ -285,6 +285,14 @@
 
 }
 
+- (IBAction)searchByKeyword:(NSSearchField *)sender
+{
+    NSString *keyword = sender.stringValue;
+    NSPredicate *predict = [NSPredicate predicateWithFormat:@"(SELF.key CONTAINS[cd] %@) OR (SELF.translateString CONTAINS[cd] %@) OR (SELF.comment CONTAINS[cd] %@) OR (SELF.filePath CONTAINS[cd] %@)", keyword, keyword, keyword, keyword];
+ 
+    [arrayController setFilterPredicate:predict];
+}
+
 @synthesize arrayController;
 @synthesize undoManager;
 @end

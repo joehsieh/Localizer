@@ -37,6 +37,7 @@
 - (void)restoreMatchinfoArray:(NSArray *)inArray actionName:(NSString *)inActionName;
 
 - (IBAction)fileterByType:(id)sender;
+- (IBAction)searchByKeyword:(id)sender;
 
 @property (retain, nonatomic) IBOutlet NSArrayController *arrayController;
 @property (readonly, nonatomic) NSArray *matchInfoArray;
