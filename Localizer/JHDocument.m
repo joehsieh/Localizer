@@ -136,7 +136,7 @@
     NSDictionary *toolbarItemNameDictionary = @{
         @"Add Scan Folders or Files": NSLocalizedString(@"Add Scan Folders or Files", @""),
         @"Scan":NSLocalizedString(@"Scan", @""),
-        @"Translate":NSLocalizedString(@"Translate", @""),
+        @"Update with Outside String":NSLocalizedString(@"Update with Outside String", @""),
         @"TranslatedCountString":NSLocalizedString(@"Translated", @""),
         @"UnTranslatedCountString":NSLocalizedString(@"UnTranslated", @""),
         @"NotExistCountString":NSLocalizedString(@"NotExist", @"")
