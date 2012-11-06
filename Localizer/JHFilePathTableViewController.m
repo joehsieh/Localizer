@@ -64,7 +64,8 @@
 
 - (void)dealloc
 {
-	[filePathArray release];
+    self.filePathArray = nil;
+    self.relativeFilePathArray = nil;
     [super dealloc];
 }
 
@@ -203,11 +204,15 @@
 
 - (void)updateRelativeFilePathArrayWithNewBaseURL:(NSURL *)baseURL
 {
+    if (![filePathArray count]) {
+        relativeFilePathArray = [[NSArray alloc] init];
+        return;
+    }
     if (![baseURL path]) {
         //如果沒有基礎的路徑可以轉換出相對路徑，就回傳絕對路徑
         relativeFilePathArray = filePathArray;
     }
-    NSMutableArray *result = [NSMutableArray array];
+    NSMutableArray *result = [[NSMutableArray alloc] init];
     for (NSURL *i in filePathArray) {
         [result addObject:[NSURL URLWithString:[[i.relativePath relativePathFromBaseDirPath:[baseURL path]] stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding]]];
     }
@@ -226,9 +231,9 @@
 {
     NSMutableString *resultString = [NSMutableString string];
     [resultString appendString:@"/*\nScan List\n"];
-	for (NSURL *fileURL in relativeFilePathArray) {
-		[resultString appendFormat:@"%@%@\n", [fileURL path], fileURL == [relativeFilePathArray lastObject] ? @"": @","];
-	}
+    for (NSURL *fileURL in relativeFilePathArray) {
+        [resultString appendFormat:@"%@%@\n", [fileURL path], fileURL == [relativeFilePathArray lastObject] ? @"": @","];
+    }
     [resultString appendString:@"*/\n"];
     
     return resultString;
