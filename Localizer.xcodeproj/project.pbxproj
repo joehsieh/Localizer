@@ -70,11 +70,6 @@
 		39715A8B1637E50A0098BC0A /* JHScanFoldersTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHScanFoldersTableView.m; sourceTree = "<group>"; };
 		39715A8C1637E50A0098BC0A /* JHSourceCodeParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHSourceCodeParser.h; sourceTree = "<group>"; };
 		39715A8D1637E50A0098BC0A /* JHSourceCodeParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHSourceCodeParser.m; sourceTree = "<group>"; };
-		3992FD3B1648BD11008DBE1B /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
-		3992FD3C1648BD12008DBE1B /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "zh-Hant"; path = "zh-Hant.lproj/JHDocument.xib"; sourceTree = "<group>"; };
-		3992FD3D1648BD12008DBE1B /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "zh-Hant"; path = "zh-Hant.lproj/MainMenu.xib"; sourceTree = "<group>"; };
-		3992FD3E1648BD12008DBE1B /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
-		3992FD3F1648BD12008DBE1B /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = "zh-Hant"; path = "zh-Hant.lproj/Credits.rtf"; sourceTree = "<group>"; };
 		39965D3F1647878300E5C638 /* JHTranslatedWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JHTranslatedWindow.xib; sourceTree = "<group>"; };
 		399C0684163A1C720076B5B4 /* JHMatchInfoProcessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHMatchInfoProcessor.h; sourceTree = "<group>"; };
 		399C0685163A1C720076B5B4 /* JHMatchInfoProcessor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHMatchInfoProcessor.m; sourceTree = "<group>"; };
@@ -84,6 +79,11 @@
 		399E1E931639405800E787B5 /* App.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = App.icns; sourceTree = "<group>"; };
 		39A5B97A16476060009904B0 /* JHTranslatedWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHTranslatedWindowController.h; sourceTree = "<group>"; };
 		39A5B97B16476060009904B0 /* JHTranslatedWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHTranslatedWindowController.m; sourceTree = "<group>"; };
+		39AEA2BF164A039300D0FC5B /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		39AEA2C0164A039300D0FC5B /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "zh-Hant"; path = "zh-Hant.lproj/JHDocument.xib"; sourceTree = "<group>"; };
+		39AEA2C1164A039300D0FC5B /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "zh-Hant"; path = "zh-Hant.lproj/MainMenu.xib"; sourceTree = "<group>"; };
+		39AEA2C2164A039300D0FC5B /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		39AEA2C3164A039300D0FC5B /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = "zh-Hant"; path = "zh-Hant.lproj/Credits.rtf"; sourceTree = "<group>"; };
 		39DF7BBB163E6B6400558F99 /* JHMatchInfoTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHMatchInfoTableViewController.m; sourceTree = "<group>"; };
 		39F25AD71626A36900BAF9C9 /* Localizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Localizer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		39F25ADB1626A36900BAF9C9 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
@@ -462,7 +462,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				39185C10163E3E7C000AE5DF /* en */,
-				3992FD3B1648BD11008DBE1B /* zh-Hant */,
+				39AEA2BF164A039300D0FC5B /* zh-Hant */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -471,7 +471,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				39F25AE51626A36900BAF9C9 /* en */,
-				3992FD3E1648BD12008DBE1B /* zh-Hant */,
+				39AEA2C2164A039300D0FC5B /* zh-Hant */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -480,7 +480,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				39F25AEB1626A36900BAF9C9 /* en */,
-				3992FD3F1648BD12008DBE1B /* zh-Hant */,
+				39AEA2C3164A039300D0FC5B /* zh-Hant */,
 			);
 			name = Credits.rtf;
 			sourceTree = "<group>";
@@ -489,7 +489,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				39F25AF11626A36900BAF9C9 /* en */,
-				3992FD3C1648BD12008DBE1B /* zh-Hant */,
+				39AEA2C0164A039300D0FC5B /* zh-Hant */,
 			);
 			name = JHDocument.xib;
 			sourceTree = "<group>";
@@ -498,7 +498,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				39F25AF41626A36A00BAF9C9 /* en */,
-				3992FD3D1648BD12008DBE1B /* zh-Hant */,
+				39AEA2C1164A039300D0FC5B /* zh-Hant */,
 			);
 			name = MainMenu.xib;
 			sourceTree = "<group>";
