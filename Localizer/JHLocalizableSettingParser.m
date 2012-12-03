@@ -39,6 +39,7 @@
     } 
     NSMutableArray *result = [NSMutableArray array];
     for (NSString *folderPath in [inFolderPaths componentsSeparatedByString:@","]) {
+        folderPath = [folderPath stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
         if ([folderPath length]) {
             NSURL *fileURL = [NSURL fileURLWithPath:folderPath];
             [result addObject:fileURL];
