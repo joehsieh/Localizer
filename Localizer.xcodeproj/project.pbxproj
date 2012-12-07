@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		39185C0E163E3E14000AE5DF /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 39185C0C163E3E14000AE5DF /* Localizable.strings */; };
 		39715A751637E4D80098BC0A /* ImageAndTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 39715A711637E4D80098BC0A /* ImageAndTextCell.m */; };
 		39715A761637E4D80098BC0A /* NSString+RelativePath.m in Sources */ = {isa = PBXBuildFile; fileRef = 39715A741637E4D80098BC0A /* NSString+RelativePath.m */; };
 		39715A8E1637E50A0098BC0A /* JHDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 39715A791637E50A0098BC0A /* JHDocument.m */; };
@@ -18,10 +17,8 @@
 		39715A941637E50A0098BC0A /* JHMatchInfoTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 39715A851637E50A0098BC0A /* JHMatchInfoTableView.m */; };
 		39715A971637E50A0098BC0A /* JHScanFoldersTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 39715A8B1637E50A0098BC0A /* JHScanFoldersTableView.m */; };
 		39715A981637E50A0098BC0A /* JHSourceCodeParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 39715A8D1637E50A0098BC0A /* JHSourceCodeParser.m */; };
-		39965D401647878300E5C638 /* JHTranslatedWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 39965D3F1647878300E5C638 /* JHTranslatedWindow.xib */; };
 		399C0686163A1C720076B5B4 /* JHMatchInfoProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = 399C0685163A1C720076B5B4 /* JHMatchInfoProcessor.m */; };
 		399C06B7163A8D990076B5B4 /* JHPreferenceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 399C06B6163A8D990076B5B4 /* JHPreferenceController.m */; };
-		399C06BA163A8DE20076B5B4 /* JHPreference.xib in Resources */ = {isa = PBXBuildFile; fileRef = 399C06B9163A8DE20076B5B4 /* JHPreference.xib */; };
 		399E1E941639405800E787B5 /* App.icns in Resources */ = {isa = PBXBuildFile; fileRef = 399E1E931639405800E787B5 /* App.icns */; };
 		39A5B97C16476060009904B0 /* JHTranslatedWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39A5B97B16476060009904B0 /* JHTranslatedWindowController.m */; };
 		39DF7BBC163E6B6400558F99 /* JHMatchInfoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39DF7BBB163E6B6400558F99 /* JHMatchInfoTableViewController.m */; };
@@ -35,6 +32,9 @@
 		39F25AFE1626A36A00BAF9C9 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39F25ADB1626A36900BAF9C9 /* Cocoa.framework */; };
 		D49A4D4E163848C900113ABE /* build.png in Resources */ = {isa = PBXBuildFile; fileRef = D49A4D4C163848C900113ABE /* build.png */; };
 		D49A4D4F163848C900113ABE /* folder.png in Resources */ = {isa = PBXBuildFile; fileRef = D49A4D4D163848C900113ABE /* folder.png */; };
+		D4D2862E1671E08F0027D5E1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D4D2862C1671E08F0027D5E1 /* Localizable.strings */; };
+		D4D286301671E0AE0027D5E1 /* JHPreference.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4D286321671E0AE0027D5E1 /* JHPreference.xib */; };
+		D4D286331671E0B30027D5E1 /* JHTranslatedWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4D286351671E0B30027D5E1 /* JHTranslatedWindow.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,7 +48,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		39185C10163E3E7C000AE5DF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Localizer/en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		39715A701637E4D80098BC0A /* ImageAndTextCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageAndTextCell.h; sourceTree = "<group>"; };
 		39715A711637E4D80098BC0A /* ImageAndTextCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageAndTextCell.m; sourceTree = "<group>"; };
 		39715A731637E4D80098BC0A /* NSString+RelativePath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+RelativePath.h"; sourceTree = "<group>"; };
@@ -70,16 +69,13 @@
 		39715A8B1637E50A0098BC0A /* JHScanFoldersTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHScanFoldersTableView.m; sourceTree = "<group>"; };
 		39715A8C1637E50A0098BC0A /* JHSourceCodeParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHSourceCodeParser.h; sourceTree = "<group>"; };
 		39715A8D1637E50A0098BC0A /* JHSourceCodeParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHSourceCodeParser.m; sourceTree = "<group>"; };
-		39965D3F1647878300E5C638 /* JHTranslatedWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JHTranslatedWindow.xib; sourceTree = "<group>"; };
 		399C0684163A1C720076B5B4 /* JHMatchInfoProcessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHMatchInfoProcessor.h; sourceTree = "<group>"; };
 		399C0685163A1C720076B5B4 /* JHMatchInfoProcessor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHMatchInfoProcessor.m; sourceTree = "<group>"; };
 		399C06B5163A8D990076B5B4 /* JHPreferenceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHPreferenceController.h; sourceTree = "<group>"; };
 		399C06B6163A8D990076B5B4 /* JHPreferenceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHPreferenceController.m; sourceTree = "<group>"; };
-		399C06B9163A8DE20076B5B4 /* JHPreference.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JHPreference.xib; sourceTree = "<group>"; };
 		399E1E931639405800E787B5 /* App.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = App.icns; sourceTree = "<group>"; };
 		39A5B97A16476060009904B0 /* JHTranslatedWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHTranslatedWindowController.h; sourceTree = "<group>"; };
 		39A5B97B16476060009904B0 /* JHTranslatedWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHTranslatedWindowController.m; sourceTree = "<group>"; };
-		39AEA2BF164A039300D0FC5B /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		39AEA2C0164A039300D0FC5B /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "zh-Hant"; path = "zh-Hant.lproj/JHDocument.xib"; sourceTree = "<group>"; };
 		39AEA2C1164A039300D0FC5B /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "zh-Hant"; path = "zh-Hant.lproj/MainMenu.xib"; sourceTree = "<group>"; };
 		39AEA2C2164A039300D0FC5B /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
@@ -101,6 +97,10 @@
 		39F25AFC1626A36A00BAF9C9 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		D49A4D4C163848C900113ABE /* build.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = build.png; sourceTree = "<group>"; };
 		D49A4D4D163848C900113ABE /* folder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = folder.png; sourceTree = "<group>"; };
+		D4D2862D1671E08F0027D5E1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		D4D2862F1671E0920027D5E1 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		D4D286311671E0AE0027D5E1 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/JHPreference.xib; sourceTree = "<group>"; };
+		D4D286341671E0B30027D5E1 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/JHTranslatedWindow.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -225,7 +225,6 @@
 		39F25ACC1626A36900BAF9C9 = {
 			isa = PBXGroup;
 			children = (
-				39185C0C163E3E14000AE5DF /* Localizable.strings */,
 				39715A6E1637E4D80098BC0A /* ExternalLibraries */,
 				39F39E2B16369BB9004F0F7D /* art */,
 				39F25AE11626A36900BAF9C9 /* Localizer */,
@@ -275,6 +274,7 @@
 		39F25AE21626A36900BAF9C9 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D4D2862C1671E08F0027D5E1 /* Localizable.strings */,
 				39F25AF01626A36900BAF9C9 /* JHDocument.xib */,
 				39F25AF31626A36A00BAF9C9 /* MainMenu.xib */,
 				39F25AE31626A36900BAF9C9 /* Localizer-Info.plist */,
@@ -282,8 +282,8 @@
 				39F25AE71626A36900BAF9C9 /* main.m */,
 				39F25AE91626A36900BAF9C9 /* Localizer-Prefix.pch */,
 				39F25AEA1626A36900BAF9C9 /* Credits.rtf */,
-				399C06B9163A8DE20076B5B4 /* JHPreference.xib */,
-				39965D3F1647878300E5C638 /* JHTranslatedWindow.xib */,
+				D4D286321671E0AE0027D5E1 /* JHPreference.xib */,
+				D4D286351671E0B30027D5E1 /* JHTranslatedWindow.xib */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -386,9 +386,9 @@
 				D49A4D4E163848C900113ABE /* build.png in Resources */,
 				D49A4D4F163848C900113ABE /* folder.png in Resources */,
 				399E1E941639405800E787B5 /* App.icns in Resources */,
-				399C06BA163A8DE20076B5B4 /* JHPreference.xib in Resources */,
-				39185C0E163E3E14000AE5DF /* Localizable.strings in Resources */,
-				39965D401647878300E5C638 /* JHTranslatedWindow.xib in Resources */,
+				D4D286301671E0AE0027D5E1 /* JHPreference.xib in Resources */,
+				D4D286331671E0B30027D5E1 /* JHTranslatedWindow.xib in Resources */,
+				D4D2862E1671E08F0027D5E1 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -458,15 +458,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		39185C0C163E3E14000AE5DF /* Localizable.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				39185C10163E3E7C000AE5DF /* en */,
-				39AEA2BF164A039300D0FC5B /* zh-Hant */,
-			);
-			name = Localizable.strings;
-			sourceTree = "<group>";
-		};
 		39F25AE41626A36900BAF9C9 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -501,6 +492,31 @@
 				39AEA2C1164A039300D0FC5B /* zh-Hant */,
 			);
 			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		D4D2862C1671E08F0027D5E1 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D4D2862D1671E08F0027D5E1 /* en */,
+				D4D2862F1671E0920027D5E1 /* zh-Hant */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		D4D286321671E0AE0027D5E1 /* JHPreference.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D4D286311671E0AE0027D5E1 /* en */,
+			);
+			name = JHPreference.xib;
+			sourceTree = "<group>";
+		};
+		D4D286351671E0B30027D5E1 /* JHTranslatedWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D4D286341671E0B30027D5E1 /* en */,
+			);
+			name = JHTranslatedWindow.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
