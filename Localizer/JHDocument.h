@@ -1,12 +1,26 @@
 /*
  JHDocument.h
  Copyright (C) 2012 Joe Hsieh
- 
- Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
- 
- The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
- 
- THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+ Permission is hereby granted, free of charge, to any person obtaining
+ a copy of this software and associated documentation files (the
+ "Software"), to deal in the Software without restriction, including
+ without limitation the rights to use, copy, modify, merge, publish,
+ distribute, sublicense, and/or sell copies of the Software, and to
+ permit persons to whom the Software is furnished to do so, subject to
+ the following conditions:
+
+ The above copyright notice and this permission notice shall be
+ included in all copies or substantial portions of the Software.
+
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+ EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+ MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+ NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
+ BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
+ ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ SOFTWARE.
 */
 
 #import <Cocoa/Cocoa.h>
@@ -14,19 +28,17 @@
 #import "JHMatchInfoTableViewController.h"
 #import "JHMatchInfoProcessor.h"
 #import "JHTranslatedWindowController.h"
-@interface JHDocument : NSDocument<NSToolbarDelegate,JHTranslatedWindowControllerDelegate>
+
+// An abstract document which represents a "Localizable.strings" file.
+
+@interface JHDocument : NSDocument <NSToolbarDelegate,JHTranslatedWindowControllerDelegate>
 {
     IBOutlet JHFilePathTableViewController *filePathTableViewController;
     IBOutlet JHMatchInfoTableViewController *matchInfoTableViewController;
+
     JHTranslatedWindowController *translatedWindowController;
-    
-    // 整合 src 和 localizable.strings 資料的處理器
     JHMatchInfoProcessor *matchInfoProcessor;
-    
-    // localizable.strings 的 header 資料
     NSArray *scanArray;
-    
-    // localizable.strings 中的 body 資料
     NSSet *localizableInfoSet;
 }
 

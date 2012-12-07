@@ -1,12 +1,26 @@
 /*
  JHMatchInfoTableViewController.m
  Copyright (C) 2012 Joe Hsieh
- 
- Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
- 
- The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
- 
- THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+ Permission is hereby granted, free of charge, to any person obtaining
+ a copy of this software and associated documentation files (the
+ "Software"), to deal in the Software without restriction, including
+ without limitation the rights to use, copy, modify, merge, publish,
+ distribute, sublicense, and/or sell copies of the Software, and to
+ permit persons to whom the Software is furnished to do so, subject to
+ the following conditions:
+
+ The above copyright notice and this permission notice shall be
+ included in all copies or substantial portions of the Software.
+
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+ EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+ MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+ NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
+ BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
+ ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ SOFTWARE.
 */
 
 #import "JHMatchInfoTableViewController.h"
@@ -32,7 +46,7 @@
 }
 
 - (void)tableView:(NSTableView *)tableView willDisplayCell:(id)cell forTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row
-{    
+{
     if ([[tableColumn identifier] isEqualToString:@"from"]) {
         ImageAndTextCell *imageAndTextCell = (ImageAndTextCell *)cell;
         NSString *path = [imageAndTextCell stringValue];
@@ -51,7 +65,7 @@
 #pragma mark -  NSTableViewDelegateMatchInfoExtension
 - (void)tableView:(NSTableView *)inTableView didDeleteMatchInfos:(id)inSomething
 {
-    [self removeMatchInfoArray:[arrayController selectedObjects]]; 
+    [self removeMatchInfoArray:[arrayController selectedObjects]];
 }
 
 - (void)tableView:(NSTableView *)inTableView didCopiedMatchInfosWithIndexes:(NSIndexSet *)inIndexes
@@ -60,7 +74,7 @@
         NSPasteboard *pasteBoard = [NSPasteboard generalPasteboard];
         [pasteBoard clearContents];
         [pasteBoard writeObjects:[arrayController selectedObjects]];
-        
+
     }
 }
 
@@ -76,7 +90,7 @@
         if (temp == nil) {
             return matchInfo;
         }
-        else{
+        else {
             return temp;
         }
     }
@@ -88,12 +102,12 @@
     NSPasteboard *pasteboard = [NSPasteboard generalPasteboard];
     NSArray *classArray = [NSArray arrayWithObject:[JHMatchInfo class]];
     NSDictionary *options = [NSDictionary dictionary];
-    
+
     BOOL ok = [pasteboard canReadObjectForClasses:classArray options:options];
     if (ok) {
         NSArray *objectsToPaste = [pasteboard readObjectsForClasses:classArray options:options];
         NSMutableArray *matchInfoArray = [NSMutableArray array];
-        
+
         [objectsToPaste enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
             [matchInfoArray addObject:[self copiedMatchInfo:obj]];
         }];
@@ -114,7 +128,7 @@
     NSUInteger translatedCount = 0;
     NSUInteger unTranslatedCount = 0;
     NSUInteger notExistCount = 0;
-    
+
     for (JHMatchInfo *i in inArray) {
         switch (i.state) {
             case translated:
@@ -133,11 +147,11 @@
     [self willChangeValueForKey:@"translatedCountString"];
     translatedCountString = [NSString stringWithFormat:@"%ld", translatedCount];
     [self didChangeValueForKey:@"translatedCountString"];
-        
+
     [self willChangeValueForKey:@"unTranslatedCountString"];
     unTranslatedCountString = [NSString stringWithFormat:@"%ld", unTranslatedCount];
     [self didChangeValueForKey:@"unTranslatedCountString"];
-    
+
     [self willChangeValueForKey:@"notExistCountString"];
     notExistCountString = [NSString stringWithFormat:@"%ld", notExistCount];
     [self didChangeValueForKey:@"notExistCountString"];
@@ -148,12 +162,12 @@
 {
     NSString *actionName = NSLocalizedString(@"Delete", @"");
     [self stopObservingMatchInfoArray:matchInfoArray];
-    
+
     [[undoManager prepareWithInvocationTarget:self] restoreMatchinfoArray:[[[arrayController content]copy]autorelease]  actionName:actionName];
     if (!undoManager.isUndoing) {
         [undoManager setActionName:actionName];
     }
-    
+
     NSMutableArray *result = [NSMutableArray arrayWithArray:arrayController.content];
     [result removeObjectsInArray:matchInfoArray];
     arrayController.content = result;
@@ -163,7 +177,7 @@
 {
     NSString *actionName = NSLocalizedString(@"Insert", @"");
     [self startObservingMatchInfoArray:matchInfoArray];
-    
+
     [[undoManager prepareWithInvocationTarget:self] restoreMatchinfoArray:[[[arrayController content]copy]autorelease]  actionName:actionName];
     if (!undoManager.isUndoing) {
         [undoManager setActionName:actionName];
@@ -179,7 +193,7 @@
 {
     [self updateCount:inArray];
     [self startObservingMatchInfoArray:inArray];
-    
+
     [[undoManager prepareWithInvocationTarget:self] restoreMatchinfoArray:[[[arrayController content]copy]autorelease]  actionName:inActionName];
     if (!undoManager.isUndoing) {
         [undoManager setActionName:inActionName];
@@ -191,7 +205,7 @@
 - (void)changeKeyPath:(NSString *)keyPath ofObject:(id)object toValue:(id)newValue
 {
     [self updateCount:[NSArray arrayWithArray:arrayController.content]];
-    [object setValue:newValue forKeyPath:keyPath];    
+    [object setValue:newValue forKeyPath:keyPath];
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(JHMatchInfo *)object change:(NSDictionary *)change context:(void *)context
@@ -204,7 +218,7 @@
     if ([object.key isEqualToString:object.translateString] || [object.key isEqualToString:@""]) {
         object.state = unTranslated;
     }
-    else{
+    else {
         object.state = translated;
     }
     [self updateCount:arrayController.content];
@@ -245,7 +259,7 @@
 - (NSString *)matchInfosString
 {
     NSMutableString *resultString = [NSMutableString string];
-    
+
     for (NSString *filePath in [self sortedMatchInfoFilePathArray]) {
         [resultString appendFormat:@"/* %@ */\n",filePath];
         for (JHMatchInfo *matchInfo in [self matchInfoArray]) {
@@ -278,7 +292,7 @@
     if (sender.selectedSegment != 0) {
         predict = [NSPredicate predicateWithFormat:@"SELF.state == %d", state];
     }
-    else{
+    else {
         predict = [NSPredicate predicateWithFormat:@"SELF.state != -1"];
     }
     [arrayController setFilterPredicate:predict];
@@ -289,7 +303,7 @@
 {
     NSString *keyword = sender.stringValue;
     NSPredicate *predict = [NSPredicate predicateWithFormat:@"(SELF.key CONTAINS[cd] %@) OR (SELF.translateString CONTAINS[cd] %@) OR (SELF.comment CONTAINS[cd] %@) OR (SELF.filePath CONTAINS[cd] %@)", keyword, keyword, keyword, keyword];
- 
+
     [arrayController setFilterPredicate:predict];
 }
 

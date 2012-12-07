@@ -1,11 +1,3 @@
-//
-//  JHTranslatedWindowController.h
-//  Localizer
-//
-//  Created by KKBOX on 12/11/5.
-//
-//
-
 #import <Cocoa/Cocoa.h>
 
 @class JHTranslatedWindowController;

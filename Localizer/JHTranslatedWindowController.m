@@ -1,11 +1,3 @@
-//
-//  JHTranslatedWindow.m
-//  Localizer
-//
-//  Created by KKBOX on 12/11/5.
-//
-//
-
 #import "JHTranslatedWindowController.h"
 
 @implementation JHTranslatedWindowController
