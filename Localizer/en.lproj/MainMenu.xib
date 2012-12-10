@@ -1258,7 +1258,8 @@
 									<reference key="NSMenu" ref="466310130"/>
 									<int key="NSIndent">1</int>
 									<string key="NSTitle">All Strings</string>
-									<string key="NSKeyEquiv"/>
+									<string key="NSKeyEquiv">1</string>
+									<int key="NSKeyEquivModMask">1048576</int>
 									<int key="NSMnemonicLoc">2147483647</int>
 									<reference key="NSOnImage" ref="1033313550"/>
 									<reference key="NSMixedImage" ref="310636482"/>
@@ -1267,7 +1268,8 @@
 									<reference key="NSMenu" ref="466310130"/>
 									<int key="NSIndent">1</int>
 									<string key="NSTitle">Translated</string>
-									<string key="NSKeyEquiv"/>
+									<string key="NSKeyEquiv">2</string>
+									<int key="NSKeyEquivModMask">1048576</int>
 									<int key="NSMnemonicLoc">2147483647</int>
 									<reference key="NSOnImage" ref="1033313550"/>
 									<reference key="NSMixedImage" ref="310636482"/>
@@ -1277,7 +1279,8 @@
 									<reference key="NSMenu" ref="466310130"/>
 									<int key="NSIndent">1</int>
 									<string key="NSTitle">Untranslated</string>
-									<string key="NSKeyEquiv"/>
+									<string key="NSKeyEquiv">3</string>
+									<int key="NSKeyEquivModMask">1048576</int>
 									<int key="NSMnemonicLoc">2147483647</int>
 									<reference key="NSOnImage" ref="1033313550"/>
 									<reference key="NSMixedImage" ref="310636482"/>
@@ -1287,7 +1290,8 @@
 									<reference key="NSMenu" ref="466310130"/>
 									<int key="NSIndent">1</int>
 									<string key="NSTitle">Not Exist</string>
-									<string key="NSKeyEquiv"/>
+									<string key="NSKeyEquiv">4</string>
+									<int key="NSKeyEquivModMask">1048576</int>
 									<int key="NSMnemonicLoc">2147483647</int>
 									<reference key="NSOnImage" ref="1033313550"/>
 									<reference key="NSMixedImage" ref="310636482"/>
@@ -3405,6 +3409,7 @@
 					<dictionary class="NSMutableDictionary" key="outlets">
 						<string key="filePathTableViewController">JHFilePathTableViewController</string>
 						<string key="matchInfoTableViewController">JHMatchInfoTableViewController</string>
+						<string key="searchField">NSSearchField</string>
 						<string key="segmentedControl">NSSegmentedControl</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
@@ -3415,6 +3420,10 @@
 						<object class="IBToOneOutletInfo" key="matchInfoTableViewController">
 							<string key="name">matchInfoTableViewController</string>
 							<string key="candidateClassName">JHMatchInfoTableViewController</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="searchField">
+							<string key="name">searchField</string>
+							<string key="candidateClassName">NSSearchField</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="segmentedControl">
 							<string key="name">segmentedControl</string>

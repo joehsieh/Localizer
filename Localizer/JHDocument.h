@@ -36,6 +36,7 @@
     IBOutlet JHFilePathTableViewController *filePathTableViewController;
     IBOutlet JHMatchInfoTableViewController *matchInfoTableViewController;
 	IBOutlet NSSegmentedControl *segmentedControl;
+	IBOutlet NSSearchField *searchField;
 
     JHTranslatedWindowController *translatedWindowController;
     JHMatchInfoProcessor *matchInfoProcessor;
@@ -50,6 +51,8 @@
 
 @property (assign, nonatomic) IBOutlet JHFilePathTableViewController *filePathTableViewController;
 @property (assign, nonatomic) IBOutlet JHMatchInfoTableViewController *matchInfoTableViewController;
+@property (assign, nonatomic) IBOutlet NSSegmentedControl *segmentedControl;
+@property (assign, nonatomic) IBOutlet NSSearchField *searchField;
 @property (assign, nonatomic) JHTranslatedWindowController *translatedWindowController;
 
 @property (retain, nonatomic) JHMatchInfoProcessor *matchInfoProcessor;

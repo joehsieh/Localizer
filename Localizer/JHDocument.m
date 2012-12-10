@@ -215,6 +215,14 @@
 	[matchInfoTableViewController fileterByType:segmentedControl];
 }
 
+- (IBAction)performFindPanelAction:(id)sender
+{
+	if ([sender tag] == 1) {
+		NSWindow *window = [[[self windowControllers] objectAtIndex:0] window];
+		[window makeFirstResponder:searchField];
+	}
+}
+
 #pragma mark - validate tool bar item
 
 - (BOOL)validateMenuItem:(NSMenuItem *)menuItem
@@ -234,6 +242,12 @@
 		[menuItem setState:([segmentedControl selectedSegment] == tag) ? NSOnState : NSOffState];
         return YES;
     }
+    else if (action == @selector(performFindPanelAction:)) {
+		if ([menuItem tag] == 1) {
+			return YES;
+		}
+		return NO;
+	}
 	return [super validateMenuItem:menuItem];
 }
 
@@ -323,6 +337,13 @@
     }
 }
 
-@synthesize filePathTableViewController, matchInfoTableViewController,translatedWindowController,
-localizableInfoSet, scanArray, matchInfoProcessor;
+@synthesize filePathTableViewController;
+@synthesize matchInfoTableViewController;
+@synthesize segmentedControl;
+@synthesize searchField;
+
+@synthesize translatedWindowController;
+@synthesize localizableInfoSet;
+@synthesize scanArray;
+@synthesize matchInfoProcessor;
 @end

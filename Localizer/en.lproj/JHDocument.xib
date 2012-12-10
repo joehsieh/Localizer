@@ -101,6 +101,7 @@
 								<int key="NSvFlags">268</int>
 								<string key="NSFrame">{{0, 14}, {96, 22}}</string>
 								<reference key="NSSuperview"/>
+								<reference key="NSWindow"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="NSEnabled">YES</bool>
 								<object class="NSSearchFieldCell" key="NSCell" id="462318382">
@@ -216,6 +217,7 @@
 								<int key="NSvFlags">268</int>
 								<string key="NSFrame">{{0, 14}, {311, 25}}</string>
 								<reference key="NSSuperview"/>
+								<reference key="NSWindow"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="NSEnabled">YES</bool>
 								<object class="NSSegmentedCell" key="NSCell" id="255789475">
@@ -398,11 +400,11 @@
 														<string key="NSFrameSize">{1019, 17}</string>
 														<reference key="NSSuperview" ref="132856126"/>
 														<reference key="NSWindow"/>
-														<reference key="NSNextKeyView" ref="656955487"/>
+														<reference key="NSNextKeyView" ref="688294172"/>
 														<string key="NSReuseIdentifierKey">_NS:16</string>
 														<reference key="NSTableView" ref="558989796"/>
 													</object>
-													<object class="_NSCornerView" key="NSCornerView" id="656955487">
+													<object class="_NSCornerView" key="NSCornerView" id="688294172">
 														<reference key="NSNextResponder" ref="290018748"/>
 														<int key="NSvFlags">-2147483392</int>
 														<string key="NSFrame">{{224, 0}, {16, 17}}</string>
@@ -625,7 +627,7 @@
 											<reference key="NSBGColor" ref="690459342"/>
 											<int key="NScvFlags">4</int>
 										</object>
-										<reference ref="656955487"/>
+										<reference ref="688294172"/>
 									</array>
 									<string key="NSFrameSize">{1021, 483}</string>
 									<reference key="NSSuperview" ref="1065102651"/>
@@ -637,7 +639,7 @@
 									<reference key="NSHScroller" ref="740349334"/>
 									<reference key="NSContentView" ref="548235643"/>
 									<reference key="NSHeaderClipView" ref="132856126"/>
-									<reference key="NSCornerView" ref="656955487"/>
+									<reference key="NSCornerView" ref="688294172"/>
 									<bytes key="NSScrollAmts">QSAAAEEgAABBsAAAQbAAAA</bytes>
 									<double key="NSMinMagnification">0.25</double>
 									<double key="NSMaxMagnification">4</double>
@@ -668,11 +670,11 @@
 														<string key="NSFrameSize">{1019, 17}</string>
 														<reference key="NSSuperview" ref="930491211"/>
 														<reference key="NSWindow"/>
-														<reference key="NSNextKeyView" ref="557378289"/>
+														<reference key="NSNextKeyView" ref="110768387"/>
 														<string key="NSReuseIdentifierKey">_NS:16</string>
 														<reference key="NSTableView" ref="233160525"/>
 													</object>
-													<object class="_NSCornerView" key="NSCornerView" id="557378289">
+													<object class="_NSCornerView" key="NSCornerView" id="110768387">
 														<reference key="NSNextResponder" ref="576911534"/>
 														<int key="NSvFlags">-2147483392</int>
 														<string key="NSFrame">{{224, 0}, {16, 17}}</string>
@@ -779,7 +781,7 @@
 											<reference key="NSBGColor" ref="690459342"/>
 											<int key="NScvFlags">4</int>
 										</object>
-										<reference ref="557378289"/>
+										<reference ref="110768387"/>
 									</array>
 									<string key="NSFrame">{{0, 493}, {1021, 66}}</string>
 									<reference key="NSSuperview" ref="1065102651"/>
@@ -791,7 +793,7 @@
 									<reference key="NSHScroller" ref="557948489"/>
 									<reference key="NSContentView" ref="63663070"/>
 									<reference key="NSHeaderClipView" ref="930491211"/>
-									<reference key="NSCornerView" ref="557378289"/>
+									<reference key="NSCornerView" ref="110768387"/>
 									<bytes key="NSScrollAmts">QSAAAEEgAABBmAAAQZgAAA</bytes>
 									<double key="NSMinMagnification">0.25</double>
 									<double key="NSMaxMagnification">4</double>
@@ -897,6 +899,14 @@
 						<reference key="destination" ref="437065941"/>
 					</object>
 					<int key="connectionID">100816</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">searchField</string>
+						<reference key="source" ref="512844837"/>
+						<reference key="destination" ref="946016904"/>
+					</object>
+					<int key="connectionID">100817</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
@@ -1465,7 +1475,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">100816</int>
+			<int key="maxID">100817</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -1507,6 +1517,7 @@
 					<dictionary class="NSMutableDictionary" key="outlets">
 						<string key="filePathTableViewController">JHFilePathTableViewController</string>
 						<string key="matchInfoTableViewController">JHMatchInfoTableViewController</string>
+						<string key="searchField">NSSearchField</string>
 						<string key="segmentedControl">NSSegmentedControl</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
@@ -1517,6 +1528,10 @@
 						<object class="IBToOneOutletInfo" key="matchInfoTableViewController">
 							<string key="name">matchInfoTableViewController</string>
 							<string key="candidateClassName">JHMatchInfoTableViewController</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="searchField">
+							<string key="name">searchField</string>
+							<string key="candidateClassName">NSSearchField</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="segmentedControl">
 							<string key="name">segmentedControl</string>
