@@ -269,7 +269,7 @@
 									<reference key="NSOnImage" ref="1033313550"/>
 									<reference key="NSMixedImage" ref="310636482"/>
 								</object>
-								<object class="NSMenuItem" id="594236265">
+								<object class="NSMenuItem" id="843394752">
 									<reference key="NSMenu" ref="720053764"/>
 									<bool key="NSIsDisabled">YES</bool>
 									<bool key="NSIsSeparator">YES</bool>
@@ -279,7 +279,7 @@
 									<reference key="NSOnImage" ref="1033313550"/>
 									<reference key="NSMixedImage" ref="310636482"/>
 								</object>
-								<object class="NSMenuItem" id="10480484">
+								<object class="NSMenuItem" id="260585286">
 									<reference key="NSMenu" ref="720053764"/>
 									<string key="NSTitle">Add Scan Folder or Files</string>
 									<string key="NSKeyEquiv"/>
@@ -287,7 +287,7 @@
 									<reference key="NSOnImage" ref="1033313550"/>
 									<reference key="NSMixedImage" ref="310636482"/>
 								</object>
-								<object class="NSMenuItem" id="462883164">
+								<object class="NSMenuItem" id="954858297">
 									<reference key="NSMenu" ref="720053764"/>
 									<string key="NSTitle">Scan</string>
 									<string key="NSKeyEquiv"/>
@@ -1236,6 +1236,63 @@
 									<reference key="NSOnImage" ref="1033313550"/>
 									<reference key="NSMixedImage" ref="310636482"/>
 								</object>
+								<object class="NSMenuItem" id="38258879">
+									<reference key="NSMenu" ref="466310130"/>
+									<bool key="NSIsDisabled">YES</bool>
+									<bool key="NSIsSeparator">YES</bool>
+									<string key="NSTitle"/>
+									<string key="NSKeyEquiv"/>
+									<int key="NSMnemonicLoc">2147483647</int>
+									<reference key="NSOnImage" ref="1033313550"/>
+									<reference key="NSMixedImage" ref="310636482"/>
+								</object>
+								<object class="NSMenuItem" id="901946578">
+									<reference key="NSMenu" ref="466310130"/>
+									<string key="NSTitle">Filtering…</string>
+									<string key="NSKeyEquiv"/>
+									<int key="NSMnemonicLoc">2147483647</int>
+									<reference key="NSOnImage" ref="1033313550"/>
+									<reference key="NSMixedImage" ref="310636482"/>
+								</object>
+								<object class="NSMenuItem" id="391284419">
+									<reference key="NSMenu" ref="466310130"/>
+									<int key="NSIndent">1</int>
+									<string key="NSTitle">All Strings</string>
+									<string key="NSKeyEquiv"/>
+									<int key="NSMnemonicLoc">2147483647</int>
+									<reference key="NSOnImage" ref="1033313550"/>
+									<reference key="NSMixedImage" ref="310636482"/>
+								</object>
+								<object class="NSMenuItem" id="240853150">
+									<reference key="NSMenu" ref="466310130"/>
+									<int key="NSIndent">1</int>
+									<string key="NSTitle">Translated</string>
+									<string key="NSKeyEquiv"/>
+									<int key="NSMnemonicLoc">2147483647</int>
+									<reference key="NSOnImage" ref="1033313550"/>
+									<reference key="NSMixedImage" ref="310636482"/>
+									<int key="NSTag">1</int>
+								</object>
+								<object class="NSMenuItem" id="28043877">
+									<reference key="NSMenu" ref="466310130"/>
+									<int key="NSIndent">1</int>
+									<string key="NSTitle">Untranslated</string>
+									<string key="NSKeyEquiv"/>
+									<int key="NSMnemonicLoc">2147483647</int>
+									<reference key="NSOnImage" ref="1033313550"/>
+									<reference key="NSMixedImage" ref="310636482"/>
+									<int key="NSTag">2</int>
+								</object>
+								<object class="NSMenuItem" id="268992806">
+									<reference key="NSMenu" ref="466310130"/>
+									<int key="NSIndent">1</int>
+									<string key="NSTitle">Not Exist</string>
+									<string key="NSKeyEquiv"/>
+									<int key="NSMnemonicLoc">2147483647</int>
+									<reference key="NSOnImage" ref="1033313550"/>
+									<reference key="NSMixedImage" ref="310636482"/>
+									<int key="NSTag">3</int>
+								</object>
 							</array>
 						</object>
 					</object>
@@ -1326,7 +1383,7 @@
 			<object class="NSCustomObject" id="534910783">
 				<string key="NSClassName">JHPreferenceController</string>
 			</object>
-			<object class="NSCustomObject" id="45230857">
+			<object class="NSCustomObject" id="586884356">
 				<string key="NSClassName">JHAppDelegate</string>
 			</object>
 		</array>
@@ -1352,7 +1409,7 @@
 					<object class="IBOutletConnection" key="connection">
 						<string key="label">delegate</string>
 						<reference key="source" ref="1021"/>
-						<reference key="destination" ref="45230857"/>
+						<reference key="destination" ref="586884356"/>
 					</object>
 					<int key="connectionID">646</int>
 				</object>
@@ -1976,7 +2033,7 @@
 					<object class="IBActionConnection" key="connection">
 						<string key="label">addScanFolderAndFiles:</string>
 						<reference key="source" ref="1014"/>
-						<reference key="destination" ref="10480484"/>
+						<reference key="destination" ref="260585286"/>
 					</object>
 					<int key="connectionID">650</int>
 				</object>
@@ -1984,9 +2041,41 @@
 					<object class="IBActionConnection" key="connection">
 						<string key="label">scan:</string>
 						<reference key="source" ref="1014"/>
-						<reference key="destination" ref="462883164"/>
+						<reference key="destination" ref="954858297"/>
 					</object>
 					<int key="connectionID">651</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">filterWithSearchType:</string>
+						<reference key="source" ref="1014"/>
+						<reference key="destination" ref="391284419"/>
+					</object>
+					<int key="connectionID">657</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">filterWithSearchType:</string>
+						<reference key="source" ref="1014"/>
+						<reference key="destination" ref="240853150"/>
+					</object>
+					<int key="connectionID">658</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">filterWithSearchType:</string>
+						<reference key="source" ref="1014"/>
+						<reference key="destination" ref="28043877"/>
+					</object>
+					<int key="connectionID">659</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">filterWithSearchType:</string>
+						<reference key="source" ref="1014"/>
+						<reference key="destination" ref="268992806"/>
+					</object>
+					<int key="connectionID">660</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBActionConnection" key="connection">
@@ -2124,9 +2213,9 @@
 							<reference ref="579971712"/>
 							<reference ref="1010469920"/>
 							<reference ref="756968868"/>
-							<reference ref="594236265"/>
-							<reference ref="10480484"/>
-							<reference ref="462883164"/>
+							<reference ref="843394752"/>
+							<reference ref="260585286"/>
+							<reference ref="954858297"/>
 						</array>
 						<reference key="parent" ref="379814623"/>
 					</object>
@@ -2471,6 +2560,12 @@
 						<array class="NSMutableArray" key="children">
 							<reference ref="102151532"/>
 							<reference ref="237841660"/>
+							<reference ref="38258879"/>
+							<reference ref="240853150"/>
+							<reference ref="268992806"/>
+							<reference ref="28043877"/>
+							<reference ref="391284419"/>
+							<reference ref="901946578"/>
 						</array>
 						<reference key="parent" ref="586577488"/>
 					</object>
@@ -3033,23 +3128,53 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">645</int>
-						<reference key="object" ref="45230857"/>
+						<reference key="object" ref="586884356"/>
 						<reference key="parent" ref="0"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">647</int>
-						<reference key="object" ref="594236265"/>
+						<reference key="object" ref="843394752"/>
 						<reference key="parent" ref="720053764"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">648</int>
-						<reference key="object" ref="10480484"/>
+						<reference key="object" ref="260585286"/>
 						<reference key="parent" ref="720053764"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">649</int>
-						<reference key="object" ref="462883164"/>
+						<reference key="object" ref="954858297"/>
 						<reference key="parent" ref="720053764"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">652</int>
+						<reference key="object" ref="38258879"/>
+						<reference key="parent" ref="466310130"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">653</int>
+						<reference key="object" ref="240853150"/>
+						<reference key="parent" ref="466310130"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">654</int>
+						<reference key="object" ref="268992806"/>
+						<reference key="parent" ref="466310130"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">655</int>
+						<reference key="object" ref="28043877"/>
+						<reference key="parent" ref="466310130"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">656</int>
+						<reference key="object" ref="391284419"/>
+						<reference key="parent" ref="466310130"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">661</int>
+						<reference key="object" ref="901946578"/>
+						<reference key="parent" ref="466310130"/>
 					</object>
 				</array>
 			</object>
@@ -3198,6 +3323,12 @@
 				<string key="647.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="648.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="649.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="652.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="653.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="654.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="655.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="656.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="661.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="72.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="73.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="74.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -3214,7 +3345,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">651</int>
+			<int key="maxID">661</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -3249,12 +3380,17 @@
 					<string key="superclassName">NSDocument</string>
 					<dictionary class="NSMutableDictionary" key="actions">
 						<string key="addScanFolderAndFiles:">id</string>
+						<string key="filterWithSearchType:">id</string>
 						<string key="scan:">id</string>
 						<string key="translate:">id</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="actionInfosByName">
 						<object class="IBActionInfo" key="addScanFolderAndFiles:">
 							<string key="name">addScanFolderAndFiles:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="filterWithSearchType:">
+							<string key="name">filterWithSearchType:</string>
 							<string key="candidateClassName">id</string>
 						</object>
 						<object class="IBActionInfo" key="scan:">
@@ -3269,6 +3405,7 @@
 					<dictionary class="NSMutableDictionary" key="outlets">
 						<string key="filePathTableViewController">JHFilePathTableViewController</string>
 						<string key="matchInfoTableViewController">JHMatchInfoTableViewController</string>
+						<string key="segmentedControl">NSSegmentedControl</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
 						<object class="IBToOneOutletInfo" key="filePathTableViewController">
@@ -3278,6 +3415,10 @@
 						<object class="IBToOneOutletInfo" key="matchInfoTableViewController">
 							<string key="name">matchInfoTableViewController</string>
 							<string key="candidateClassName">JHMatchInfoTableViewController</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="segmentedControl">
+							<string key="name">segmentedControl</string>
+							<string key="candidateClassName">NSSegmentedControl</string>
 						</object>
 					</dictionary>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">

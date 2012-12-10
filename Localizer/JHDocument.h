@@ -35,6 +35,7 @@
 {
     IBOutlet JHFilePathTableViewController *filePathTableViewController;
     IBOutlet JHMatchInfoTableViewController *matchInfoTableViewController;
+	IBOutlet NSSegmentedControl *segmentedControl;
 
     JHTranslatedWindowController *translatedWindowController;
     JHMatchInfoProcessor *matchInfoProcessor;
@@ -45,6 +46,7 @@
 - (IBAction)addScanFolderAndFiles:(id)sender;
 - (IBAction)scan:(id)sender;
 - (IBAction)translate:(id)sender;
+- (IBAction)filterWithSearchType:(id)sender;
 
 @property (assign, nonatomic) IBOutlet JHFilePathTableViewController *filePathTableViewController;
 @property (assign, nonatomic) IBOutlet JHMatchInfoTableViewController *matchInfoTableViewController;

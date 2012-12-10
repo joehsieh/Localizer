@@ -173,7 +173,8 @@
 {
     [inIndexes enumerateIndexesUsingBlock:^(NSUInteger idx, BOOL *stop) {
         NSDictionary* errors = [NSDictionary dictionary];
-        NSAppleScript* appleScript = [[NSAppleScript alloc] initWithSource:[NSString stringWithFormat:@"tell application \"Finder\" \n open (\"%@\" as POSIX file) \n end tell",[filePathArray objectAtIndex:idx]]];
+		NSString *scriptString = [NSString stringWithFormat:@"tell application \"Finder\" \n activate\n open (\"%@\" as POSIX file) \n end tell",[filePathArray objectAtIndex:idx]];
+        NSAppleScript* appleScript = [[NSAppleScript alloc] initWithSource:scriptString];
         [appleScript executeAndReturnError:&errors];
         [appleScript release];
     }];

@@ -149,17 +149,17 @@
 
 - (void)toolbarWillAddItem:(NSNotification *)notification
 {
-    NSDictionary *toolbarItemNameDictionary = @{
-        @"Add Scan Folders or Files": NSLocalizedString(@"Add Scan Folders or Files", @""),
-        @"Scan":NSLocalizedString(@"Scan", @""),
-        @"Update with Outside String":NSLocalizedString(@"Update with Outside String", @""),
-        @"TranslatedCountString":NSLocalizedString(@"Translated", @""),
-        @"UnTranslatedCountString":NSLocalizedString(@"UnTranslated", @""),
-        @"NotExistCountString":NSLocalizedString(@"NotExist", @"")
-    };
-
-    NSToolbarItem *item = [notification.userInfo objectForKey:@"item"];
-    item.label = [toolbarItemNameDictionary objectForKey:item.itemIdentifier];
+//    NSDictionary *toolbarItemNameDictionary = @{
+//        @"Add Scan Folders or Files": NSLocalizedString(@"Add Scan Folders or Files", @""),
+//        @"Scan":NSLocalizedString(@"Scan", @""),
+//        @"Insert External Strings":NSLocalizedString(@"Insert External Strings", @""),
+//        @"TranslatedCountString":NSLocalizedString(@"Translated", @""),
+//        @"UnTranslatedCountString":NSLocalizedString(@"Untranslated", @""),
+//        @"NotExistCountString":NSLocalizedString(@"NotExist", @"")
+//    };
+//
+//    NSToolbarItem *item = [notification.userInfo objectForKey:@"item"];
+//    item.label = [toolbarItemNameDictionary objectForKey:item.itemIdentifier];
 }
 
 #pragma mark -  button action
@@ -206,10 +206,36 @@
 {
     NSWindow *window = [[[self windowControllers] objectAtIndex:0] window];
     [NSApp beginSheet:translatedWindowController.window modalForWindow:window modalDelegate:nil didEndSelector:NULL contextInfo:nil];
+}
 
+- (IBAction)filterWithSearchType:(id)sender
+{
+	NSInteger tag = [sender tag];
+	[segmentedControl setSelectedSegment:tag];
+	[matchInfoTableViewController fileterByType:segmentedControl];
 }
 
 #pragma mark - validate tool bar item
+
+- (BOOL)validateMenuItem:(NSMenuItem *)menuItem
+{
+	SEL action = [menuItem action];
+	if (action == @selector(addScanFolderAndFiles:)) {
+		return YES;
+	}
+	else if (action == @selector(scan:)) {
+		return !![[self filePathTableViewController].filePathArray count];
+	}
+    else if (action == @selector(translate:)) {
+        return YES;
+    }
+    else if (action == @selector(filterWithSearchType:)) {
+		NSInteger tag = [menuItem tag];
+		[menuItem setState:([segmentedControl selectedSegment] == tag) ? NSOnState : NSOffState];
+        return YES;
+    }
+	return [super validateMenuItem:menuItem];
+}
 
 - (BOOL)validateToolbarItem:(NSToolbarItem *)theItem
 {
@@ -220,7 +246,7 @@
 	else if (action == @selector(scan:)) {
 		return !![[self filePathTableViewController].filePathArray count];
 	}
-    else if (action == @selector(translate:)){
+    else if (action == @selector(translate:)) {
         return YES;
     }
 	return [super validateToolbarItem:theItem];

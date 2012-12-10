@@ -3,8 +3,8 @@ Scan List
 ../..
 */
 /* Localizer/JHDocument.m */
-"Update with Outside String" = "使用外部字串更新";/**/ 
-"UnTranslated" = "未翻譯";/**/ 
+"Insert External Strings" = "使用外部字串更新";/**/ 
+"Untranslated" = "未翻譯";/**/ 
 "Add Scan Folders or Files" = "增加掃瞄的資料夾或檔案";/**/ 
 "Translate" = "翻譯";/**/ 
 "Scan" = "掃瞄";/**/ 
