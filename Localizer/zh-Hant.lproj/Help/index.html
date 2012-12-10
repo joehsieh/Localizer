@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8">
+<title>Localizer</title>
+<meta name="AppleOrder" content="0">
+<meta name="AppleTitle" content="Localizer Help">
+<meta name="AppleIcon" content="localizer.png">
+<meta name="KEYWORDS" content="Localizer">
+<meta name="DESCRIPTION" content="Localizer Help">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body>
+<div class="Destination">
+<h1>Localizer</h1>
+
+<p>一套 Cocoa 應用程式的翻譯工具</p>
+
+<ul>
+<li>2012 © Joe Hsieh</li>
+<li><a href="&#x6d;a&#105;l&#x74;&#x6f;&#x3a;&#106;&#111;&#x65;&#x68;s&#x69;e&#x68;&#x40;&#x6b;k&#98;&#111;x&#x2e;&#x63;&#111;&#109;">&#106;&#111;&#x65;&#x68;s&#x69;e&#x68;&#x40;&#x6b;k&#98;&#111;x&#x2e;&#x63;&#111;&#109;</a></li>
+</ul>
+
+<h2>緣起</h2>
+
+<p>蘋果有一套非常傑出的多國語系軟體架構，同一套軟體不需要針對不同語言準備
+不同的版本，只要準備好對應的語系檔案，就可以在多個不同語系下使用。然而，
+要長期維護一套多國語系的軟體，仍然是一件苦差事。</p>
+
+<p>蘋果有一套從程式中抽取字串以供後續翻譯的命令列工具，叫做 genstring。這
+套工具雖然不錯，但只有在第一次做軟體翻譯的時候，你會覺得好用，之後，當
+你想要做 2.0 等後續版本的時候，可就麻煩了。</p>
+
+<p>genstring 只能夠幫你只做一次的掃描、以及建立翻譯字串檔；在軟體開發工作
+中，我們往往會開發後續版本，而在這些後續版本中，我們的翻譯工作不可能每
+次都是從零做起，而可能是有些字串要沿用舊版本的內容，要加入新增的字串，
+以及移除已經無用的字串。我們需要的，是一套可以更輕鬆管理翻譯語系檔的工
+具。</p>
+
+<p>這就是我們開始開發 <strong>Localizer</strong> 的動機。</p>
+
+<h2>Localizer 的工作流程</h2>
+
+<p>Localizer 是一套專門用來編輯 "Localizable.strings" 檔案的編輯軟體，操作
+方式如何其他各式各樣的編輯軟體。</p>
+
+<p>您可以直接使用 Localizer 打開既有 Xcode 專案中的 Localizable.strings 檔
+案，然後從文件視窗上方的工具列，點選「增加掃描的資料夾或檔案」，這樣，
+我們就可以從這些檔案夾中的程式碼中，抽取想要翻譯的字串。只要按下「掃描」
+按鈕，便會開始掃描。</p>
+
+<p>掃描的結果會列在文件正中央的主要表格介面中，如果是原本就存在的字串，會
+用黑色表示，新增的字串則會以藍色表示，如果是紅色的字串，則代表在程式碼
+中已經沒有用到，可以考慮刪除了。同時，您也可以使用工具列上的過濾按鈕，
+只顯示已經翻譯或是未翻譯的字串。</p>
+
+<p>接下來，便可以在表格中編輯翻譯字串。而當你下次打開同一個
+"Localizable.strings" 檔案的時候， Localizer 可以記住上次設定的掃描路徑，
+不用再手動設定一次，只要再按一次「掃描」即可。</p>
+
+<h2>系統需求</h2>
+
+<ul>
+<li>Mac OS X 10.7</li>
+<li>Xcode</li>
+</ul>
+
+<h2>如何編譯？</h2>
+
+<ul>
+<li>下載 Xcode。從 App Store 或是 Apple Developer Connection 均可取得。</li>
+<li>用 Xcode 打開 <code>Localizer.xcodeproj</code></li>
+<li>直接編譯執行即可</li>
+</ul>
+
+</div>
+</body>
+</html>

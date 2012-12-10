@@ -1,0 +1,81 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8">
+<title>Localizer</title>
+<meta name="AppleOrder" content="0">
+<meta name="AppleTitle" content="Localizer Help">
+<meta name="AppleIcon" content="localizer.png">
+<meta name="KEYWORDS" content="Localizer">
+<meta name="DESCRIPTION" content="Localizer Help">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body>
+<div class="Destination">
+<h1>Localizer</h1>
+
+<p>A tool for maintaining a localized Cocoa app.</p>
+
+<ul>
+<li>2012 © Joe Hsieh</li>
+<li><a href="&#109;&#97;&#105;&#108;&#x74;&#x6f;&#x3a;&#x6a;&#111;&#x65;&#104;&#115;&#x69;&#x65;&#104;&#64;&#x6b;&#107;&#x62;&#111;&#x78;&#46;&#99;&#111;&#109;">&#x6a;&#111;&#x65;&#104;&#115;&#x69;&#x65;&#104;&#64;&#x6b;&#107;&#x62;&#111;&#x78;&#46;&#99;&#111;&#109;</a></li>
+</ul>
+
+<h2>Motivation</h2>
+
+<p>Apple has a great architecture for internationalization and
+localization, however, maintaining a localized iOS or Mac application
+is still a pain.</p>
+
+<p>Apple has a tool, genstring, which helps you to extract strings need
+to be localized from your source code, and generate a string-pair
+map. The tool is nice if you are working on an application which is
+never localized.</p>
+
+<p>In real world, what you are doing daily is maintaining an existing
+localization text file, and check if there is addition or deletion of
+the strings need to be localized if you ever change your source
+code. What genstring does is to generate a new file, but you do not
+want a new file, and to translate all of the strings in your project
+every time.</p>
+
+<p>What you really want is a tool, which knows these changes.</p>
+
+<p>That is what the <strong>Localizer</strong> app tries to solve.</p>
+
+<h2>The Workflow</h2>
+
+<p>Localizer is an editor for your "Localizable.strings" files, like any
+other document-based applications.</p>
+
+<p>Just open your existing files, add new files or folders of your source
+code, then simply click on the "Scan" button on the toolbar. After
+scanning, new strings will be in blue, while the strings ever
+localized but deleted from source code will be in red.</p>
+
+<p>Then, you can translate these strings from the table user interface,
+and save the file for furthur use. Localizer remembers where these
+strings are from, and the paths of your scan folders and files.</p>
+
+<h2>Requirement</h2>
+
+<ul>
+<li>Mac OS X 10.7</li>
+<li>Xcode</li>
+</ul>
+
+<h2>How to Build the Project?</h2>
+
+<ul>
+<li>Download Xcode. Xcode is available on Mac App Store and Apple
+Developer Connection.</li>
+<li>Open Localizer.xcodeproj with Xcode.</li>
+<li>Click on the "Run" button.</li>
+</ul>
+
+<p>Enjoy it!</p>
+
+</div>
+</body>
+</html>
