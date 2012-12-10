@@ -382,8 +382,7 @@
 								<object class="NSMenuItem" id="437104165">
 									<reference key="NSMenu" ref="789758025"/>
 									<string key="NSTitle">Delete</string>
-									<string key="NSKeyEquiv"/>
-									<int key="NSKeyEquivModMask">1048576</int>
+									<string type="base64-UTF8" key="NSKeyEquiv">CA</string>
 									<int key="NSMnemonicLoc">2147483647</int>
 									<reference key="NSOnImage" ref="1033313550"/>
 									<reference key="NSMixedImage" ref="310636482"/>
@@ -1301,7 +1300,7 @@
 			<object class="NSCustomObject" id="534910783">
 				<string key="NSClassName">JHPreferenceController</string>
 			</object>
-			<object class="NSCustomObject" id="676821284">
+			<object class="NSCustomObject" id="663484876">
 				<string key="NSClassName">JHAppDelegate</string>
 			</object>
 		</array>
@@ -1327,7 +1326,7 @@
 					<object class="IBOutletConnection" key="connection">
 						<string key="label">delegate</string>
 						<reference key="source" ref="1021"/>
-						<reference key="destination" ref="676821284"/>
+						<reference key="destination" ref="663484876"/>
 					</object>
 					<int key="connectionID">646</int>
 				</object>
@@ -2989,7 +2988,7 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">645</int>
-						<reference key="object" ref="676821284"/>
+						<reference key="object" ref="663484876"/>
 						<reference key="parent" ref="0"/>
 					</object>
 				</array>
