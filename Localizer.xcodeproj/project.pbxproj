@@ -157,8 +157,7 @@
 		39715A771637E4FC0098BC0A /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				D45FC25216762FE9005D9BF7 /* JHAppDelegate.h */,
-				D45FC25316762FE9005D9BF7 /* JHAppDelegate.m */,
+				D45FC2561676334F005D9BF7 /* App Delegate */,
 				39715A9D1637E6440098BC0A /* Controllers */,
 				39715A9C1637E6340098BC0A /* Views */,
 				39715A9B1637E6240098BC0A /* Models */,
@@ -299,6 +298,15 @@
 				D49A4D4B163848C900113ABE /* Images */,
 			);
 			name = art;
+			sourceTree = "<group>";
+		};
+		D45FC2561676334F005D9BF7 /* App Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				D45FC25216762FE9005D9BF7 /* JHAppDelegate.h */,
+				D45FC25316762FE9005D9BF7 /* JHAppDelegate.m */,
+			);
+			name = "App Delegate";
 			sourceTree = "<group>";
 		};
 		D49A4D4B163848C900113ABE /* Images */ = {

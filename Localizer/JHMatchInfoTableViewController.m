@@ -63,6 +63,7 @@
 }
 
 #pragma mark -  NSTableViewDelegateMatchInfoExtension
+
 - (void)tableView:(NSTableView *)inTableView didDeleteMatchInfos:(id)inSomething
 {
     [self removeMatchInfoArray:[arrayController selectedObjects]];
@@ -74,7 +75,6 @@
         NSPasteboard *pasteBoard = [NSPasteboard generalPasteboard];
         [pasteBoard clearContents];
         [pasteBoard writeObjects:[arrayController selectedObjects]];
-
     }
 }
 
@@ -114,7 +114,6 @@
         [self insetMatchInfoArray:matchInfoArray withIndex:[inIndexes firstIndex] + 1];
     }
 }
-
 
 - (void)reloadMatchInfoRecords:(NSArray *)inArray
 {
@@ -264,7 +263,11 @@
         [resultString appendFormat:@"/* %@ */\n",filePath];
         for (JHMatchInfo *matchInfo in [self matchInfoArray]) {
             if ([[matchInfo filePath] isEqualToString:filePath]) {
-                [resultString appendString:[NSString stringWithFormat:@"\"%@\" = \"%@\";/*%@*/ \n", matchInfo.key , matchInfo.translateString, matchInfo.comment]];
+				[resultString appendFormat:@"\"%@\" = \"%@\";",  matchInfo.key , matchInfo.translateString];
+				if ([matchInfo.comment length]) {
+					[resultString appendFormat:@" /* %@ */", matchInfo.comment];
+				}
+				[resultString appendString:@"\n"];
             }
         }
 		[resultString appendString:@"\n\n"];

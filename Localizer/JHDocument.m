@@ -81,12 +81,14 @@
     NSMutableString *resultString = [NSMutableString string];
 
     //寫入 header 的 files 路徑字串和 body 的 matchInfos 字串
-    [resultString appendFormat:@"%@%@",filePathTableViewController.relativeSourceFilepahtsStringRepresentation, matchInfoTableViewController.matchInfosString];
+    [resultString appendFormat:@"%@%@", filePathTableViewController.relativeSourceFilepahtsStringRepresentation, matchInfoTableViewController.matchInfosString];
 
     BOOL boolResult = [resultString writeToURL:absoluteURL atomically:YES encoding:NSUTF8StringEncoding error:outError];
 
     //成功儲存完相關資料後，更新 localizable 的 set
-    if (boolResult) [self updateLocalizableSet];
+    if (boolResult) {
+		[self updateLocalizableSet];
+	}
 
     return boolResult;
 }
