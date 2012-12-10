@@ -1,5 +1,5 @@
 /*
- JHPreferenceController.m
+ JHAppDelegate.m
  Copyright (C) 2012 Joe Hsieh
 
  Permission is hereby granted, free of charge, to any person obtaining
@@ -21,39 +21,19 @@
  ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
  CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  SOFTWARE.
-*/
+ */
 
-#import "JHPreferenceController.h"
+#import "JHAppDelegate.h"
 #import "JHSourceCodeParser.h"
 
-@implementation JHPreferenceController
+@implementation JHAppDelegate
 
-- (void)dealloc
+- (void)applicationDidFinishLaunching:(NSNotification *)notification
 {
-    self.window = nil;
-    self.message = nil;
-    self.subMessage = nil;
-    [super dealloc];
+	if (![[NSUserDefaults standardUserDefaults] objectForKey:JHAutoFillTranslationPreferenceKey]) {
+		[[NSUserDefaults standardUserDefaults] setBool:YES forKey:JHAutoFillTranslationPreferenceKey];
+	}
 }
 
-- (IBAction)showPreference:(id)sender
-{
-    if (!window) {
-        [NSBundle loadNibNamed:@"JHPreference" owner:self];
-        message.stringValue = NSLocalizedString(@"Fill translate string automatically.", @"");
-        subMessage.stringValue = NSLocalizedString(@"localizer will fill untranslate string with key automatically.", @"");
-    }
-    if (![window isVisible]) {
-        [window center];
-    }
-    [self.window makeKeyAndOrderFront:sender];
-}
 
-- (IBAction)clickCheckbox:(id)sender
-{
-    [[NSUserDefaults standardUserDefaults] setBool:(BOOL)[sender state] forKey:JHAutoFillTranslationPreferenceKey];
-    [[NSUserDefaults standardUserDefaults] synchronize];
-}
-
-@synthesize window, message, subMessage;
 @end

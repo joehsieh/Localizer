@@ -24,9 +24,9 @@
 */
 
 #import <Foundation/Foundation.h>
-extern NSString *const autoFillTranslateStr;
+
+extern NSString *const JHAutoFillTranslationPreferenceKey;
+
 @interface JHSourceCodeParser : NSObject
-
 - (NSMutableSet *)parse:(NSString *)filePath;
-
 @end

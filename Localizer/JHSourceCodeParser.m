@@ -26,7 +26,7 @@
 #import "JHSourceCodeParser.h"
 #import "JHMatchInfo.h"
 
-NSString *const autoFillTranslateStr = @"autoFillTranslateStr";
+NSString *const JHAutoFillTranslationPreferenceKey = @"autoFillTranslateStr";
 
 @implementation JHSourceCodeParser
 
@@ -56,7 +56,7 @@ static NSSet *makeMatchInfoSet(NSString *pattern, NSString *fileContent, NSStrin
 
         //檢查 userDefault 如果 autoFillTranslateStr 是打開的則 translate string 自動填入 key
 
-        if ([[NSUserDefaults standardUserDefaults] boolForKey:autoFillTranslateStr]) {
+        if ([[NSUserDefaults standardUserDefaults] boolForKey:JHAutoFillTranslationPreferenceKey]) {
             matchInfo.translateString = matchInfo.key;
         }
         else {
