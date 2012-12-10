@@ -71,8 +71,8 @@
 							<object class="NSMutableString" key="NSToolbarItemIdentifier">
 								<characters key="NS.bytes">569E15BD-A83A-4ADB-AC11-26F91E17675A</characters>
 							</object>
-							<string key="NSToolbarItemLabel">Add Scan Folders or Files</string>
-							<string key="NSToolbarItemPaletteLabel">Add Scan Folders or Files</string>
+							<string key="NSToolbarItemLabel">加入掃描目錄或檔案</string>
+							<string key="NSToolbarItemPaletteLabel">加入掃描目錄或檔案</string>
 							<string key="NSToolbarItemToolTip"/>
 							<nil key="NSToolbarItemView"/>
 							<object class="NSCustomResource" key="NSToolbarItemImage">
@@ -93,26 +93,27 @@
 							<object class="NSMutableString" key="NSToolbarItemIdentifier">
 								<characters key="NS.bytes">5B11DC54-0FCC-48AD-9B72-0ECCCFF62028</characters>
 							</object>
-							<string key="NSToolbarItemLabel">search</string>
-							<string key="NSToolbarItemPaletteLabel">search</string>
+							<string key="NSToolbarItemLabel">搜尋關鍵字</string>
+							<string key="NSToolbarItemPaletteLabel">搜尋關鍵字</string>
 							<nil key="NSToolbarItemToolTip"/>
 							<object class="NSSearchField" key="NSToolbarItemView" id="946016904">
 								<reference key="NSNextResponder"/>
 								<int key="NSvFlags">268</int>
-								<string key="NSFrame">{{0, 14}, {96, 22}}</string>
+								<string key="NSFrame">{{0, 14}, {120, 22}}</string>
 								<reference key="NSSuperview"/>
-								<reference key="NSWindow"/>
+								<reference key="NSNextKeyView"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="NSEnabled">YES</bool>
 								<object class="NSSearchFieldCell" key="NSCell" id="462318382">
 									<int key="NSCellFlags">342884416</int>
 									<int key="NSCellFlags2">268436544</int>
 									<string key="NSContents"/>
-									<object class="NSFont" key="NSSupport" id="343364975">
-										<string key="NSName">LucidaGrande</string>
+									<object class="NSFont" key="NSSupport">
+										<string key="NSName">STHeitiTC-Light</string>
 										<double key="NSSize">13</double>
-										<int key="NSfFlags">1044</int>
+										<int key="NSfFlags">16</int>
 									</object>
+									<string key="NSPlaceholderString">請輸入關鍵字</string>
 									<string key="NSCellIdentifier">_NS:9</string>
 									<reference key="NSControlView" ref="946016904"/>
 									<bool key="NSDrawsBackground">YES</bool>
@@ -175,7 +176,7 @@
 							<nil key="NSToolbarItemTarget"/>
 							<nil key="NSToolbarItemAction"/>
 							<string key="NSToolbarItemMinSize">{96, 22}</string>
-							<string key="NSToolbarItemMaxSize">{96, 22}</string>
+							<string key="NSToolbarItemMaxSize">{120, 22}</string>
 							<bool key="NSToolbarItemEnabled">YES</bool>
 							<bool key="NSToolbarItemAutovalidates">YES</bool>
 							<int key="NSToolbarItemTag">0</int>
@@ -186,8 +187,8 @@
 							<object class="NSMutableString" key="NSToolbarItemIdentifier">
 								<characters key="NS.bytes">783D1A43-F72B-4607-AE1A-52EEC842168E</characters>
 							</object>
-							<string key="NSToolbarItemLabel">Scan</string>
-							<string key="NSToolbarItemPaletteLabel">Scan</string>
+							<string key="NSToolbarItemLabel">掃描</string>
+							<string key="NSToolbarItemPaletteLabel">掃描</string>
 							<string key="NSToolbarItemToolTip"/>
 							<nil key="NSToolbarItemView"/>
 							<object class="NSCustomResource" key="NSToolbarItemImage">
@@ -208,40 +209,44 @@
 							<object class="NSMutableString" key="NSToolbarItemIdentifier">
 								<characters key="NS.bytes">991364A2-A7CE-47CB-8632-8FE4E1F4BB16</characters>
 							</object>
-							<string key="NSToolbarItemLabel">Filters</string>
-							<string key="NSToolbarItemPaletteLabel">Filters</string>
+							<string key="NSToolbarItemLabel">過濾字串</string>
+							<string key="NSToolbarItemPaletteLabel">過濾字串</string>
 							<nil key="NSToolbarItemToolTip"/>
 							<object class="NSSegmentedControl" key="NSToolbarItemView" id="437065941">
 								<reference key="NSNextResponder"/>
 								<int key="NSvFlags">268</int>
-								<string key="NSFrame">{{0, 14}, {311, 25}}</string>
+								<string key="NSFrame">{{0, 14}, {232, 25}}</string>
 								<reference key="NSSuperview"/>
-								<reference key="NSWindow"/>
+								<reference key="NSNextKeyView"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="NSEnabled">YES</bool>
 								<object class="NSSegmentedCell" key="NSCell" id="255789475">
 									<int key="NSCellFlags">67108864</int>
 									<int key="NSCellFlags2">0</int>
-									<reference key="NSSupport" ref="343364975"/>
+									<object class="NSFont" key="NSSupport" id="343364975">
+										<string key="NSName">LucidaGrande</string>
+										<double key="NSSize">13</double>
+										<int key="NSfFlags">1044</int>
+									</object>
 									<string key="NSCellIdentifier">_NS:9</string>
 									<reference key="NSControlView" ref="437065941"/>
 									<array class="NSMutableArray" key="NSSegmentImages">
 										<object class="NSSegmentItem">
-											<string key="NSSegmentItemLabel">All</string>
+											<string key="NSSegmentItemLabel">全部</string>
 											<bool key="NSSegmentItemSelected">YES</bool>
 											<int key="NSSegmentItemImageScaling">0</int>
 										</object>
 										<object class="NSSegmentItem">
-											<string key="NSSegmentItemLabel">Translared</string>
+											<string key="NSSegmentItemLabel">已翻譯</string>
 											<int key="NSSegmentItemTag">1</int>
 											<int key="NSSegmentItemImageScaling">0</int>
 										</object>
 										<object class="NSSegmentItem">
-											<string key="NSSegmentItemLabel">Untranslated</string>
+											<string key="NSSegmentItemLabel">未翻譯</string>
 											<int key="NSSegmentItemImageScaling">0</int>
 										</object>
 										<object class="NSSegmentItem">
-											<string key="NSSegmentItemLabel">Not Exist</string>
+											<string key="NSSegmentItemLabel">不存在</string>
 											<int key="NSSegmentItemImageScaling">0</int>
 										</object>
 									</array>
@@ -253,7 +258,7 @@
 							<nil key="NSToolbarItemTarget"/>
 							<nil key="NSToolbarItemAction"/>
 							<string key="NSToolbarItemMinSize">{104, 25}</string>
-							<string key="NSToolbarItemMaxSize">{311, 25}</string>
+							<string key="NSToolbarItemMaxSize">{320, 25}</string>
 							<bool key="NSToolbarItemEnabled">YES</bool>
 							<bool key="NSToolbarItemAutovalidates">YES</bool>
 							<int key="NSToolbarItemTag">0</int>
@@ -264,8 +269,8 @@
 							<object class="NSMutableString" key="NSToolbarItemIdentifier">
 								<characters key="NS.bytes">CCFAAA69-598F-4882-878F-9B5EBFD94D37</characters>
 							</object>
-							<string key="NSToolbarItemLabel">Update with Outside String</string>
-							<string key="NSToolbarItemPaletteLabel">Update with Outside String</string>
+							<string key="NSToolbarItemLabel">貼上外部字串</string>
+							<string key="NSToolbarItemPaletteLabel">貼上外部字串</string>
 							<string key="NSToolbarItemToolTip"/>
 							<nil key="NSToolbarItemView"/>
 							<object class="NSCustomResource" key="NSToolbarItemImage">
@@ -399,11 +404,11 @@
 														<string key="NSFrameSize">{1019, 17}</string>
 														<reference key="NSSuperview" ref="132856126"/>
 														<reference key="NSWindow"/>
-														<reference key="NSNextKeyView" ref="111826218"/>
+														<reference key="NSNextKeyView" ref="62829839"/>
 														<string key="NSReuseIdentifierKey">_NS:16</string>
 														<reference key="NSTableView" ref="558989796"/>
 													</object>
-													<object class="_NSCornerView" key="NSCornerView" id="111826218">
+													<object class="_NSCornerView" key="NSCornerView" id="62829839">
 														<reference key="NSNextResponder" ref="290018748"/>
 														<int key="NSvFlags">-2147483392</int>
 														<string key="NSFrame">{{224, 0}, {16, 17}}</string>
@@ -626,7 +631,7 @@
 											<reference key="NSBGColor" ref="690459342"/>
 											<int key="NScvFlags">4</int>
 										</object>
-										<reference ref="111826218"/>
+										<reference ref="62829839"/>
 									</array>
 									<string key="NSFrameSize">{1021, 483}</string>
 									<reference key="NSSuperview" ref="1065102651"/>
@@ -638,7 +643,7 @@
 									<reference key="NSHScroller" ref="740349334"/>
 									<reference key="NSContentView" ref="548235643"/>
 									<reference key="NSHeaderClipView" ref="132856126"/>
-									<reference key="NSCornerView" ref="111826218"/>
+									<reference key="NSCornerView" ref="62829839"/>
 									<bytes key="NSScrollAmts">QSAAAEEgAABBsAAAQbAAAA</bytes>
 									<double key="NSMinMagnification">0.25</double>
 									<double key="NSMaxMagnification">4</double>
@@ -669,11 +674,11 @@
 														<string key="NSFrameSize">{1019, 17}</string>
 														<reference key="NSSuperview" ref="930491211"/>
 														<reference key="NSWindow"/>
-														<reference key="NSNextKeyView" ref="3728418"/>
+														<reference key="NSNextKeyView" ref="342797155"/>
 														<string key="NSReuseIdentifierKey">_NS:16</string>
 														<reference key="NSTableView" ref="233160525"/>
 													</object>
-													<object class="_NSCornerView" key="NSCornerView" id="3728418">
+													<object class="_NSCornerView" key="NSCornerView" id="342797155">
 														<reference key="NSNextResponder" ref="576911534"/>
 														<int key="NSvFlags">-2147483392</int>
 														<string key="NSFrame">{{224, 0}, {16, 17}}</string>
@@ -781,7 +786,7 @@
 											<reference key="NSBGColor" ref="690459342"/>
 											<int key="NScvFlags">4</int>
 										</object>
-										<reference ref="3728418"/>
+										<reference ref="342797155"/>
 									</array>
 									<string key="NSFrame">{{0, 493}, {1021, 66}}</string>
 									<reference key="NSSuperview" ref="1065102651"/>
@@ -793,7 +798,7 @@
 									<reference key="NSHScroller" ref="557948489"/>
 									<reference key="NSContentView" ref="63663070"/>
 									<reference key="NSHeaderClipView" ref="930491211"/>
-									<reference key="NSCornerView" ref="3728418"/>
+									<reference key="NSCornerView" ref="342797155"/>
 									<bytes key="NSScrollAmts">QSAAAEEgAABBmAAAQZgAAA</bytes>
 									<double key="NSMinMagnification">0.25</double>
 									<double key="NSMaxMagnification">4</double>
@@ -1565,47 +1570,6 @@
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
 						<string key="minorKey">./Classes/JHScanFoldersTableView.h</string>
-					</object>
-				</object>
-				<object class="IBPartialClassDescription">
-					<string key="className">NSDocument</string>
-					<dictionary class="NSMutableDictionary" key="actions">
-						<string key="printDocument:">id</string>
-						<string key="revertDocumentToSaved:">id</string>
-						<string key="runPageLayout:">id</string>
-						<string key="saveDocument:">id</string>
-						<string key="saveDocumentAs:">id</string>
-						<string key="saveDocumentTo:">id</string>
-					</dictionary>
-					<dictionary class="NSMutableDictionary" key="actionInfosByName">
-						<object class="IBActionInfo" key="printDocument:">
-							<string key="name">printDocument:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="revertDocumentToSaved:">
-							<string key="name">revertDocumentToSaved:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="runPageLayout:">
-							<string key="name">runPageLayout:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="saveDocument:">
-							<string key="name">saveDocument:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="saveDocumentAs:">
-							<string key="name">saveDocumentAs:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="saveDocumentTo:">
-							<string key="name">saveDocumentTo:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-					</dictionary>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/NSDocument.h</string>
 					</object>
 				</object>
 			</array>

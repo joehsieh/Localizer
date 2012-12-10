@@ -16,10 +16,10 @@ Scan List
 
 /* JHMatchInfoTableView.m */
 "Delete" = "Delete";/**/ 
-"from" = "from";/**/ 
-"translate string" = "translate string";/**/ 
-"comment" = "comment";/**/ 
-"key" = "key";/**/ 
+"from" = "File";/**/ 
+"translate string" = "Translation";/**/ 
+"comment" = "Comment";/**/ 
+"key" = "English";/**/ 
 "Context Menu" = "Context Menu";/**/ 
 "Copy" = "Copy";/**/ 
 "Paste" = "Paste";/**/ 
