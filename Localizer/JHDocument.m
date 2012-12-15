@@ -24,150 +24,137 @@
 */
 
 #import "JHDocument.h"
-#import "JHSourceCodeParser.h"
+
 #import "JHFilePathTableViewController.h"
-#import "JHMatchInfo.h"
-#import "JHLocalizableSettingParser.h"
 #import "JHMatchInfoTableViewController.h"
-#import "JHMatchInfoRecordColorTransformer.h"
+#import "JHTranslatedWindowController.h"
+#import "JHSourceCodeParser.h"
+#import "JHLocalizableSettingParser.h"
+#import "JHMatchInfo.h"
 #import "NSString+RelativePath.h"
+
+@interface JHDocument() <JHTranslatedWindowControllerDelegate>
+@end
 
 @implementation JHDocument
 
 + (BOOL)autosavesInPlace
 {
-    return YES;
+	return YES;
 }
 
 - (void)dealloc
 {
-    self.filePathTableViewController = nil;
-    self.matchInfoTableViewController = nil;
-    self.translatedWindowController = nil;
-    self.matchInfoProcessor = nil;
-    self.localizableInfoSet = nil;
-    [super dealloc];
+	self.filePathTableViewController = nil;
+	self.matchInfoTableViewController = nil;
+	self.matchInfoProcessor = nil;
+	self.localizableInfoSet = nil;
+	[super dealloc];
 }
 
 - (id)init
 {
-    self = [super init];
-    if (self) {
-        // Registering value transformers
-        JHMatchInfoRecordColorTransformer *transformer = [[[JHMatchInfoRecordColorTransformer alloc] init] autorelease];
-        [NSValueTransformer setValueTransformer:transformer forName:@"JHMatchInfoRecordColorTransformer"];
-
-        matchInfoProcessor = [[JHMatchInfoProcessor alloc] init];
-        // 預設自動填入翻譯字串
-        // [[NSUserDefaults standardUserDefaults] setBool:YES forKey:autoFillTranslateStr];
-
-    }
-    return self;
+	self = [super init];
+	if (self) {
+		matchInfoProcessor = [[JHMatchInfoProcessor alloc] init];
+	}
+	return self;
 }
 
-#pragma mark -  override NSDocument
+#pragma mark -	override NSDocument
 
-//在 saveToURL 中才可以得到即將要存入的檔案路徑
+// We need to capture the path that we will write data to here. Due to
+// the sandboxing design of Mac OS X 10.7 and later, the file URL
+// passed from the
+// "writeToURL ofType:forSaveOperation:originalContentsURL:error:" is
+// a temporary file but not the real path, while the what contained in
+// the "originalContentsURL" might be nil.
+
 - (void)saveToURL:(NSURL *)url ofType:(NSString *)typeName forSaveOperation:(NSSaveOperationType)saveOperation completionHandler:(void (^)(NSError *))completionHandler
 {
-    [filePathTableViewController updateRelativeFilePathArrayWithNewBaseURL:url];
-
-    [super saveToURL:url ofType:typeName forSaveOperation:saveOperation completionHandler:completionHandler];
+	[filePathTableViewController updateRelativeFilePathArrayWithNewBaseURL:url];
+	[super saveToURL:url ofType:typeName forSaveOperation:saveOperation completionHandler:completionHandler];
 }
 
-//將檔案依照規定的格式寫入檔案中
+// Write data.
 - (BOOL)writeToURL:(NSURL *)absoluteURL ofType:(NSString *)typeName forSaveOperation:(NSSaveOperationType)saveOperation originalContentsURL:(NSURL *)absoluteOriginalContentsURL error:(NSError **)outError
 {
-    NSMutableString *resultString = [NSMutableString string];
+	NSMutableString *resultString = [NSMutableString string];
 
-    //寫入 header 的 files 路徑字串和 body 的 matchInfos 字串
-    [resultString appendFormat:@"%@%@", filePathTableViewController.relativeSourceFilepahtsStringRepresentation, matchInfoTableViewController.matchInfosString];
+	//寫入 header 的 files 路徑字串和 body 的 matchInfos 字串
+	[resultString appendFormat:@"%@%@", filePathTableViewController.relativeSourceFilepahtsStringRepresentation, matchInfoTableViewController.matchInfosString];
 
-    BOOL boolResult = [resultString writeToURL:absoluteURL atomically:YES encoding:NSUTF8StringEncoding error:outError];
+	BOOL boolResult = [resultString writeToURL:absoluteURL atomically:YES encoding:NSUTF8StringEncoding error:outError];
 
-    //成功儲存完相關資料後，更新 localizable 的 set
-    if (boolResult) {
+	//成功儲存完相關資料後，更新 localizable 的 set
+	if (boolResult) {
 		[self updateLocalizableSet];
 	}
 
-    return boolResult;
+	return boolResult;
 }
 
-//讀入檔案，並且利用 parser 得到所要的資料
+// Read data from "Localizable.string.
 - (BOOL)readFromData:(NSData *)data ofType:(NSString *)typeName error:(NSError **)outError
 {
-    BOOL readSuccess = NO;
-    //截取自 .strings 檔所讀出的 key value pair
-    NSString *localizableFileContent = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+	NSString *localizableFileContent = [[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding] autorelease];
+	if (!localizableFileContent) {
+		if (outError) {
+			*outError = [NSError errorWithDomain:NSCocoaErrorDomain code:NSFileReadUnknownError userInfo:nil];
+		}
+		return NO;
+	}
+	if (localizableFileContent) {
+		// get localizable related info from Localizable.strings
+		JHLocalizableSettingParser *localizableSettingParser = [[[JHLocalizableSettingParser alloc] init] autorelease];
 
-    if (!localizableFileContent && outError) {
-        *outError = [NSError errorWithDomain:NSCocoaErrorDomain
-                                        code:NSFileReadUnknownError userInfo:nil];
-    }
-    if (localizableFileContent) {
-        readSuccess = YES;
-        // get localizable related info from Localizable.strings
-        JHLocalizableSettingParser *localizableSettingParser = [[[JHLocalizableSettingParser alloc] init] autorelease];
+		NSArray *tempScanArray = nil;
+		NSSet *tempMatchRecordSet = nil;
 
-        NSArray *tempScanArray = nil;
-        NSSet *tempMatchRecordSet = nil;
+		[localizableSettingParser parse:localizableFileContent scanFolderPathArray:&tempScanArray matchRecordSet:&tempMatchRecordSet];
 
-        [localizableSettingParser parse:localizableFileContent scanFolderPathArray:&tempScanArray matchRecordSet:&tempMatchRecordSet];
-
-        scanArray = [tempScanArray copy];
-        localizableInfoSet = [tempMatchRecordSet copy];
-    }
-    [localizableFileContent release];
-
-    return readSuccess;
+		scanArray = [tempScanArray copy];
+		localizableInfoSet = [tempMatchRecordSet copy];
+	}
+	return YES;
 }
 
 - (void)windowControllerDidLoadNib:(NSWindowController *)windowController
 {
-    [super windowControllerDidLoadNib:windowController];
+	[super windowControllerDidLoadNib:windowController];
 
-    //將 undo manager 傳入 controller 讓 controller 可以自行 undo/redo
-    [self.matchInfoTableViewController setUndoManager:[self undoManager]];
-    [self.filePathTableViewController setUndoManager:[self undoManager]];
+	//將 undo manager 傳入 controller 讓 controller 可以自行 undo/redo
+	[self.matchInfoTableViewController setUndoManager:[self undoManager]];
+	[self.filePathTableViewController setUndoManager:[self undoManager]];
 
-    //載入 matchInfoTable 中的資料
-    [self.matchInfoTableViewController reloadMatchInfoRecords:[localizableInfoSet allObjects]];
+	//載入 matchInfoTable 中的資料
+	[self.matchInfoTableViewController reloadMatchInfoRecords:[localizableInfoSet allObjects]];
 
-    //載入 scan array 的資料
-    [self.filePathTableViewController setSourceFilePaths:scanArray withBaseURL:[self fileURL]];
+	//載入 scan array 的資料
+	[self.filePathTableViewController setSourceFilePaths:scanArray withBaseURL:[self fileURL]];
 
-    translatedWindowController = [[JHTranslatedWindowController alloc] initWithWindowNibName:@"JHTranslatedWindow"];
-    translatedWindowController.translatedWindowControllerDelegate = self;
+	JHTranslatedWindowController *translatedWindowController = [[[JHTranslatedWindowController alloc] initWithWindowNibName:@"JHTranslatedWindow"] autorelease];
+	translatedWindowController.translatedWindowControllerDelegate = self;
+	[self addWindowController:translatedWindowController];
 }
 
 - (NSString *)windowNibName
 {
-    return @"JHDocument";
+	return @"JHDocument";
 }
 
 #pragma mark - NSToolbarDelegate
 
 - (void)toolbarWillAddItem:(NSNotification *)notification
 {
-//    NSDictionary *toolbarItemNameDictionary = @{
-//        @"Add Scan Folders or Files": NSLocalizedString(@"Add Scan Folders or Files", @""),
-//        @"Scan":NSLocalizedString(@"Scan", @""),
-//        @"Insert External Strings":NSLocalizedString(@"Insert External Strings", @""),
-//        @"TranslatedCountString":NSLocalizedString(@"Translated", @""),
-//        @"UnTranslatedCountString":NSLocalizedString(@"Untranslated", @""),
-//        @"NotExistCountString":NSLocalizedString(@"NotExist", @"")
-//    };
-//
-//    NSToolbarItem *item = [notification.userInfo objectForKey:@"item"];
-//    item.label = [toolbarItemNameDictionary objectForKey:item.itemIdentifier];
 }
 
-#pragma mark -  button action
+#pragma mark -	button action
 
 //加入檔案路徑的 action
 - (IBAction)addScanFolderAndFiles:(id)sender
 {
-    NSOpenPanel* openPanel = [NSOpenPanel openPanel];
+	NSOpenPanel* openPanel = [NSOpenPanel openPanel];
 	[openPanel setCanChooseFiles:YES];
 	[openPanel setCanChooseDirectories:YES];
 	[openPanel setAllowsMultipleSelection:YES];
@@ -176,7 +163,7 @@
 	NSWindow *window = [[[self windowControllers] objectAtIndex:0] window];
 	[openPanel beginSheetModalForWindow:window completionHandler:^(NSInteger result) {
 		if (result == NSOKButton) {
-            NSMutableArray *pathsToAdd = [NSMutableArray array];
+			NSMutableArray *pathsToAdd = [NSMutableArray array];
 			NSSet *filePathSet = [NSSet setWithArray:self.filePathTableViewController.filePathArray];
 			NSArray *URLs = openPanel.URLs;
 			[URLs enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
@@ -184,7 +171,7 @@
 					[pathsToAdd addObject:obj];
 				}
 			}];
-            [filePathTableViewController addFilePaths:pathsToAdd];
+			[filePathTableViewController addFilePaths:pathsToAdd];
 		}
 
 	}];
@@ -193,19 +180,27 @@
 //merge src 和 localizable.strings 的資料
 - (IBAction)scan:(id)sender
 {
-    NSMutableSet *sourceCodeInfoSet = [NSMutableSet setWithSet:[self parseSourceCode:filePathTableViewController.filePathArray]];
+	NSArray *filePathArray = filePathTableViewController.filePathArray;
+	NSMutableSet *sourceCodeInfoSet = [NSMutableSet set];
 
-    // merge src info set and localizable info set
-    NSArray *result = [matchInfoProcessor mergeSetWithSrcInfoSet:sourceCodeInfoSet withLocalizableInfoSet:localizableInfoSet withLocalizableFileExist:([self fileURL] != nil)];
+	JHSourceCodeParser *sourceCodeParser = [[JHSourceCodeParser alloc] init];
+	for (NSURL *filePath in filePathArray) {
+		[sourceCodeInfoSet unionSet: [sourceCodeParser parse:[filePath path]]];
+	}
+	[sourceCodeParser release];
 
-    // reload match info table view
-    [self.matchInfoTableViewController reloadMatchInfoRecords:result];
+	// merge src info set and localizable info set
+	NSArray *result = [matchInfoProcessor mergeSetWithSrcInfoSet:sourceCodeInfoSet withLocalizableInfoSet:localizableInfoSet withLocalizableFileExist:([self fileURL] != nil)];
+
+	// reload match info table view
+	[self.matchInfoTableViewController reloadMatchInfoRecords:result];
 }
 
 - (IBAction)translate:(id)sender
 {
-    NSWindow *window = [[[self windowControllers] objectAtIndex:0] window];
-    [NSApp beginSheet:translatedWindowController.window modalForWindow:window modalDelegate:nil didEndSelector:NULL contextInfo:nil];
+	NSWindow *window = [[[self windowControllers] objectAtIndex:0] window];
+	JHTranslatedWindowController *translatedWindowController = [[self windowControllers] objectAtIndex:1];
+	[NSApp beginSheet:translatedWindowController.window modalForWindow:window modalDelegate:nil didEndSelector:NULL contextInfo:nil];
 }
 
 - (IBAction)filterWithSearchType:(id)sender
@@ -234,15 +229,15 @@
 	else if (action == @selector(scan:)) {
 		return !![[self filePathTableViewController].filePathArray count];
 	}
-    else if (action == @selector(translate:)) {
-        return YES;
-    }
-    else if (action == @selector(filterWithSearchType:)) {
+	else if (action == @selector(translate:)) {
+		return YES;
+	}
+	else if (action == @selector(filterWithSearchType:)) {
 		NSInteger tag = [menuItem tag];
 		[menuItem setState:([segmentedControl selectedSegment] == tag) ? NSOnState : NSOffState];
-        return YES;
-    }
-    else if (action == @selector(performFindPanelAction:)) {
+		return YES;
+	}
+	else if (action == @selector(performFindPanelAction:)) {
 		if ([menuItem tag] == 1) {
 			return YES;
 		}
@@ -260,58 +255,47 @@
 	else if (action == @selector(scan:)) {
 		return !![[self filePathTableViewController].filePathArray count];
 	}
-    else if (action == @selector(translate:)) {
-        return YES;
-    }
+	else if (action == @selector(translate:)) {
+		return YES;
+	}
 	return [super validateToolbarItem:theItem];
 }
 
 #pragma mark - Others
 
-- (NSSet *)parseSourceCode:(NSArray *)filePathArray
-{
-    NSMutableSet *sourceCodeInfoSet = [NSMutableSet set];
-    JHSourceCodeParser *sourceCodeParser = [[JHSourceCodeParser alloc] init];
-    for (NSURL *filePath in filePathArray) {
-        [sourceCodeInfoSet unionSet: [sourceCodeParser parse:[filePath path]]];
-    }
-    [sourceCodeParser release];
-    return sourceCodeInfoSet;
-}
-
 - (void)updateLocalizableSet
 {
-    NSArray *updatedLocalizableInfoArray = [NSArray arrayWithArray:matchInfoTableViewController.matchInfoArray];
+	NSArray *updatedLocalizableInfoArray = [NSArray arrayWithArray:matchInfoTableViewController.matchInfoArray];
 
-    NSSet *temp = localizableInfoSet;
-    localizableInfoSet = [[NSSet setWithArray:updatedLocalizableInfoArray] retain];
-    [temp release];
+	NSSet *temp = localizableInfoSet;
+	localizableInfoSet = [[NSSet setWithArray:updatedLocalizableInfoArray] retain];
+	[temp release];
 }
 
 - (void)windowController:(JHTranslatedWindowController *)inWindowController didMerge:(id)inSomething;
 {
-    NSUndoManager *undoManager = [self undoManager];
-    NSString *inActionName = NSLocalizedString(@"Translate", @"");
-    [[undoManager prepareWithInvocationTarget:matchInfoTableViewController] restoreMatchinfoArray:[[[matchInfoTableViewController.arrayController content]copy]autorelease]  actionName:inActionName];
-    if (!undoManager.isUndoing) {
-        [undoManager setActionName:NSLocalizedString(inActionName, @"")];
-    }
-    NSString *translatedContent = [NSString stringWithFormat:@"/* Not exist */ \n %@",translatedWindowController.translatedView.textStorage.string];
+	NSUndoManager *undoManager = [self undoManager];
+	NSString *inActionName = NSLocalizedString(@"Translate", @"");
+	[[undoManager prepareWithInvocationTarget:matchInfoTableViewController] restoreMatchinfoArray:[[[matchInfoTableViewController.arrayController content]copy]autorelease]	 actionName:inActionName];
+	if (!undoManager.isUndoing) {
+		[undoManager setActionName:NSLocalizedString(inActionName, @"")];
+	}
+	NSString *translatedContent = [NSString stringWithFormat:@"/* Not exist */ \n %@", inWindowController.translatedView.textStorage.string];
 
-    // 在加入翻譯字串前，先將 localizanbleSet 更新到最新的狀態
-    [self updateLocalizableSet];
+	// 在加入翻譯字串前，先將 localizanbleSet 更新到最新的狀態
+	[self updateLocalizableSet];
 
-    if (translatedContent && localizableInfoSet) {
-        JHLocalizableSettingParser *localizableSettingParser = [[[JHLocalizableSettingParser alloc] init] autorelease];
+	if (translatedContent && localizableInfoSet) {
+		JHLocalizableSettingParser *localizableSettingParser = [[[JHLocalizableSettingParser alloc] init] autorelease];
 
-        NSArray *tempScanArray = nil;
-        NSSet *translatedMatchRecordSet = nil;
+		NSArray *tempScanArray = nil;
+		NSSet *translatedMatchRecordSet = nil;
 
-        [localizableSettingParser parse:translatedContent scanFolderPathArray:&tempScanArray matchRecordSet:&translatedMatchRecordSet];
+		[localizableSettingParser parse:translatedContent scanFolderPathArray:&tempScanArray matchRecordSet:&translatedMatchRecordSet];
 
-        NSMutableArray *result = [NSMutableArray arrayWithArray:[localizableInfoSet allObjects]];
+		NSMutableArray *result = [NSMutableArray arrayWithArray:[localizableInfoSet allObjects]];
 
-        [translatedMatchRecordSet enumerateObjectsUsingBlock:^(JHMatchInfo *obj, BOOL *stop) {
+		[translatedMatchRecordSet enumerateObjectsUsingBlock:^(JHMatchInfo *obj, BOOL *stop) {
 				//matchInfo 是以 key 為比對方式，key 相同就存在，在除了 key 以外的資訊有可能不同，所以採用 replace 的方式置換
 				if ([localizableInfoSet containsObject:obj]) {
 					NSUInteger index = [result indexOfObject:obj];
@@ -333,8 +317,8 @@
 					[result addObject:obj];
 				}
 			}];
-        [matchInfoTableViewController reloadMatchInfoRecords:result];
-    }
+		[matchInfoTableViewController reloadMatchInfoRecords:result];
+	}
 }
 
 @synthesize filePathTableViewController;
@@ -342,7 +326,6 @@
 @synthesize segmentedControl;
 @synthesize searchField;
 
-@synthesize translatedWindowController;
 @synthesize localizableInfoSet;
 @synthesize scanArray;
 @synthesize matchInfoProcessor;

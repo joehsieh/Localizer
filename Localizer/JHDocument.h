@@ -27,21 +27,19 @@
 #import "JHFilePathTableViewController.h"
 #import "JHMatchInfoTableViewController.h"
 #import "JHMatchInfoProcessor.h"
-#import "JHTranslatedWindowController.h"
 
 // An abstract document which represents a "Localizable.strings" file.
 
-@interface JHDocument : NSDocument <NSToolbarDelegate,JHTranslatedWindowControllerDelegate>
+@interface JHDocument : NSDocument <NSToolbarDelegate>
 {
-    IBOutlet JHFilePathTableViewController *filePathTableViewController;
-    IBOutlet JHMatchInfoTableViewController *matchInfoTableViewController;
+	IBOutlet JHFilePathTableViewController *filePathTableViewController;
+	IBOutlet JHMatchInfoTableViewController *matchInfoTableViewController;
 	IBOutlet NSSegmentedControl *segmentedControl;
 	IBOutlet NSSearchField *searchField;
 
-    JHTranslatedWindowController *translatedWindowController;
-    JHMatchInfoProcessor *matchInfoProcessor;
-    NSArray *scanArray;
-    NSSet *localizableInfoSet;
+	JHMatchInfoProcessor *matchInfoProcessor;
+	NSArray *scanArray;
+	NSSet *localizableInfoSet;
 }
 
 - (IBAction)addScanFolderAndFiles:(id)sender;
@@ -53,7 +51,6 @@
 @property (assign, nonatomic) IBOutlet JHMatchInfoTableViewController *matchInfoTableViewController;
 @property (assign, nonatomic) IBOutlet NSSegmentedControl *segmentedControl;
 @property (assign, nonatomic) IBOutlet NSSearchField *searchField;
-@property (assign, nonatomic) JHTranslatedWindowController *translatedWindowController;
 
 @property (retain, nonatomic) JHMatchInfoProcessor *matchInfoProcessor;
 @property (retain, nonatomic) NSSet *localizableInfoSet;

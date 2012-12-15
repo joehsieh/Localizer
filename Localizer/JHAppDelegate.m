@@ -25,15 +25,19 @@
 
 #import "JHAppDelegate.h"
 #import "JHSourceCodeParser.h"
+#import "JHMatchInfoRecordColorTransformer.h"
 
 @implementation JHAppDelegate
 
 - (void)applicationDidFinishLaunching:(NSNotification *)notification
 {
+	// Registering value transformers
+	JHMatchInfoRecordColorTransformer *transformer = [[[JHMatchInfoRecordColorTransformer alloc] init] autorelease];
+	[NSValueTransformer setValueTransformer:transformer forName:@"JHMatchInfoRecordColorTransformer"];
+
 	if (![[NSUserDefaults standardUserDefaults] objectForKey:JHAutoFillTranslationPreferenceKey]) {
 		[[NSUserDefaults standardUserDefaults] setBool:YES forKey:JHAutoFillTranslationPreferenceKey];
 	}
 }
-
 
 @end
