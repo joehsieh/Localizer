@@ -40,4 +40,16 @@
 	}
 }
 
+- (IBAction)openHomepage:(id)sender
+{
+	NSURL *URL = [NSURL URLWithString:@"https://github.com/ninja31312/Localizer"];
+	[[NSWorkspace sharedWorkspace] openURL:URL];
+}
+- (IBAction)reportIssue:(id)sender
+{
+	NSURL *URL = [NSURL URLWithString:@"https://github.com/ninja31312/Localizer/issues"];
+	[[NSWorkspace sharedWorkspace] openURL:URL];
+}
+
+
 @end

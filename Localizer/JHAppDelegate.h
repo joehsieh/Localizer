@@ -27,4 +27,6 @@
 
 @interface JHAppDelegate : NSObject  <NSApplicationDelegate>
 
+- (IBAction)openHomepage:(id)sender;
+- (IBAction)reportIssue:(id)sender;
 @end
