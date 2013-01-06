@@ -78,8 +78,9 @@ static NSSet *parseFile(NSString *baseFilePath, NSString *extFilePath, NSError *
     NSString *absoluteFilePath = [baseFilePath stringByAppendingPathComponent:extFilePath];
 
     BOOL isDir = NO;
+    // Because we used GTMUILocalizer, so we must maintain key in xib.
     [[NSFileManager defaultManager] fileExistsAtPath:absoluteFilePath isDirectory:&isDir];
-    if ([[NSArray arrayWithObjects:@"h", @"m", @"mm", nil] containsObject:[absoluteFilePath pathExtension]] || isDir) {
+    if ([[NSArray arrayWithObjects:@"h", @"m", @"mm", @"xib", nil] containsObject:[absoluteFilePath pathExtension]] || isDir) {
         NSString *fileContent = [NSString stringWithContentsOfFile:absoluteFilePath encoding:NSUTF8StringEncoding error:&e];
         if (e) {
             if (error != nil) {
@@ -102,7 +103,8 @@ static NSSet *parseFile(NSString *baseFilePath, NSString *extFilePath, NSError *
          */
 		NSArray *patterns = [NSArray arrayWithObjects:
 							 @"NSLocalizedString\\s*\\(\\s*@\"(.*?)\"\\s*,\\s*@?\"?(.*?)\"?\\s*\\)",
-							 @"LFLSTR\\s*\\(\\s*@\"(.*?)\"\\s*\\)",nil];
+							 @"LFLSTR\\s*\\(\\s*@\"(.*?)\"\\s*\\)",
+                             @"\\^(.*?)<",nil];
 		for (NSString *pattern in patterns) {
 			[result unionSet:makeMatchInfoSet(pattern, fileContent, extFilePath)];
 		}
