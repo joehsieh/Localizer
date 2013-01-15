@@ -30,4 +30,6 @@
 //according to that does localizable.strings file exit to merge src
 //info set and localizable info set
 - (NSArray *)mergeSetWithSrcInfoSet:(NSSet *)inSrcInfoSet withLocalizableInfoSet:(NSSet *)inLocalizableInfoSet withLocalizableFileExist:(BOOL)isLocalizableFileExist;
+
+- (NSArray *)getAddedSortedArray:(NSSet *)inSrcInfoSet localizableInfoSet:(NSSet *)inLocalizableInfoSet;
 @end

@@ -185,6 +185,19 @@
 	}
 	[sourceCodeParser release];
 
+	NSArray *addedResult = [matchInfoProcessor getAddedSortedArray:sourceCodeInfoSet localizableInfoSet:localizableInfoSet];
+	if([addedResult count] && [addedResult count] < 10){
+		NSMutableString *message = [NSMutableString string];
+		[message appendFormat:NSLocalizedString(@"After this scan, we have added %d new key\n\n", @""),[addedResult count]];
+		int count = 0;
+		for (JHMatchInfo *addedMatchInfo in addedResult){
+			count ++;
+			[message appendFormat:@"%d. %@\n\n",count, addedMatchInfo.key];
+		}
+		NSAlert *alert = [NSAlert alertWithMessageText:message defaultButton:NSLocalizedString(@"OK", @"") alternateButton:nil otherButton:nil informativeTextWithFormat:@""];
+		NSWindow *window = [[[self windowControllers] objectAtIndex:0] window];
+		[alert beginSheetModalForWindow:window modalDelegate:nil didEndSelector:nil contextInfo:nil];
+	}
 	// merge src info set and localizable info set
 	NSArray *result = [matchInfoProcessor mergeSetWithSrcInfoSet:sourceCodeInfoSet withLocalizableInfoSet:localizableInfoSet withLocalizableFileExist:([self fileURL] != nil)];
 
