@@ -26,6 +26,7 @@
 #import <Cocoa/Cocoa.h>
 #import "JHFilePathTableViewController.h"
 #import "JHMatchInfoTableViewController.h"
+#import "JHTranslatedWindowController.h"
 #import "JHMatchInfoProcessor.h"
 
 // An abstract document which represents a "Localizable.strings" file.
@@ -53,6 +54,7 @@
 @property (assign, nonatomic) IBOutlet NSSearchField *searchField;
 
 @property (retain, nonatomic) JHMatchInfoProcessor *matchInfoProcessor;
+@property (retain, nonatomic) JHTranslatedWindowController *translatedWindowController;
 @property (retain, nonatomic) NSSet *localizableInfoSet;
 @property (retain, nonatomic) NSArray *scanArray;
 

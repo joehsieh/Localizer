@@ -27,7 +27,6 @@
 
 #import "JHFilePathTableViewController.h"
 #import "JHMatchInfoTableViewController.h"
-#import "JHTranslatedWindowController.h"
 #import "JHSourceCodeParser.h"
 #import "JHLocalizableSettingParser.h"
 #import "JHMatchInfo.h"
@@ -49,6 +48,7 @@
 	self.matchInfoTableViewController = nil;
 	self.matchInfoProcessor = nil;
 	self.localizableInfoSet = nil;
+	self.translatedWindowController = nil;
 	[super dealloc];
 }
 
@@ -132,10 +132,6 @@
 
 	//載入 scan array 的資料
 	[self.filePathTableViewController setSourceFilePaths:scanArray withBaseURL:[self fileURL]];
-
-	JHTranslatedWindowController *translatedWindowController = [[[JHTranslatedWindowController alloc] initWithWindowNibName:@"JHTranslatedWindow"] autorelease];
-	translatedWindowController.translatedWindowControllerDelegate = self;
-	[self addWindowController:translatedWindowController];
 }
 
 - (NSString *)windowNibName
@@ -198,8 +194,12 @@
 
 - (IBAction)translate:(id)sender
 {
+	if(!translatedWindowController){
+		translatedWindowController = [[[JHTranslatedWindowController alloc] initWithWindowNibName:@"JHTranslatedWindow"] autorelease];
+		translatedWindowController.translatedWindowControllerDelegate = self;
+		[self addWindowController:translatedWindowController];
+	}
 	NSWindow *window = [[[self windowControllers] objectAtIndex:0] window];
-	JHTranslatedWindowController *translatedWindowController = [[self windowControllers] objectAtIndex:1];
 	[NSApp beginSheet:translatedWindowController.window modalForWindow:window modalDelegate:nil didEndSelector:NULL contextInfo:nil];
 }
 
@@ -323,6 +323,7 @@
 
 @synthesize filePathTableViewController;
 @synthesize matchInfoTableViewController;
+@synthesize translatedWindowController;
 @synthesize segmentedControl;
 @synthesize searchField;
 
