@@ -100,8 +100,8 @@
 - (void)tableView:(NSTableView *)inTableView didPasteMatchInfosWithIndexes:(NSIndexSet *)inIndexes
 {
     NSPasteboard *pasteboard = [NSPasteboard generalPasteboard];
-    NSArray *classArray = [NSArray arrayWithObject:[JHMatchInfo class]];
-    NSDictionary *options = [NSDictionary dictionary];
+    NSArray *classArray = @[[JHMatchInfo class]];
+    NSDictionary *options = @{};
 
     BOOL ok = [pasteboard canReadObjectForClasses:classArray options:options];
     if (ok) {
@@ -209,7 +209,7 @@
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(JHMatchInfo *)object change:(NSDictionary *)change context:(void *)context
 {
-    id oldValue = [change objectForKey:NSKeyValueChangeOldKey];
+    id oldValue = change[NSKeyValueChangeOldKey];
     [[undoManager prepareWithInvocationTarget:self] changeKeyPath:keyPath ofObject:object toValue:oldValue];
     if (!undoManager.isUndoing) {
         [undoManager setActionName:NSLocalizedString(@"Edit", @"")];

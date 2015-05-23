@@ -49,7 +49,7 @@
 - (NSArray *)scanFolderPathsFromString:(NSString *)inFolderPaths
 {
     if (![inFolderPaths length]) {
-        return [NSArray array];
+        return @[];
     }
     NSMutableArray *result = [NSMutableArray array];
     for (NSString *folderPath in [inFolderPaths componentsSeparatedByString:@","]) {
@@ -133,7 +133,7 @@
         //matchInfo 是以 key 為比對方式，key 相同就存在，在除了 key 以外的資訊有可能不同，所以採用 replace 的方式置換
         if ([result containsObject:matchInfo]) {
             NSUInteger index = [result indexOfObject:matchInfo];
-            [result replaceObjectAtIndex:index withObject:matchInfo];
+            result[index] = matchInfo;
         }
         else {
             [result addObject:matchInfo];

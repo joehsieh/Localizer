@@ -42,10 +42,10 @@
 - (void)reloadMatchInfoRecords:(NSArray *)inArray;
 
 //利用 match info 的所有資訊生成一個固定格式的字串
-- (NSString *)matchInfosString;
+@property (NS_NONATOMIC_IOSONLY, readonly, copy) NSString *matchInfosString;
 
 //回傳排序好的 match info file path 陣列
-- (NSArray *)sortedMatchInfoFilePathArray;
+@property (NS_NONATOMIC_IOSONLY, readonly, copy) NSArray *sortedMatchInfoFilePathArray;
 
 //matchInfo array 要 redo 的時候使用這個介面 restore 資料
 - (void)restoreMatchinfoArray:(NSArray *)inArray actionName:(NSString *)inActionName;

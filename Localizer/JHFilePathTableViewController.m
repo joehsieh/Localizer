@@ -83,7 +83,7 @@
     [super dealloc];
 }
 
-- (id)init
+- (instancetype)init
 {
     self = [super init];
     if (self) {
@@ -97,7 +97,7 @@
 - (void)awakeFromNib
 {
 	// Register to accept filename drag/drop
-	[self.view registerForDraggedTypes:[NSArray arrayWithObjects:NSFilenamesPboardType, nil]];
+	[self.view registerForDraggedTypes:@[NSFilenamesPboardType]];
     NSTableView *tableView = (NSTableView *)self.view;
     NSTableColumn *column = [tableView tableColumnWithIdentifier:@"path"];
     [column setEditable:NO];
@@ -129,7 +129,7 @@
 
 - (id)tableView:(NSTableView *)tableView objectValueForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row
 {
-    return [[filePathArray  objectAtIndex:row] path];
+    return [filePathArray[row] path];
 }
 
 - (BOOL)tableView:(NSTableView *)aTableView acceptDrop:(id<NSDraggingInfo>)info row:(NSInteger)row dropOperation:(NSTableViewDropOperation)dropOperation
@@ -172,8 +172,8 @@
 - (void)tableView:(NSTableView *)inTableView didOpenScanFoldersWithIndexes:(NSIndexSet *)inIndexes
 {
     [inIndexes enumerateIndexesUsingBlock:^(NSUInteger idx, BOOL *stop) {
-        NSDictionary* errors = [NSDictionary dictionary];
-		NSString *scriptString = [NSString stringWithFormat:@"tell application \"Finder\" \n activate\n open (\"%@\" as POSIX file) \n end tell",[filePathArray objectAtIndex:idx]];
+        NSDictionary* errors = @{};
+		NSString *scriptString = [NSString stringWithFormat:@"tell application \"Finder\" \n activate\n open (\"%@\" as POSIX file) \n end tell",filePathArray[idx]];
         NSAppleScript* appleScript = [[NSAppleScript alloc] initWithSource:scriptString];
         [appleScript executeAndReturnError:&errors];
         [appleScript release];

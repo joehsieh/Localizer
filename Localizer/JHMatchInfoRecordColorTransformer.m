@@ -58,13 +58,13 @@
 - (id)reverseTransformedValue:(id)value
 {
     if (value == [NSColor blueColor]) {
-        return [NSNumber numberWithInt:unTranslated];
+        return @(unTranslated);
     }
     else if(value == [NSColor redColor]) {
-        return [NSNumber numberWithInt:notExist];
+        return @(notExist);
     }
     else if(value == [NSColor blackColor]) {
-        return [NSNumber numberWithInt:translated];
+        return @(translated);
     }
     return nil;
 }

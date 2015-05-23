@@ -136,7 +136,7 @@ NSString *const JHMatchInfoUTI = @"com.joehsieh.JHMatchInfo";
     [coder encodeObject:self.filePath forKey:@"kFilePath"];
 }
 
-- (id)initWithCoder:(NSCoder *)aDecoder
+- (instancetype)initWithCoder:(NSCoder *)aDecoder
 {
     self = [super init];
     if (self) {

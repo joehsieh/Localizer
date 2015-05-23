@@ -27,7 +27,7 @@
 
 @implementation JHMatchInfoTableView
 
-- (id)initWithCoder:(NSCoder *)aDecoder
+- (instancetype)initWithCoder:(NSCoder *)aDecoder
 {
     self = [super initWithCoder:aDecoder];
 
@@ -43,7 +43,7 @@
         [self setAllowsMultipleSelection: YES];
 
         for (int i = 0; i < [self.tableColumns count] ; i++) {
-            [[self.tableColumns objectAtIndex:i] setHeaderCell:[[[NSTableHeaderCell alloc] initTextCell:[headerNameArray objectAtIndex:i]] autorelease]];
+            [(self.tableColumns)[i] setHeaderCell:[[[NSTableHeaderCell alloc] initTextCell:headerNameArray[i]] autorelease]];
         }
     }
     return self;

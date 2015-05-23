@@ -25,11 +25,11 @@
 
 #import <Foundation/Foundation.h>
 
-typedef enum {
+typedef NS_ENUM(unsigned int, MatchInfoRecordState) {
     notExist, // not exist
     unTranslated, // untranslatedString
     translated // translatedString
-} MatchInfoRecordState;
+};
 
 @interface JHMatchInfo : NSObject<NSCopying, NSCoding, NSPasteboardWriting, NSPasteboardReading>
 {
@@ -45,7 +45,6 @@ typedef enum {
 @property (retain, nonatomic) NSString *comment;
 @property (retain, nonatomic) NSString *filePath;
 
-- (MatchInfoRecordState)state;
-- (void)setState:(MatchInfoRecordState)state;
+@property (NS_NONATOMIC_IOSONLY) MatchInfoRecordState state;
 
 @end

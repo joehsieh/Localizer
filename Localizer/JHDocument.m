@@ -52,7 +52,7 @@
 	[super dealloc];
 }
 
-- (id)init
+- (instancetype)init
 {
 	self = [super init];
 	if (self) {
@@ -154,9 +154,9 @@
 	[openPanel setCanChooseFiles:YES];
 	[openPanel setCanChooseDirectories:YES];
 	[openPanel setAllowsMultipleSelection:YES];
-	[openPanel setAllowedFileTypes:[NSArray arrayWithObjects:@"h", @"m",@"mm", nil]];
+	[openPanel setAllowedFileTypes:@[@"h", @"m",@"mm"]];
 
-	NSWindow *window = [[[self windowControllers] objectAtIndex:0] window];
+	NSWindow *window = [[self windowControllers][0] window];
 	[openPanel beginSheetModalForWindow:window completionHandler:^(NSInteger result) {
 		if (result == NSOKButton) {
 			NSMutableArray *pathsToAdd = [NSMutableArray array];
@@ -195,7 +195,7 @@
 			[message appendFormat:@"%d. %@\n\n",count, addedMatchInfo.key];
 		}
 		NSAlert *alert = [NSAlert alertWithMessageText:message defaultButton:NSLocalizedString(@"OK", @"") alternateButton:nil otherButton:nil informativeTextWithFormat:@""];
-		NSWindow *window = [[[self windowControllers] objectAtIndex:0] window];
+		NSWindow *window = [[self windowControllers][0] window];
 		[alert beginSheetModalForWindow:window modalDelegate:nil didEndSelector:nil contextInfo:nil];
 	}
 	// merge src info set and localizable info set
@@ -212,7 +212,7 @@
 		translatedWindowController.translatedWindowControllerDelegate = self;
 		[self addWindowController:translatedWindowController];
 	}
-	NSWindow *window = [[[self windowControllers] objectAtIndex:0] window];
+	NSWindow *window = [[self windowControllers][0] window];
 	[NSApp beginSheet:translatedWindowController.window modalForWindow:window modalDelegate:nil didEndSelector:NULL contextInfo:nil];
 }
 
@@ -226,7 +226,7 @@
 - (IBAction)performFindPanelAction:(id)sender
 {
 	if ([sender tag] == 1) {
-		NSWindow *window = [[[self windowControllers] objectAtIndex:0] window];
+		NSWindow *window = [[self windowControllers][0] window];
 		[window makeFirstResponder:searchField];
 	}
 }
@@ -313,7 +313,7 @@
 				if ([localizableInfoSet containsObject:obj]) {
 					NSUInteger index = [result indexOfObject:obj];
 
-					JHMatchInfo *matchInfo = [result objectAtIndex:index];
+					JHMatchInfo *matchInfo = result[index];
 					obj.filePath = matchInfo.filePath;
 
 					if ([obj.key isEqualToString:obj.translateString]) {
@@ -323,7 +323,7 @@
 					if ([obj.filePath isEqualToString:@"Not exist"]) {
 						obj.state = notExist;
 					}
-					[result replaceObjectAtIndex:index withObject:obj];
+					result[index] = obj;
 				}
 				else {
 					obj.state = notExist;

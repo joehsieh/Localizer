@@ -26,7 +26,7 @@
     NSMutableArray *pathComponents2 = [NSMutableArray arrayWithArray:[theBasePath pathComponents]];
 
     while ([pathComponents1 count] > 0) {        
-        NSString *topComponent1 = [pathComponents1 objectAtIndex:0];
+        NSString *topComponent1 = pathComponents1[0];
         [pathComponents1 removeObjectAtIndex:0];
 
         if ([topComponent1 isEqualToString:@".."]) {
@@ -55,8 +55,8 @@
 
     // Remove same path components
     while ([pathComponents1 count] > 0 && [pathComponents2 count] > 0) {
-        NSString *topComponent1 = [pathComponents1 objectAtIndex:0];
-        NSString *topComponent2 = [pathComponents2 objectAtIndex:0];
+        NSString *topComponent1 = pathComponents1[0];
+        NSString *topComponent2 = pathComponents2[0];
         if (![topComponent1 isEqualToString:topComponent2]) {
             break;
         }
