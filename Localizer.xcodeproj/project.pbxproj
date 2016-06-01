@@ -28,7 +28,6 @@
 		39F25AEC1626A36900BAF9C9 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 39F25AEA1626A36900BAF9C9 /* Credits.rtf */; };
 		39F25AF21626A36900BAF9C9 /* JHDocument.xib in Resources */ = {isa = PBXBuildFile; fileRef = 39F25AF01626A36900BAF9C9 /* JHDocument.xib */; };
 		39F25AF51626A36A00BAF9C9 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 39F25AF31626A36A00BAF9C9 /* MainMenu.xib */; };
-		39F25AFD1626A36A00BAF9C9 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39F25AFC1626A36A00BAF9C9 /* SenTestingKit.framework */; };
 		39F25AFE1626A36A00BAF9C9 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39F25ADB1626A36900BAF9C9 /* Cocoa.framework */; };
 		D45FC25416762FEA005D9BF7 /* JHAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D45FC25316762FE9005D9BF7 /* JHAppDelegate.m */; };
 		D45FC25916764BD9005D9BF7 /* Help in Resources */ = {isa = PBXBuildFile; fileRef = D45FC25716764BD9005D9BF7 /* Help */; };
@@ -95,8 +94,7 @@
 		39F25AEB1626A36900BAF9C9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
 		39F25AF11626A36900BAF9C9 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/JHDocument.xib; sourceTree = "<group>"; };
 		39F25AF41626A36A00BAF9C9 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		39F25AFB1626A36A00BAF9C9 /* LocalizerTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LocalizerTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
-		39F25AFC1626A36A00BAF9C9 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		39F25AFB1626A36A00BAF9C9 /* LocalizerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LocalizerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D45FC25216762FE9005D9BF7 /* JHAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHAppDelegate.h; sourceTree = "<group>"; };
 		D45FC25316762FE9005D9BF7 /* JHAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHAppDelegate.m; sourceTree = "<group>"; };
 		D45FC25816764BD9005D9BF7 /* en */ = {isa = PBXFileReference; lastKnownFileType = folder; name = en; path = en.lproj/Help; sourceTree = "<group>"; };
@@ -122,7 +120,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				39F25AFD1626A36A00BAF9C9 /* SenTestingKit.framework in Frameworks */,
 				39F25AFE1626A36A00BAF9C9 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -244,7 +241,7 @@
 			isa = PBXGroup;
 			children = (
 				39F25AD71626A36900BAF9C9 /* Localizer.app */,
-				39F25AFB1626A36A00BAF9C9 /* LocalizerTests.octest */,
+				39F25AFB1626A36A00BAF9C9 /* LocalizerTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -253,7 +250,6 @@
 			isa = PBXGroup;
 			children = (
 				39F25ADB1626A36900BAF9C9 /* Cocoa.framework */,
-				39F25AFC1626A36A00BAF9C9 /* SenTestingKit.framework */,
 				39F25ADD1626A36900BAF9C9 /* Other Frameworks */,
 			);
 			name = Frameworks;
@@ -360,8 +356,8 @@
 			);
 			name = LocalizerTests;
 			productName = LocalizerTests;
-			productReference = 39F25AFB1626A36A00BAF9C9 /* LocalizerTests.octest */;
-			productType = "com.apple.product-type.bundle";
+			productReference = 39F25AFB1626A36A00BAF9C9 /* LocalizerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -626,13 +622,12 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Localizer.app/Contents/MacOS/Localizer";
 				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Localizer/Localizer-Prefix.pch";
 				INFOPLIST_FILE = "LocalizerTests/LocalizerTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = octest;
 			};
 			name = Debug;
 		};
@@ -641,13 +636,12 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Localizer.app/Contents/MacOS/Localizer";
 				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Localizer/Localizer-Prefix.pch";
 				INFOPLIST_FILE = "LocalizerTests/LocalizerTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = octest;
 			};
 			name = Release;
 		};
